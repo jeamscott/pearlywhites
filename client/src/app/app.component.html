@@ -1,15 +1,42 @@
 <div class="navbar navbar-default">
   <div class="container">
-    <div id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li><a routerLink="/">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
+    <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
         <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
         <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
-      </ul>
+  <div class="navbar">
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">About Us</button>
+    <div class="dropdown-content">
+      <a href="html/doctors.html">Doctors</a>
+      <a href="html/mission.html">Mission</a>
+      <a href="html/history.html">History</a>
     </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">FAQs</button>
+    <div class="dropdown-content">
+      <a href="html/newpatient.html">New Patients</a>
+      <a href="html/services.html">Services</a>
+      <a href="#">Something</a>
+    </div>
+  </div> 
+  <a href="html/feedback.html">Feedback</a>
+  <a href="html/contactus.html">Contact Us</a>
+  <a href="html/portal.html">Portal</a>
+  <a href="html/portal.html">Something</a>
+</div>
+  <div class="row">
+  <div class="column_left">
+    <a href="index.html"><img src="img/logo-small-brushed.jpg" alt="" width="300px" class="logo"/></a>
+  </div>  
+  <div class="column_right">
+    <p class="schedule">Schedule an Appointment Today!<br> <a href="tel:1-800-479-5295">1-800-479-5295</a></p>
+    <p class="hours" >Monday through Friday: 8am - 5pm<br>
+Saturday: 9am - 2pm<br>
+Sunday: Closed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  </div>
+</div>
   </div>
 </div>
 
