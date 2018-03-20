@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'faqs', component: FaqsComponent },
+  { path: 'doctors', component: DoctorsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] }
 ];
@@ -27,6 +29,7 @@ const routes: Routes = [
     ProfileComponent,
     LoginComponent,
 	FaqsComponent,
+	DoctorsComponent,
     RegisterComponent,
     HomeComponent
   ],
