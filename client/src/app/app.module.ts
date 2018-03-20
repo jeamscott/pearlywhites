@@ -1,6 +1,6 @@
 import { AccountingComponent } from './accounting/accounting.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -40,7 +40,7 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     // line 41 added for accounting RS
-    AccountingComponent
+    AccountingComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +56,11 @@ const routes: Routes = [
     AuthGuardService,
     FinanceService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
 })
 export class AppModule { }

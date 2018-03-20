@@ -1,3 +1,31 @@
+<div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak="" class="sidenavdemoBasicUsage" ng-app="MyApp">
+
+  <section layout="row" flex="">
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Navigation</h1>
+      </md-toolbar>
+      <md-content layout-padding="left" ng-controller="LeftCtrl">
+        <p hide="" show-gt-md="">
+
+                <!--<button class="btn btn-info" (click)="<a class="nav-link" routerLink="/accounting"> General Journal <div class="sr-only">(current)</div>"</button> -->
+                 <!-- <a routerLink="/generaljournal/generaljournal"><button class="btn btn-general" > General Journal </button></a> -->
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item start">
+                      <a class="nav-link" routerLink="/generaljournal/generaljournal"> General Journal <div class="sr-only">(current)</div></a>
+                    </li>
+                  </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item start">
+                  <a class="nav-link" routerLink="/login"> Ledger <div class="sr-only">(current)</div></a>
+                </li>
+              </ul>
+
+
  <div class="container">
     <div class="col-md-12">
       <h1>Journal Entries</h1>
