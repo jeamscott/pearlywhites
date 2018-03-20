@@ -1,0 +1,48 @@
+ <div class="container">
+    <div class="col-md-12">
+      <h1>Journal Entries</h1>
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">Entry</th>
+            <th class="text-center">Due</th>       
+            <th class="text-center">Notes</th>       
+            <th class="text-center">Done</th>       
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let finance of finances">       
+            <td>{{ finance.name }}</td>
+            <td>{{ finance.due | date: 'EE, MMM dd' }}</td>       
+            <td>{{ finance.notes }}</td>
+            <td class="text-center">
+              <input type="checkbox" [checked]="finance.done" [disabled]="true">
+            </td>
+            <td class="text-center">
+              <button class="btn btn-info" (click)="showEditForm(finance)">
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+              <button class="btn btn-danger" (click)="removeFinance(finance)">
+                <i class="glyphicon glyphicon-remove"></i>
+              </button>
+            </td>       
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="showNewForm()">
+        <i class="glyphicon glyphicon-plus"></i>
+      </button>
+      <form *ngIf="showForm()" [formGroup]="formGroup" (ngSubmit)="saveFinance(formGroup.value)">
+        <h2>{{headerText}}</h2>
+        <p>Entry <input type="text" name="name" formControlName="name" /></p>
+        <p>Due <input type="date" name="due" formControlName="due"/></p>
+        <p>Done <input type="checkbox" name="done" formControlName="done" /></p>    
+        <p>Notes <input type="text" name="notes" formControlName="notes" /></p>
+        <p>
+          <input type="submit" class="btn btn-primary" value="Save">
+          <input type="button" class="btn btn-warning" value="Cancel" (click)="cancelEditFinance()">
+        </p>
+      </form>
+    </div>
+   </div>
