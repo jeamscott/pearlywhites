@@ -17,7 +17,7 @@ import { AuthGuardService } from './auth-guard.service';
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AlertModule } from 'ngx-bootstrap';
+// import { AlertModule } from 'ngx-bootstrap';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,7 +44,7 @@ const routes: Routes = [
     FormsModule,
     // line 47,48 added for accounting RS
     ReactiveFormsModule,
-    AlertModule.forRoot(),
+    // AlertModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
