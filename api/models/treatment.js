@@ -1,0 +1,22 @@
+var mongoose = require( 'mongoose' );
+
+var treatmentSchema = new mongoose.Schema({
+    id: {
+    type: String,
+    required: true
+  },
+    treatment: {
+    type: String,
+    required: true
+    },
+    description: {
+    type: String,
+    required: false
+   },
+    tooth_id: {
+    type: String,
+    required: true
+    }
+
+});
+mongoose.model('Treatment', treatmentSchema);

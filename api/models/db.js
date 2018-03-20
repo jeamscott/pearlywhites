@@ -58,3 +58,12 @@ process.on('SIGTERM', function() {
 // BRING IN YOUR SCHEMAS & MODELS
 require('./users');
 require('./patients');
+require('./visit');
+require('./location');
+require('./role');
+require('./user_role');
+require('./treatment');
+require('./visit_steps');
+require('./visit_history');
+require('./user_account');
+require('./tooth');
