@@ -1,6 +1,6 @@
 var mongoose = require( 'mongoose' );
 
-var locationSchema = new mongoose.Schema({
+var user_roleSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true
