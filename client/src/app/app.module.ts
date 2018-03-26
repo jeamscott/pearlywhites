@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
+import { PatientProfileService } from './patient.profile.service';
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
@@ -51,7 +52,8 @@ const routes: Routes = [
   providers: [
     AuthenticationService,
     AuthGuardService,
-    FinanceService
+    FinanceService,
+    PatientProfileService
   ],
   bootstrap: [
     AppComponent
