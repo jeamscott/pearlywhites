@@ -1,51 +1,20 @@
 <div class="navbar navbar-default">
   <div class="container">
-    <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
-        <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
-        <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
-  <div class="navbar">
-  <a href="index.html">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">About Us</button>
-    <div class="dropdown-content">
-      <a href="html/doctors.html">Doctors</a>
-      <a href="html/mission.html">Mission</a>
-      <a href="html/history.html">History</a>
+      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
+      
+
+        
+        
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      
+      <!-- Patient Bar Option -->
+      <a *ngIf="auth.isLoggedIn()" routerLink="/schedule">Appointment</a>
+      <a *ngIf="auth.isLoggedIn()"routerLink="/pay">Pay Bill</a>
+      <a *ngIf="auth.isLoggedIn()" (click)="auth.logout()">Logout</a>
+  
     </div>
-  </div> 
-  <div class="dropdown">
-    <button class="dropbtn">FAQs</button>
-    <div class="dropdown-content">
-      <a href="html/newpatient.html">New Patients</a>
-      <a href="html/services.html">Services</a>
-      <a href="#">Something</a>
-    </div>
-  </div> 
-  <a href="html/feedback.html">Feedback</a>
-  <a href="html/contactus.html">Contact Us</a>
-  <a href="html/portal.html">Portal</a>
-  <a href="html/something.html">Something</a>
-  <!-- <a href="html/accounting.html">Accounting</a> -->
-  <div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav">
-  <li class="nav-item start">
-    <a class="nav-link" routerLink="/accounting">Accounting <div class="sr-only">(current)</div></a>
-  </li>
-</ul>
-<!-- -->
-  </div>
-</div>
-  <div class="row">
-  <div class="column_left">
-    <a href="index.html"><img src="assets/logo-small-brushed.jpg" alt="" width="300px" class="logo"/></a>
-  </div>  
-  <div class="column_right">
-    <p class="schedule">Schedule an Appointment Today!<br> <a href="tel:1-800-479-5295">1-800-479-5295</a></p>
-    <p class="hours" >Monday through Friday: 8am - 5pm<br>
-Saturday: 9am - 2pm<br>
-Sunday: Closed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-  </div>
-</div>
   </div>
 </div>
 
