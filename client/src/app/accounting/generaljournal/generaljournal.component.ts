@@ -16,7 +16,7 @@ export enum SaveMode {
   templateUrl: './generaljournal.component.html',
   styleUrls: ['./generaljournal.component.css']
 })
-export class AccountingComponent implements OnInit {
+export class GeneraljournalComponent implements OnInit {
   formGroup: FormGroup;
   finances: Finance[];
   saveMode: SaveMode = SaveMode.None;
