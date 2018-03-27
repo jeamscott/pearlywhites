@@ -15,6 +15,7 @@ import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { PayComponent } from './pay/pay.component';
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'pay', component: PayComponent },
 ];
 
 @NgModule({
@@ -40,6 +42,7 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     ScheduleComponent,
+    PayComponent,
     // line 41 added for accounting RS
     AccountingComponent,
   ],
