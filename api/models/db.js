@@ -3,6 +3,41 @@ var gracefulShutdown;
 var dbURI = 'mongodb://localhost/pearlyWhites?authSource=admin';
 
 
+// BRING IN YOUR SCHEMAS & MODELS
+require('./users');
+require('./patients');
+require('./visit');
+require('./location');
+require('./role');
+require('./user_role');
+require('./treatment');
+require('./visit_steps');
+require('./visit_history');
+require('./user_account');
+require('./tooth');
+require('./financial');
+require('./inventory');
+
+//TEST DATA HERE
+var testLocations = require('./data/location');
+
+function insertTestData(testRecordModule, modelName) {
+  const records = testRecordModule.data();
+  var Model = mongoose.model(modelName);
+  records.forEach((record) => {
+    let modelInstance = new Model(record);
+    Model.findOne({'id':modelInstance.id}, 'id', (err, result) => {
+      if (err || !result) {
+        modelInstance.save((err) => {
+          if (err) {
+            console.error(err);
+          }
+        });
+      }
+    });
+  });
+}
+
 const options = {
   useMongoClient: true,
   user: 'root',
@@ -20,6 +55,8 @@ mongoose.connect(dbURI, options);
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
+
+  insertTestData(testLocations, 'Location');
 });
 mongoose.connection.on('error', function(err) {
   console.log('Mongoose connection error: ' + err);
@@ -54,16 +91,3 @@ process.on('SIGTERM', function() {
     process.exit(0);
   });
 });
-
-// BRING IN YOUR SCHEMAS & MODELS
-require('./users');
-require('./patients');
-require('./visit');
-require('./location');
-require('./role');
-require('./user_role');
-require('./treatment');
-require('./visit_steps');
-require('./visit_history');
-require('./user_account');
-require('./tooth');
