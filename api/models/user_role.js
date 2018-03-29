@@ -1,7 +1,7 @@
 var mongoose = require( 'mongoose' );
 
 var user_roleSchema = new mongoose.Schema({
-  id: {
+  id_number: {
     type: String,
     required: true
   },
