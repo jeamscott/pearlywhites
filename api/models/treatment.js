@@ -5,7 +5,7 @@ var treatmentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-    treatment: {
+    treatment_id: {
     type: String,
     required: true
     },
