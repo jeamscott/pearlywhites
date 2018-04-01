@@ -12,9 +12,12 @@ var ctrlPatient = require('../controllers/patient');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
+router.put('/profile', auth, ctrlProfile.profileWrite); //experimental
 
 // patient
 router.get('/patient/profile', auth, ctrlPatient.profileRead);
+router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
+
 
 // authentication
 router.post('/register', ctrlAuth.register);

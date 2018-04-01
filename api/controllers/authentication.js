@@ -1,6 +1,7 @@
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Patient = mongoose.model('Patient'); //experimental
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
@@ -15,6 +16,12 @@ module.exports.register = function(req, res) {
   //   });
   //   return;
   // }
+
+  var Patient = new Patient(); //experimental
+  
+  patient.first_name = req.body.name;
+  patient.email_address = req.body.email;
+
 
   var user = new User();
 
@@ -43,7 +50,7 @@ module.exports.login = function(req, res) {
   //   return;
   // }
 
-  passport.authenticate('local', function(err, user, info){
+  passport.authenticate('session', function(err, user, info){
     var token;
 
     // If Passport throws/catches an error

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthenticationService, UserDetails } from '../authentication.service';
-import { PatientProfileService } from '../patient.profile.service';
+import { AuthenticationService, UserDetails, TokenPayload } from '../authentication.service';
+import { PatientProfileService, PatientPayload } from '../patient.profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './edit.profile.component.html'
@@ -8,8 +9,13 @@ import { PatientProfileService } from '../patient.profile.service';
 export class EditProfileComponent {
   details: UserDetails;
   patientProfile;
+  changes: TokenPayload = { //experimental
+    email: '',
+    name: '',
+    password: '',
+  };
 
-  constructor(private auth: AuthenticationService, private patientService: PatientProfileService) {}
+  constructor(private auth: AuthenticationService, private patientService: PatientProfileService, private router: Router) {}
   
   ngOnInit() {    
     this.auth.profile().subscribe(user => {
@@ -24,4 +30,13 @@ export class EditProfileComponent {
       console.error(err);
     });
   }
+
+  update() { //experimental
+    this.auth.update(this.changes).subscribe(() => {
+      this.router.navigateByUrl('/profile');
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
 }
