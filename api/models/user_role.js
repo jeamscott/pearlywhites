@@ -12,6 +12,10 @@ var user_roleSchema = new mongoose.Schema({
   user_role_id: {
     type: String,
     required: true
+  },
+  email_address: {
+    type: String,
+    required: true
   }
 });
 mongoose.model('User_role', user_roleSchema);
