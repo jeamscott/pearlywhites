@@ -9,7 +9,11 @@ var user_roleSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  role_id: {
+  user_role_id: {
+    type: String,
+    required: true
+  },
+  email_address: {
     type: String,
     required: true
   }

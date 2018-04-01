@@ -8,6 +8,10 @@ var roleSchema = new mongoose.Schema({
   role_name: {
     type: String,
     required: true
+  },
+  email_address:{
+    type: String,
+    required: true
   }
 
 });
