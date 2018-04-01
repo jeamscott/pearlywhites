@@ -17,10 +17,14 @@ module.exports.register = function(req, res) {
   //   return;
   // }
 
-  var Patient = new Patient(); //experimental
+  /* var Patient = new Patient(); //experimental
   
   patient.first_name = req.body.name;
   patient.email_address = req.body.email;
+
+  patient.save(function(err) {
+
+  }); */
 
 
   var user = new User();
@@ -40,6 +44,8 @@ module.exports.register = function(req, res) {
   });
 
 };
+
+
 
 module.exports.login = function(req, res) {
 
