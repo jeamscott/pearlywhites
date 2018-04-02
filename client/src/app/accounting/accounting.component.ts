@@ -92,7 +92,7 @@ export class AccountingComponent implements OnInit {
     this.saveMode = SaveMode.None;
   }
 
-  removeLineItem(arr: LineItem[], index: number) {
+  removeLineItem(arr: LineItem[], index: number, finance: Finance) {
     this._financeService.deleteFinance(finance);
   }
 
