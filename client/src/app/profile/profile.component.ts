@@ -10,8 +10,8 @@ export class ProfileComponent {
   patientProfile;
 
   constructor(private auth: AuthenticationService, private patientService: PatientProfileService) {}
-  
-  ngOnInit() {    
+
+  ngOnInit() {
     this.auth.profile().subscribe(user => {
       this.details = user;
     }, (err) => {

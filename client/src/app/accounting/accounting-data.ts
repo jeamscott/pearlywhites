@@ -3,21 +3,76 @@ import {Finance} from './accounting';
 export const Finance_ITEMS: Finance[] = [
  {
    id: 1,
-   name: 'Cash flow incomming',
-   notes: 'debit',
-   due: new Date(new Date().setDate(new Date().getDate() + 4)),
-   done: false
+   accountNumber: 12345,
+   name: 'Interstellar Co.',
+   type: 'Utility',
+   balance: 0,
+   lineItems: [
+     {
+       id: 1,
+       type: 'purchase',
+       name: 'buy buy buy',
+       cost: 1500
+     },{
+      id: 1,
+      type: 'purchase',
+      name: 'buy buy buy',
+      cost: 1500
+    },{
+      id: 1,
+      type: 'purchase',
+      name: 'buy buy buy',
+      cost: 1500
+    }
+   ]
+
  }, {
    id: 2,
-   name: 'Cash flow outgoing',
-   notes: 'credit',
-   due: new Date(new Date().setDate(new Date().getDate() + 5)),
-   done: false
+   accountNumber: 12346,
+   name: 'Happy Sunshine.',
+   type: 'Corporation',
+   balance: 52000,
+   lineItems: [
+    {
+      id: 1,
+      type: 'purchase',
+      name: 'buy buy buy',
+      cost: 1500
+    },{
+     id: 1,
+     type: 'purchase',
+     name: 'buy buy buy',
+     cost: 1500
+   },{
+     id: 1,
+     type: 'purchase',
+     name: 'buy buy buy',
+     cost: 1500
+   }
+  ]
  }, {
    id: 3,
-   name: 'Balance',
-   notes: 'debit / credit',
-   due: new Date(new Date().setDate(new Date().getDate() - 1)),
-   done: true
+   accountNumber: 12347,
+   name: 'Deep Space Guys',
+   type: 'Rockets',
+   balance: 100000,
+   lineItems: [
+    {
+      id: 1,
+      type: 'purchase',
+      name: 'buy buy buy',
+      cost: 1500
+    },{
+     id: 1,
+     type: 'purchase',
+     name: 'buy buy buy',
+     cost: 1500
+   },{
+     id: 1,
+     type: 'purchase',
+     name: 'buy buy buy',
+     cost: 1500
+   }
+  ]
  }
 ];

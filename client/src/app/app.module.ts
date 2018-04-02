@@ -1,3 +1,6 @@
+import { DeleteItemComponent } from './accounting/delete-item/delete-item.component';
+import { LoadComponentModule } from './common/load-component/load-component.module';
+import { OverlayModule } from './common/overlay/overlay.module';
 import { GeneraljournalComponent } from './accounting/generaljournal/generaljournal.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,10 +17,13 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
+import { PatientProfileService } from './patient.profile.service';
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
+import { JournalFinanceService } from './accounting/generaljournal/generaljournal.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './accounting/logout/logout.component';
 // import { AlertModule } from 'ngx-bootstrap';
 
 const routes: Routes = [
@@ -38,7 +44,8 @@ const routes: Routes = [
     FaqsComponent,
     RegisterComponent,
     HomeComponent,
-
+    DeleteItemComponent,
+    LogoutComponent,
     // line 41 added for accounting RS
     AccountingComponent,
     GeneraljournalComponent,
@@ -46,6 +53,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    OverlayModule,
+    LoadComponentModule,
     // line 47,48 added for accounting RS
     ReactiveFormsModule,
     // AlertModule.forRoot(),
@@ -55,8 +64,11 @@ const routes: Routes = [
   providers: [
     AuthenticationService,
     AuthGuardService,
-    FinanceService
+    FinanceService,
+    JournalFinanceService,
+    PatientProfileService
   ],
+  entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [
     AppComponent
   ],
