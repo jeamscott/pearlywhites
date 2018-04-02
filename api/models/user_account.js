@@ -16,6 +16,10 @@ var user_accountSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  user_role: {
+    type: String,
+    required: true
   }
 
 });
