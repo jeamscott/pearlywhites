@@ -1,15 +1,15 @@
 var mongoose = require( 'mongoose' );
 
 var patientSchema = new mongoose.Schema({
-  first_name: {
+  id_number: {
     type: String,
     required: true
   },
-  last_name: {
+  first_name: {
     type: String,
     required: true    
   },
-  id_number: {
+  last_name: {
     type: String,
     required: true
   },

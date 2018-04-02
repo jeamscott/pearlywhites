@@ -1,6 +1,35 @@
 exports.data = function() {
     return [
-        {id: "1", tooth_letter: "a", tooth_number: "1"},
-        {id: "2", tooth_letter: "a", tooth_number: "2"}
+        {id_number: "1", tooth_letter: "a", tooth_number: "1"},
+        {id_number: "2", tooth_letter: "b", tooth_number: "2"},
+        {id_number: "3", tooth_letter: "c", tooth_number: "3"},
+        {id_number: "4", tooth_letter: "d", tooth_number: "4"},
+        {id_number: "5", tooth_letter: "e", tooth_number: "5"},
+        {id_number: "6", tooth_letter: "f", tooth_number: "6"},
+        {id_number: "7", tooth_letter: "g", tooth_number: "7"},
+        {id_number: "8", tooth_letter: "h", tooth_number: "8"},
+        {id_number: "9", tooth_letter: "i", tooth_number: "9"},
+        {id_number: "10", tooth_letter: "j", tooth_number: "10"},
+        {id_number: "11", tooth_letter: "k", tooth_number: "11"},
+        {id_number: "12", tooth_letter: "l", tooth_number: "12"},
+        {id_number: "13", tooth_letter: "m", tooth_number: "13"},
+        {id_number: "14", tooth_letter: "n", tooth_number: "14"},
+        {id_number: "15", tooth_letter: "0", tooth_number: "15"},
+        {id_number: "16", tooth_letter: "p", tooth_number: "16"},
+        {id_number: "17", tooth_letter: "q", tooth_number: "17"},
+        {id_number: "19", tooth_letter: "s", tooth_number: "19"},
+        {id_number: "20", tooth_letter: "t", tooth_number: "20"},
+        {id_number: "21",tooth_number: "21"},
+        {id_number: "22",tooth_number: "22"},
+        {id_number: "23",tooth_number: "23"},
+        {id_number: "24",tooth_number: "24"},
+        {id_number: "25",tooth_number: "25"},
+        {id_number: "26",tooth_number: "26"},
+        {id_number: "27",tooth_number: "27"},
+        {id_number: "28",tooth_number: "28"},
+        {id_number: "29",tooth_number: "29"},
+        {id_number: "30",tooth_number: "30"},
+        {id_number: "231",tooth_number: "31"},
+        {id_number: "32",tooth_number: "32"}
     ];
 } 

@@ -5,7 +5,7 @@ var inventorySchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      item_name: {
+    item_name: {
         type: String,
         required: true
       },
@@ -17,9 +17,9 @@ var inventorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    cost:{
+    cost: {
         type: String,
-        required: true
+        required: false
     }
       
     });

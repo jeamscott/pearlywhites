@@ -29,13 +29,13 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {}
 
   private saveToken(token: string): void {
-    localStorage.setItem('mean-token', token);
+    sessionStorage.setItem('mean-token', token);
     this.token = token;
   }
 
   private getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem('mean-token');
+      this.token = sessionStorage.getItem('mean-token');
     }
     return this.token;
   }
@@ -61,12 +61,16 @@ export class AuthenticationService {
     }
   }
 
-  private request(method: 'post'|'get', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
     let base;
 
     if (method === 'post') {
       base = this.http.post(`/api/${type}`, user);
-    } else {
+    } 
+    else if (method === 'put'){ //experimental
+      base = this.http.put(`/api/${type}`, user);
+    }
+    else {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
@@ -94,9 +98,15 @@ export class AuthenticationService {
     return this.request('get', 'profile');
   }
 
+    // /* Experimental
+    public update(user: TokenPayload): Observable<any> { 
+      return this.request('put', 'profile', user);
+    }
+    // */
+
   public logout(): void {
     this.token = '';
-    window.localStorage.removeItem('mean-token');
+    window.sessionStorage.removeItem('mean-token');
     this.router.navigateByUrl('/');
   }
 }
