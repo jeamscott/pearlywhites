@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit.profile/edit.profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { RegisterComponent } from './register/register.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'faqs', component: FaqsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent }
 ];
@@ -40,6 +42,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ProfileComponent,
+    EditProfileComponent,
     LoginComponent,
     FaqsComponent,
     RegisterComponent,
