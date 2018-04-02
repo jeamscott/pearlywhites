@@ -3,7 +3,7 @@ import { DatePipe } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Finance } from './generaljournal';
-import { FinanceService } from './generaljournal.service';
+import { JournalFinanceService } from './generaljournal.service';
 
 export enum SaveMode {
   None,
@@ -16,13 +16,13 @@ export enum SaveMode {
   templateUrl: './generaljournal.component.html',
   styleUrls: ['./generaljournal.component.css']
 })
-export class AccountingComponent implements OnInit {
+export class GeneraljournalComponent implements OnInit {
   formGroup: FormGroup;
   finances: Finance[];
   saveMode: SaveMode = SaveMode.None;
   headerText: string;
 
-  constructor(private _financeService: FinanceService, private _formBuilder: FormBuilder) {
+  constructor(private _financeService: JournalFinanceService, private _formBuilder: FormBuilder) {
     this.formGroup = _formBuilder.group({
       'id': '',
       'name': '',

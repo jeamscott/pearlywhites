@@ -1,3 +1,7 @@
+import { DeleteItemComponent } from './accounting/delete-item/delete-item.component';
+import { LoadComponentModule } from './common/load-component/load-component.module';
+import { OverlayModule } from './common/overlay/overlay.module';
+import { GeneraljournalComponent } from './accounting/generaljournal/generaljournal.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -14,13 +18,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { PayComponent } from './pay/pay.component';
-import { EditProfileComponent } from './edit.profile/edit.profile.component';
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
+import { JournalFinanceService } from './accounting/generaljournal/generaljournal.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './accounting/logout/logout.component';
 // import { AlertModule } from 'ngx-bootstrap';
 
 const routes: Routes = [
@@ -30,10 +33,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
-  { path: 'schedule', component: ScheduleComponent },
-  { path: 'pay', component: PayComponent },
-  { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
-  
+  { path: 'generaljournal/generaljournal', component: GeneraljournalComponent }
 ];
 
 @NgModule({
@@ -44,15 +44,17 @@ const routes: Routes = [
     FaqsComponent,
     RegisterComponent,
     HomeComponent,
-    ScheduleComponent,
-    PayComponent,
-    EditProfileComponent,
+    DeleteItemComponent,
+    LogoutComponent,
     // line 41 added for accounting RS
     AccountingComponent,
+    GeneraljournalComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    OverlayModule,
+    LoadComponentModule,
     // line 47,48 added for accounting RS
     ReactiveFormsModule,
     // AlertModule.forRoot(),
@@ -63,8 +65,10 @@ const routes: Routes = [
     AuthenticationService,
     AuthGuardService,
     FinanceService,
+    JournalFinanceService,
     PatientProfileService
   ],
+  entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [
     AppComponent
   ],

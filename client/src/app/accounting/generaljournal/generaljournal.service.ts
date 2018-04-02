@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-
 import { Finance } from './generaljournal';
 import { Finance_ITEMS } from './generaljournal-data';
 import { Router } from '@angular/router';
 
 @Injectable()
-export class FinanceService {
+export class JournalFinanceService {
   pItems: Finance[] = Finance_ITEMS;
 
   constructor() { }

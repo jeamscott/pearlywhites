@@ -1,0 +1,5 @@
+<div class="bg" (click)="closeFromOutside()"></div>
+<div class="overlayContent" [class.show]="showInner">
+  <h1>{{header}}</h1>
+  <ng-content></ng-content>
+</div>
