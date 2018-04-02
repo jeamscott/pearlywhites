@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Finance } from './accounting';
 import { Finance_ITEMS } from './accounting-data';
 import { Router } from '@angular/router';

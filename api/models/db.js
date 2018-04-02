@@ -17,6 +17,7 @@ require('./user_account');
 require('./tooth');
 require('./financial');
 require('./inventory');
+require('./accounting');
 
 //TEST DATA HERE
 var testPatients = require('./data/patients');

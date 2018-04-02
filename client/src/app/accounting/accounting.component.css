@@ -1,0 +1,7 @@
+.not-input {
+    border: none;
+    background: transparent;
+}
+input {
+    transition: all .25s ease-in-out;
+}

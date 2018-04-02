@@ -6,67 +6,109 @@
 
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Navigation</h1>
-      </md-toolbar>
-      <md-content layout-padding="left" ng-controller="LeftCtrl">
-        <p hide="" show-gt-md="">
-
-                <!--<button class="btn btn-info" (click)="<a class="nav-link" routerLink="/accounting"> General Journal <div class="sr-only">(current)</div>"</button> -->
-                 <!-- <a routerLink="/generaljournal/generaljournal"><button class="btn btn-general" > General Journal </button></a> -->
-                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item start">
-                      <a class="nav-link" routerLink="/generaljournal/generaljournal"> General Journal <div class="sr-only">(current)</div></a>
-                    </li>
-                  </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item start">
+              <a class="nav-link" routerLink="/accounting"> Chart of Accounts <div class="sr-only">(current)</div></a>
+            </li>
+          </ul>
+             <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item start">
+                    <a class="nav-link" routerLink="/generaljournal/generaljournal"> Accounts Payable <div class="sr-only">(current)</div></a>
+                  </li>
+                </ul>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item start">
+                <a class="nav-link" routerLink="/login"> Accounts Receivable <div class="sr-only">(current)</div></a>
+              </li>
+            </ul> -->
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item start">
-                  <a class="nav-link" routerLink="/login"> Ledger <div class="sr-only">(current)</div></a>
+                  <a class="nav-link" routerLink="/login"> Inventory <div class="sr-only">(current)</div></a>
                 </li>
-              </ul>
+              </ul> 
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item start">
+                    <a class="nav-link" routerLink="/login"> Reports <div class="sr-only">(current)</div></a>
+                  </li>
+                </ul>
+      
+      <md-content layout-padding="left" ng-controller="LeftCtrl">
+        <p hide="" show-gt-md="">
+
+          
 
 
  <div class="container">
     <div class="col-md-12">
-      <h1>Journal Entries</h1>
+      <h1>Chart of Accounts</h1>
       <table class="table table-bordered table-striped table-hover">
-        <thead>
-          <tr>
-            <th class="text-center">Entry</th>
-            <th class="text-center">Due</th>       
-            <th class="text-center">Notes</th>       
-            <th class="text-center">Done</th>       
-            <th class="text-center"></th>
-          </tr>
-        </thead>
         <tbody>
-          <tr *ngFor="let finance of finances">       
-            <td>{{ finance.name }}</td>
-            <td>{{ finance.due | date: 'EE, MMM dd' }}</td>       
-            <td>{{ finance.notes }}</td>
-            <td class="text-center">
-              <input type="checkbox" [checked]="finance.done" [disabled]="true">
-            </td>
-            <td class="text-center">
-              <button class="btn btn-info" (click)="showEditForm(finance)">
-                <i class="glyphicon glyphicon-pencil"></i>
-              </button>
-              <button class="btn btn-danger" (click)="removeFinance(finance)">
-                <i class="glyphicon glyphicon-remove"></i>
-              </button>
-            </td>       
+            <div class="container">
+                <div class="col-md-12">
+          <tr *ngFor="let finance of finances"> 
+            
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                      <th class="text-center">Account #</th>
+                      <th class="text-center">Name</th>       
+                      <th class="text-center">Type</th>       
+                      <th class="text-center">Balance</th>
+                      <th class="text-center"></th>      
+                    </tr>
+                  </thead>
+              <tr>
+                <td>{{ finance.accountNumber }}</td>
+                <td>{{ finance.name }}</td>       
+                <td>{{ finance.type }}</td>
+                <td>{{ finance.balance }}</td>
+                <td class="text-center">
+                  <button class="btn btn-info" (click)="toggleLineItems(finance)">
+                    <i class="glyphicon glyphicon-edit"></i>
+                  </button>
+                </td>
+              </tr>
+              <ng-container *ngIf="finance.showLineItems">
+                  <div (click)="addListItem(finance)">Add</div>
+                <tr>
+                  <td>head 1</td>
+                  <td>head 2</td>
+                  <td>head 3</td>
+                  <td>head 4</td>
+                </tr>
+                <tr *ngFor="let lineItem of finance.lineItems; let i = index;">
+                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.id" [readonly]="!lineItem.edit"/></td>
+                  <td>{{lineItem.name}}</td>
+                  <td>{{lineItem.type}}</td>
+                  <td>{{lineItem.cost}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="lineItem.edit = !lineItem.edit">
+                      <i class="glyphicon glyphicon-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" (click)="launchOverlay('DeleteItem', {lineItems: finance.lineItems, index: i})">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+            </ng-container>
+          </table>           
           </tr>
         </tbody>
-      </table>
+      
       <button class="btn btn-success" (click)="showNewForm()">
         <i class="glyphicon glyphicon-plus"></i>
       </button>
       <form *ngIf="showForm()" [formGroup]="formGroup" (ngSubmit)="saveFinance(formGroup.value)">
         <h2>{{headerText}}</h2>
-        <p>Entry <input type="text" name="name" formControlName="name" /></p>
-        <p>Due <input type="date" name="due" formControlName="due"/></p>
-        <p>Done <input type="checkbox" name="done" formControlName="done" /></p>    
-        <p>Notes <input type="text" name="notes" formControlName="notes" /></p>
+        <p>Account Name <input type="text" name="accountNumber" formControlName="accountNumber" /></p>
+        <p>Name <input type="text" name="name" formControlName="name"/></p>
+        <p>Type <input type="text" name="type" formControlName="type" /></p>    
+        <p>Balance <input type="text" name="balance" formControlName="balance" /></p>
         <p>
           <input type="submit" class="btn btn-primary" value="Save">
           <input type="button" class="btn btn-warning" value="Cancel" (click)="cancelEditFinance()">
@@ -74,3 +116,8 @@
       </form>
     </div>
    </div>
+   <overlay #overlay [disableClose]="true" [header]="overlayTitles[currentOverlay]">
+     <ng-container>
+       <ng-template load-component></ng-template>
+     </ng-container>
+   </overlay>
