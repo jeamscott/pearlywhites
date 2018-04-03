@@ -40,10 +40,6 @@ var patientSchema = new mongoose.Schema({
   visit_history: {
     type: Date,
     required: false
-  },
-  status_time: {
-    type: Timestamp,
-    required: false
   }
 
 });
