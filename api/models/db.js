@@ -17,13 +17,9 @@ var testPatients = require('./data/patients');
 var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
-<<<<<<< HEAD
-var testAccounts = require('./data/accounting');
-=======
 var testAccounting = require('./data/accounting');
 var testUsers = require('./data/users');
 var testVisit = require('./data/visit');
->>>>>>> 48845ad88745e24e3661c20aab3bd94dcdaec56a
 
 function insertTestData(testRecordModule, modelName) {
   const records = testRecordModule.data();
