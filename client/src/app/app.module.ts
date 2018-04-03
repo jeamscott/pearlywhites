@@ -4,6 +4,7 @@ import { OverlayModule } from './common/overlay/overlay.module';
 import { GeneraljournalComponent } from './accounting/generaljournal/generaljournal.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
+
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
