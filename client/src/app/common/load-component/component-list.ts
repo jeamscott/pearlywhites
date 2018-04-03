@@ -4,4 +4,4 @@ import { LogoutComponent } from '../../accounting/logout/logout.component';
 export const ComponentList: any = {
     'DeleteItem': DeleteItemComponent,
     'Logout': LogoutComponent
-}
+};

@@ -82,7 +82,7 @@
                   <td>head 4</td>
                 </tr>
                 <tr *ngFor="let lineItem of finance.lineItems; let i = index;">
-                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.id" [readonly]="!lineItem.edit"/></td>
+                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.id_number" [readonly]="!lineItem.edit"/></td>
                   <td>{{lineItem.name}}</td>
                   <td>{{lineItem.type}}</td>
                   <td>{{lineItem.cost}}</td>

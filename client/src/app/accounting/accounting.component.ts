@@ -49,7 +49,7 @@ export class AccountingComponent implements OnInit {
   constructor(private _financeService: FinanceService, private _formBuilder: FormBuilder,
   private _componentFactoryResolver: ComponentFactoryResolver) {
     this.formGroup = _formBuilder.group({
-      'id': '',
+      'id_number': '',
       'accountNumber': '',
       'name': '',
       'type': '',
@@ -57,20 +57,18 @@ export class AccountingComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.overlay);
     this.getFinance();
   }
 
   public launchOverlay(componentRef: string, data: any): void {
     this.currentOverlay = componentRef;
     this._loadComponent(this._overlayComponents[componentRef], data);
-    console.log(this.overlay);
     this.overlay.state = 'active';
   }
 
   addListItem(finance: Finance) {
     let financeItem = {
-      id : finance.lineItems.length + 1, name : null, type : null, cost : null
+      id_number : finance.lineItems.length + 1, name : null, type : null, cost : null
     };
     finance.lineItems.push(financeItem);
     finance.lineItems[finance.lineItems.length - 1].edit = true;
@@ -84,7 +82,7 @@ export class AccountingComponent implements OnInit {
 
   saveFinance(finance: Finance) {
     finance.lineItems = [];
-    if (finance.id) {
+    if (finance.id_number) {
       this._financeService.updateFinance(finance);
     } else {
       this._financeService.addFinance(finance);
@@ -98,7 +96,7 @@ export class AccountingComponent implements OnInit {
 
   public toggleLineItems(finance: Finance): void {
     for (let f of this.finances) {
-    f.showLineItems = f.id !== finance.id ? false : f.showLineItems;
+    f.showLineItems = f.id_number !== finance.id_number ? false : f.showLineItems;
     }
     finance.showLineItems = finance.hasOwnProperty('showLineItems') ? !finance.showLineItems : true;
   }

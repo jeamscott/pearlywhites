@@ -16,7 +16,7 @@ export class FinanceService {
     this.pItems.push(finance);
   }
   updateFinance(finance: Finance) {
-    const index = this.pItems.map(x => x.id).indexOf(finance.id);
+    const index = this.pItems.map(x => x.id_number).indexOf(finance.id_number);
     this.pItems[index] = finance;
   }
   deleteFinance(finance: Finance) {

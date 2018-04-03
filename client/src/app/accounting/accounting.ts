@@ -1,5 +1,5 @@
 export interface Finance {
-    id: number;
+    id_number: number;
     accountNumber: number;
     name: string;
     type: string;
@@ -9,7 +9,7 @@ export interface Finance {
   }
 
   export interface LineItem {
-    id: number;
+    id_number: number;
     type: string;
     name: string;
     cost: number;

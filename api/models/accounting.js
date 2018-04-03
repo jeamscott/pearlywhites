@@ -1,19 +1,19 @@
 var mongoose = require( 'mongoose' );
 
 var accountingSchema = new mongoose.Schema({
-    id_number: {
+      id_number: {
         type: String,
         required: true
       },
       accountNumber: {
         type: String,
-        required: false 
+        required: true 
       },
       name: {
         type: String,
         required: true 
       },
-      type: {
+      accountType: {
       type: String,
       required: true  
       },

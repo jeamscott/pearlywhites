@@ -15,6 +15,6 @@ export class LoadComponentModule {
             providers: [
                 { provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: components, multi: true}
             ]
-        }
+        };
     }
 }
