@@ -36,6 +36,10 @@ var patientSchema = new mongoose.Schema({
   email_address: {
     type: String,
     required: false
+  },
+  visit_history: {
+    type: Date,
+    required: false
   }
 
 });

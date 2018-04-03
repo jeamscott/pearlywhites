@@ -3,9 +3,13 @@ var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
 var userSchema = new mongoose.Schema({
-  email: {
+  id_number: {
     type: String,
-    unique: true,
+    unique: true, 
+    required: true
+  },
+    email: {
+    type: String,
     required: true
   },
   name: {

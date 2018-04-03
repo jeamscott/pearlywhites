@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
-import { TokenPayload } from './authentication.service';
+import { AuthenticationService, TokenPayload } from './authentication.service';
 
 export interface PatientPayload { //experimental
   first_name: string;
@@ -13,7 +13,7 @@ export interface PatientPayload { //experimental
 export class PatientProfileService {
   private token: string;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private auth: AuthenticationService) {}
 
   private getToken(): string {
     if (!this.token) {
@@ -22,14 +22,17 @@ export class PatientProfileService {
     return this.token;
   }
 
-  private request(method: 'post'|'get'|'put', type: 'patient/profile', user?: TokenPayload): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'patient/profile', request?): Observable<any> {
     let base;
 
+    
     if (method === 'post') {
-      base = this.http.post(`/api/${type}`, user);
+      request._id = this.auth.getUserDetails()._id;
+      base = this.http.post(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     } 
       else if (method === 'put'){ //experimental
-      base = this.http.put(`/api/${type}`, user);
+      request._id = this.auth.getUserDetails()._id;
+      base = this.http.put(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
       else {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
@@ -43,8 +46,8 @@ export class PatientProfileService {
   }
 
   // /* Experimental
-  public update(user: TokenPayload): Observable<any> { 
-    return this.request('put', 'patient/profile', user);
+  public update(profile): Observable<any> { 
+    return this.request('put', 'patient/profile', profile);
   }
   // */
 }

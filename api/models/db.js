@@ -8,24 +8,22 @@ require('./users');
 require('./patients');
 require('./visit');
 require('./location');
-require('./role');
-require('./user_role');
 require('./treatment');
-require('./visit_steps');
-require('./visit_history');
-require('./user_account');
-require('./tooth');
-require('./financial');
 require('./inventory');
 require('./accounting');
 
 //TEST DATA HERE
 var testPatients = require('./data/patients');
-var testLocations = require('./data/location');
-var testTooth = require('./data/tooth');
+var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
+<<<<<<< HEAD
 var testAccounts = require('./data/accounting');
+=======
+var testAccounting = require('./data/accounting');
+var testUsers = require('./data/users');
+var testVisit = require('./data/visit');
+>>>>>>> 48845ad88745e24e3661c20aab3bd94dcdaec56a
 
 function insertTestData(testRecordModule, modelName) {
   const records = testRecordModule.data();
@@ -62,12 +60,18 @@ mongoose.connect(dbURI, options);
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
 
-  insertTestData(testLocations, 'Location');
+  insertTestData(testLocation, 'Location');
   insertTestData(testPatients, 'Patient');
-  insertTestData(testTooth, 'Tooth');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
+<<<<<<< HEAD
   insertTestData(testAccounts, 'Accounting');
+=======
+  insertTestData(testAccounting, 'Accounting');
+  insertTestData(testUsers, 'User');
+  insertTestData(testVisit, 'Visit');
+
+>>>>>>> 48845ad88745e24e3661c20aab3bd94dcdaec56a
 
 });
 mongoose.connection.on('error', function(err) {

@@ -4,6 +4,7 @@ import { OverlayModule } from './common/overlay/overlay.module';
 import { GeneraljournalComponent } from './accounting/generaljournal/generaljournal.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit.profile/edit.profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
+
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
@@ -32,6 +35,7 @@ const routes: Routes = [
   { path: 'faqs', component: FaqsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent }
 ];
@@ -40,6 +44,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ProfileComponent,
+    EditProfileComponent,
     LoginComponent,
     FaqsComponent,
     RegisterComponent,
