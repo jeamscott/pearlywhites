@@ -17,7 +17,7 @@ export class PatientProfileService {
 
   private getToken(): string {
     if (!this.token) {
-      this.token = sessionStorage.getItem('mean-token');
+      this.token = localStorage.getItem('mean-token');
     }
     return this.token;
   }
@@ -28,7 +28,7 @@ export class PatientProfileService {
     
     if (method === 'post') {
       request._id = this.auth.getUserDetails()._id;
-      base = this.http.post(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+    base = this.http.post(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     } 
       else if (method === 'put'){ //experimental
       request._id = this.auth.getUserDetails()._id;

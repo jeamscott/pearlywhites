@@ -22,7 +22,7 @@ export class EditProfileComponent {
     this.auth.profile().subscribe(user => {
       this.details = user;
     }, (err) => {
-      console.error(err);
+      console.log(err);
     });
 
     this.patientService.profile().subscribe(profile => {

@@ -3,11 +3,13 @@ var User = mongoose.model('User');
 var Patient = mongoose.model('Patient');
 
 module.exports.profileRead = function(req, res) {
+  console.log("made it here")
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
     });
   } else {
+    
     User
       .findById(req.payload._id)
       .exec(function(err, user) {
@@ -16,7 +18,7 @@ module.exports.profileRead = function(req, res) {
               return;
           }
           Patient.findOne({'email_address':user.email},
-            'first_name last_name id_number phone_number street city state zip_code email_address', 
+            'id_number first_name last_name phone_number street city state zip_code email_address visit_history', 
             function(err, patient) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
@@ -26,7 +28,7 @@ module.exports.profileRead = function(req, res) {
           })
       });
   }
-
+  
 };
 
 // /* Experimental

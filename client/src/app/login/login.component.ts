@@ -14,6 +14,7 @@ export class LoginComponent {
   constructor(private auth: AuthenticationService, private router: Router) {}
 
   login() {
+    
     this.auth.login(this.credentials).subscribe(response => {
       console.log(response)
       this.router.navigateByUrl('/profile');

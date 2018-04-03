@@ -74,14 +74,14 @@ export class AuthenticationService {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
-    const request = base.pipe(
+      const request = base.pipe(
       map((data: TokenResponse) => {
         if (data.token) {
           this.saveToken(data.token);
         }
         return data;
       })
-    );
+     ); 
 
     return request;
   }
