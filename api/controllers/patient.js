@@ -40,10 +40,11 @@ module.exports.profileWrite = function(req, res) {
       .findById(req.payload._id)
       .exec(function(err, user) {
           if(err) {
+            console.error(err);
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findByIdAndUpdate(
+          Patient.findOneAndUpdate(
           {
             'email_address':user.email},
           {
