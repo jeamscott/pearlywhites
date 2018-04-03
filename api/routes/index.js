@@ -9,7 +9,7 @@ var auth = jwt({
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlPatient = require('../controllers/patient');
-console.log(express)
+var ctrlAccounting = require('../controllers/accounting');
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
 router.put('/profile', auth, ctrlProfile.profileWrite); //experimental
@@ -22,5 +22,8 @@ router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
+
+// accounting
+router.get('/accounting', crtlAccounting.getAll);
 
 module.exports = router;

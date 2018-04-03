@@ -25,6 +25,7 @@ var testLocations = require('./data/location');
 var testTooth = require('./data/tooth');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
+var testAccounts = require('./data/accounting');
 
 function insertTestData(testRecordModule, modelName) {
   const records = testRecordModule.data();
@@ -66,6 +67,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testTooth, 'Tooth');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
+  insertTestData(testAccounts, 'Accounting');
 
 });
 mongoose.connection.on('error', function(err) {
