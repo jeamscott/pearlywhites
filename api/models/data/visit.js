@@ -1,6 +1,6 @@
 exports.data = function() {
     return [
-        {id_number:"1", visit_id:"a", treatment_id:"a"},
-        {id_number:"2", visit_id:"b", treatment_id:"b"}
+        {id_number:"1", visit_date:" ", patient_id:" ", user_role:" ", location_id:" "},
+        {id_number:"2", visit_date:" ", patient_id:" ", user_role:" ", location_id:" "}
     ];
 } 
