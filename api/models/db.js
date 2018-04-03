@@ -64,14 +64,10 @@ mongoose.connection.on('connected', function() {
   insertTestData(testPatients, 'Patient');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
-<<<<<<< HEAD
-  insertTestData(testAccounts, 'Accounting');
-=======
   insertTestData(testAccounting, 'Accounting');
   insertTestData(testUsers, 'User');
   insertTestData(testVisit, 'Visit');
 
->>>>>>> 48845ad88745e24e3661c20aab3bd94dcdaec56a
 
 });
 mongoose.connection.on('error', function(err) {
