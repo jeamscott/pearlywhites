@@ -24,6 +24,6 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
 // accounting
-router.get('/accounting', crtlAccounting.getAll);
+router.get('/accounting', ctrlAccounting.getAll);
 
 module.exports = router;
