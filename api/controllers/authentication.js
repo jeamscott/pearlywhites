@@ -56,7 +56,7 @@ module.exports.login = function(req, res) {
   //   return;
   // }
 
-  passport.authenticate('session', function(err, user, info){
+  passport.authenticate('local', function(err, user, info){
     var token;
 
     // If Passport throws/catches an error
