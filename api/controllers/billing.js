@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Patient = mongoose.model('Patient');
+var Patient = mongoose.model('Billing');
 
 module.exports.profileRead = function(req, res) {
   console.log("made it here")
@@ -17,14 +17,14 @@ module.exports.profileRead = function(req, res) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findOne({'email_address':user.email},
-            'id_number first_name last_name phone_number street city state zip_code email_address visit_history', 
-            function(err, patient) {
+          Billing.findOne({'email_address':user.email},
+            'ballance_due', 
+            function(err, billing) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(patient);
+                res.status(200).json(billing);
           })
       });
   }
@@ -32,7 +32,7 @@ module.exports.profileRead = function(req, res) {
 };
 
 // /* Experimental
-module.exports.profileWrite = function(req, res) {  
+module.exports.billingWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -50,7 +50,7 @@ module.exports.profileWrite = function(req, res) {
           {
             'email_address':user.email},
           {
-            $set: { 'first_name': req.body.first_name, 'last_name': req.body.last_name, 'phone_number': req.body.phone_number, 'street': req.body.street, 'city': req.body.city, 'state': req.body.state, 'zip_code': req.body.zip_code},
+            $set: { 'ballance_due': req.body.ballance_due},
           },
           {
             new: true
