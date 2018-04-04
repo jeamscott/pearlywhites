@@ -21,8 +21,8 @@ router.get('/patient/profile', auth, ctrlPatient.profileRead);
 router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
 
 // billing
-//router.get('/billing', auth, ctrlBilling.billingRead);
-//router.put('/billing', auth, ctrlBilling.billingWrite);
+router.get('/billing', auth, ctrlBilling.billingRead);
+router.put('/billing', auth, ctrlBilling.billingWrite);
 
 // authentication
 router.post('/register', ctrlAuth.register);

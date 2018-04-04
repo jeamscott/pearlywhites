@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var Patient = mongoose.model('Billing');
 
-module.exports.profileRead = function(req, res) {
+module.exports.billingRead = function(req, res) {
   console.log("made it here")
   if (!req.payload._id) {
     res.status(401).json({
@@ -55,12 +55,12 @@ module.exports.billingWrite = function(req, res) {
           {
             new: true
           },
-            function(err, patient) {
+            function(err, billing) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(patient);
+                res.status(200).json(billing);
           })
       });
   }
