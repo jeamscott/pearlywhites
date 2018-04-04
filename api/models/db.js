@@ -18,7 +18,7 @@ var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
 var testAccounting = require('./data/accounting');
-var testUsers = require('./data/users');
+// var testUsers = require('./data/users');
 var testVisit = require('./data/visit');
 
 function insertTestData(testRecordModule, modelName) {
@@ -61,7 +61,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
   insertTestData(testAccounting, 'Accounting');
-  insertTestData(testUsers, 'User');
+  // insertTestData(testUsers, 'User');
   insertTestData(testVisit, 'Visit');
 
 
