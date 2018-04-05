@@ -70,7 +70,7 @@ export class AccountingComponent implements OnInit {
 
   addListItem(finance: Finance) {
     const financeItem = {
-      id_number: finance.lineItems.length + 1, name : null, type : null, cost : null
+      id_number: finance.lineItems.length + 1, vendor : null, accountType: null, name : null, type : null, cost : null, bills : null
     };
     finance.lineItems.push(financeItem);
     finance.lineItems[finance.lineItems.length - 1].edit = true;
