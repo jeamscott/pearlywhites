@@ -7,11 +7,19 @@ var visitSchema = new mongoose.Schema({
   },
   visit_id: {
     type: String,
-    required: true
+    required: false
   },
   treatment_id: {
-  type: String,
-    required: true
+    type: String,
+    required: false
+  },
+  user_role: {
+    type: String,
+    required: false
+  },
+  location_id: {
+    type: String,
+    required: false
   }
 
 });

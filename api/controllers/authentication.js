@@ -35,6 +35,7 @@ module.exports.register = function(req, res) {
   user.setPassword(req.body.password);
 
   user.save(function(err) {
+    console.log(err)
     var token;
     token = user.generateJwt();
     res.status(200);
@@ -56,7 +57,7 @@ module.exports.login = function(req, res) {
   //   return;
   // }
 
-  passport.authenticate('session', function(err, user, info){
+  passport.authenticate('local', function(err, user, info){
     var token;
 
     // If Passport throws/catches an error

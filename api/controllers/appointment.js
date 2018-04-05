@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Patient = mongoose.model('Patient');
+var Appointment = mongoose.model('Appointment');
 
-module.exports.profileRead = function(req, res) {
+module.exports.appointmentRead = function(req, res) {
   
   if (!req.payload._id) {
     res.status(401).json({
@@ -11,28 +11,29 @@ module.exports.profileRead = function(req, res) {
   } else {
     
     User
+      
       .findById(req.payload._id)
       .exec(function(err, user) {
           if(err) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findOne({'user_name':user.email},
-            'id_number first_name last_name phone_number street city state zip_code email_address visit_history user_name',
-                function(err, patient) {
+          Appointment.findOne({'user_name':user.email}, console.log(user.email),
+            'user_name app_date app_time app_location', 
+            function(err, appointment) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(patient);
+                res.status(200).json(appointment);
           })
       });
   }
   
 };
 
-
-module.exports.profileWrite = function(req, res) {  
+// /* Experimental
+module.exports.appointmentWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -46,22 +47,23 @@ module.exports.profileWrite = function(req, res) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findOneAndUpdate(
+          Appointment.findOneAndUpdate(
           {
             'user_name':user.email},
           {
-            $set: { 'first_name': req.body.first_name, 'last_name': req.body.last_name, 'phone_number': req.body.phone_number, 'street': req.body.street, 'city': req.body.city, 'state': req.body.state, 'zip_code': req.body.zip_code, 'email_adress': req.body.email_adress },
+            $set: { 'app_date': req.body.app_date, 'app_time': req.body.app_time, 'app_location': req.body.app_location},
           },
           {
             new: true
           },
-            function(err, patient) {
+            function(err, appointment) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(patient);
+                res.status(200).json(appointment);
           })
       });
   }
 };
+// */

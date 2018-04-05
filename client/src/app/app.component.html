@@ -8,12 +8,16 @@
         
     <div class="navbar">
       <a href="index.html">Home</a>
-      <a href="accounting">Finance</a>
       
+      <div *ngIf="auth.isLoggedIn()">
       <!-- Patient Bar Option -->
-      <a *ngIf="auth.isLoggedIn()" routerLink="/schedule">Appointment</a>
-      <a *ngIf="auth.isLoggedIn()"routerLink="/pay">Pay Bill</a>
-      <a *ngIf="auth.isLoggedIn()" (click)="auth.logout()">Logout</a>
+      <a routerLink="/schedule">Appointment</a>
+      <a routerLink="/pay">Pay Bill</a>
+      <a (click)="auth.logout()">Logout</a>
+
+      <!-- Employee Bar Option -->
+      <a href="accounting">Finance</a>
+      </div>
     
   
     </div>

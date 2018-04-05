@@ -3,35 +3,35 @@ var mongoose = require( 'mongoose' );
 var patientSchema = new mongoose.Schema({
   id_number: {
     type: String,
-    required: true
+    required: false
   },
   first_name: {
     type: String,
-    required: true    
+    required: false    
   },
   last_name: {
     type: String,
-    required: true
+    required: false
   },
   phone_number: {
     type: String,
-    required: true 
+    required: false 
   },
   street: {
     type: String,
-    required: true
+    required: false
   },
   city: {
     type: String,
-    required: true
+    required: false
   },
   state: {
     type: String,
-    required: true
+    required: false
   },
   zip_code: {
     type: String,
-    required: true
+    required: false
   },
   email_address: {
     type: String,
@@ -40,6 +40,11 @@ var patientSchema = new mongoose.Schema({
   visit_history: {
     type: Date,
     required: false
+  },
+  user_name: {
+    type: String,
+    required: true,
+    unique: true
   }
 
 });

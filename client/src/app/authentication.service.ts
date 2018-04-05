@@ -29,13 +29,13 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {}
 
   private saveToken(token: string): void {
-    sessionStorage.setItem('mean-token', token);
+    localStorage.setItem('mean-token', token);
     this.token = token;
   }
 
   private getToken(): string {
     if (!this.token) {
-      this.token = sessionStorage.getItem('mean-token');
+      this.token = localStorage.getItem('mean-token');
     }
     return this.token;
   }
@@ -74,14 +74,14 @@ export class AuthenticationService {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
-    const request = base.pipe(
+      const request = base.pipe(
       map((data: TokenResponse) => {
         if (data.token) {
           this.saveToken(data.token);
         }
         return data;
       })
-    );
+     ); 
 
     return request;
   }
@@ -106,7 +106,7 @@ export class AuthenticationService {
 
   public logout(): void {
     this.token = '';
-    window.sessionStorage.removeItem('mean-token');
+    window.localStorage.removeItem('mean-token');
     this.router.navigateByUrl('/');
   }
 }

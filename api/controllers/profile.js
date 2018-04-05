@@ -14,7 +14,7 @@ module.exports.profileRead = function(req, res) {
         res.status(200).json(user);
       });
   }
-
+  
 };
 // /* Experimental
 module.exports.profileWrite = function(req, res) {  

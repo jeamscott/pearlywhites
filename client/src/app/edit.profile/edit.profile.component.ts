@@ -22,7 +22,7 @@ export class EditProfileComponent {
     this.auth.profile().subscribe(user => {
       this.details = user;
     }, (err) => {
-      console.error(err);
+      console.log(err);
     });
 
     this.patientService.profile().subscribe(profile => {
@@ -34,6 +34,7 @@ export class EditProfileComponent {
 
   updateProfile() {
     this.patientService.update(this.patientProfile).subscribe(() => {
+      this.router.navigateByUrl('/profile');
       console.log('yay');
     }, (err) => {
       console.error(err);

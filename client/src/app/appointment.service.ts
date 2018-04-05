@@ -5,12 +5,10 @@ import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
 import { AuthenticationService, TokenPayload } from './authentication.service';
 
-export interface PatientPayload { //experimental
-  first_name: string;
-}
+
 
 @Injectable()
-export class PatientProfileService {
+export class AppointmentService {
   private token: string;
 
   constructor(private http: HttpClient, private router: Router, private auth: AuthenticationService) {}
@@ -22,7 +20,7 @@ export class PatientProfileService {
     return this.token;
   }
 
-  private request(method: 'post'|'get'|'put', type: 'patient/profile', request?): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'appointment', request?): Observable<any> {
     let base;
 
     
@@ -41,13 +39,13 @@ export class PatientProfileService {
     return base;
   }
 
-  public profile(): Observable<any> {
-    return this.request('get', 'patient/profile');
+  public appointment(): Observable<any> {
+    return this.request('get', 'appointment');
   }
 
   // /* Experimental
-  public update(profile): Observable<any> { 
-    return this.request('put', 'patient/profile', profile);
+  public schedule(appointment): Observable<any> { 
+    return this.request('put', 'appointment', appointment);
   }
   // */
 }

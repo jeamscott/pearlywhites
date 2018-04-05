@@ -12,6 +12,7 @@ export class ProfileComponent {
   constructor(private auth: AuthenticationService, private patientService: PatientProfileService) {}
 
   ngOnInit() {
+    
     this.auth.profile().subscribe(user => {
       this.details = user;
     }, (err) => {

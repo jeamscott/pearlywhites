@@ -9,7 +9,10 @@ var auth = jwt({
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlPatient = require('../controllers/patient');
-// var ctrlAccounting = require('../controllers/accounting');
+var ctrlAccounting = require('../controllers/accounting');
+var ctrlBilling = require('../controllers/billing');
+var ctrlAppointment = require('../controllers/appointment');
+
 // profile
 
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -19,12 +22,23 @@ router.put('/profile', auth, ctrlProfile.profileWrite); //experimental
 router.get('/patient/profile', auth, ctrlPatient.profileRead);
 router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
 
+// billing
+router.get('/billing', auth, ctrlBilling.billingRead);
+router.put('/billing', auth, ctrlBilling.billingWrite);
+
+// appointment
+router.get('/appointment', auth, ctrlAppointment.appointmentRead);
+router.put('/appointment', auth, ctrlAppointment.appointmentWrite);
 
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
 // accounting
+<<<<<<< HEAD
 // router.get('/accounting', crtlAccounting.getAll);
+=======
+router.get('/accounting', ctrlAccounting.getAll);
+>>>>>>> 264a2134625d3f5bbecd82105db95b26d5a1cc77
 
 module.exports = router;
