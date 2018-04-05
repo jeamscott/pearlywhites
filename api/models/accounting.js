@@ -15,7 +15,7 @@ var accountingSchema = new mongoose.Schema({
       },
       accountType: {
       type: String,
-      required: true  
+      required: false  
       },
       balance: {
          type: String,

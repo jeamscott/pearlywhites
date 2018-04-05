@@ -10,14 +10,14 @@ require('./visit');
 require('./location');
 require('./treatment');
 require('./inventory');
-require('./accounting');
+// require('./accounting');
 
 //TEST DATA HERE
 var testPatients = require('./data/patients');
 var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
-var testAccounting = require('./data/accounting');
+// var testAccounting = require('./data/accounting');
 var testUsers = require('./data/users');
 var testVisit = require('./data/visit');
 
@@ -60,7 +60,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testPatients, 'Patient');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
-  insertTestData(testAccounting, 'Accounting');
+ // insertTestData(testAccounting, 'Accounting');
   insertTestData(testUsers, 'User');
   insertTestData(testVisit, 'Visit');
 

@@ -1,6 +1,7 @@
+/*
 var mongoose = require('mongoose');
 var accounting = mongoose.model('Accounting');
-/*
+
 module.exports.profileRead = function(req, res) {
   if (!req.payload._id) {
     res.status(401).json({
@@ -27,8 +28,8 @@ module.exports.profileRead = function(req, res) {
   }
 
 };
-*/
-// /* Experimental
+
+// Experimental
 module.exports.profileWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
@@ -73,4 +74,4 @@ module.exports.getAll = function(req, res) {
         });
 }
 
-// */
+*/

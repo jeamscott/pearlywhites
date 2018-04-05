@@ -14,22 +14,23 @@ export class LoadComponentDirective implements OnInit {
     private _data;
 
     public ngOnInit() {
-        if (this._component)
+        if (this._component) {
         this._loadComponent(this._component, this._data);
+        }
     }
 
     private _loadComponent(component: any, data: any): void {
 
         this._data = data;
-        let _component = ComponentList[component];
+        const _component = ComponentList[component];
 
-        let componentFactory = this._componentFactoryResolver.resolveComponentFactory(_component);
+        const componentFactory = this._componentFactoryResolver.resolveComponentFactory(_component);
 
-        let viewContainerRef = this.viewContainerRef;
+        const viewContainerRef = this.viewContainerRef;
 
         viewContainerRef.clear();
 
-        let componentRef = viewContainerRef.createComponent(componentFactory);
+        const componentRef = viewContainerRef.createComponent(componentFactory);
 
         (<any> componentRef.instance).data = this._data;
     }

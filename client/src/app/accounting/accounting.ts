@@ -9,9 +9,9 @@ export interface Finance {
   }
 
   export interface LineItem {
-    id_number: number;
-    type: string;
-    name: string;
+    accountType: string;
+    vendor: string;
+    bills: string;
     cost: number;
     edit?: boolean;
   }

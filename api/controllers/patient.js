@@ -29,7 +29,7 @@ module.exports.profileRead = function(req, res) {
 
 };
 
-// /* Experimental
+
 module.exports.profileWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
@@ -63,4 +63,3 @@ module.exports.profileWrite = function(req, res) {
       });
   }
 };
-// */

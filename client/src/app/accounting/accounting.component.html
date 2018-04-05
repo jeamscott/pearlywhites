@@ -45,7 +45,22 @@
 
  <div class="container">
     <div class="col-md-12">
-      <h1>Chart of Accounts</h1>
+      <h1> <button class="btn btn-success" (click)="showNewForm()">
+          <i class="glyphicon glyphicon-plus"></i>
+        </button> Chart of Accounts</h1>
+
+        <form *ngIf="showForm()" [formGroup]="formGroup" (ngSubmit)="saveFinance(formGroup.value)">
+            <h2>{{headerText}}</h2>
+            <p>Account Number <input type="text" name="accountNumber" formControlName="accountNumber" /></p>
+            <p>Name <input type="text" name="name" formControlName="name"/></p>
+            <p>Type <input type="text" name="type" formControlName="type" /></p>    
+            <p>Balance <input type="text" name="balance" formControlName="balance" /></p>
+            <p>
+              <input type="submit" class="btn btn-primary" value="Save">
+              <input type="button" class="btn btn-warning" value="Cancel" (click)="cancelEditFinance()">
+            </p>
+          </form>
+
       <table class="table table-bordered table-striped table-hover">
         <tbody>
             <div class="container">
@@ -74,18 +89,18 @@
                 </td>
               </tr>
               <ng-container *ngIf="finance.showLineItems">
-                  <div (click)="addListItem(finance)">Add</div>
+                  <button class="btn btn-info" (click)="addListItem(finance)">Add</button>
                 <tr>
-                  <td>head 1</td>
-                  <td>head 2</td>
-                  <td>head 3</td>
-                  <td>head 4</td>
+                  <td style="background-color: lightblue">Account Type</td>
+                  <td style="background-color: lightblue">Vendor</td>
+                  <td style="background-color: lightblue">Bills</td>
+                  <td style="background-color: lightblue">Payments</td>
                 </tr>
                 <tr *ngFor="let lineItem of finance.lineItems; let i = index;">
-                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.id_number" [readonly]="!lineItem.edit"/></td>
-                  <td>{{lineItem.name}}</td>
-                  <td>{{lineItem.type}}</td>
-                  <td>{{lineItem.cost}}</td>
+                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.accountType" [readonly]="!lineItem.edit"/></td>
+                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.vendor" [readonly]="!lineItem.edit"/></td>
+                  <td><input type="text" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.bills" [readonly]="!lineItem.edit"/></td>
+                  <td><input type="number" [class.not-input]="!lineItem.edit" [(ngModel)]="lineItem.cost" [readonly]="!lineItem.edit"/></td>
                   <td>
                     <button class="btn btn-danger" (click)="lineItem.edit = !lineItem.edit">
                       <i class="glyphicon glyphicon-pencil"></i>
@@ -98,22 +113,7 @@
             </ng-container>
           </table>           
           </tr>
-        </tbody>
-      
-      <button class="btn btn-success" (click)="showNewForm()">
-        <i class="glyphicon glyphicon-plus"></i>
-      </button>
-      <form *ngIf="showForm()" [formGroup]="formGroup" (ngSubmit)="saveFinance(formGroup.value)">
-        <h2>{{headerText}}</h2>
-        <p>Account Name <input type="text" name="accountNumber" formControlName="accountNumber" /></p>
-        <p>Name <input type="text" name="name" formControlName="name"/></p>
-        <p>Type <input type="text" name="type" formControlName="type" /></p>    
-        <p>Balance <input type="text" name="balance" formControlName="balance" /></p>
-        <p>
-          <input type="submit" class="btn btn-primary" value="Save">
-          <input type="button" class="btn btn-warning" value="Cancel" (click)="cancelEditFinance()">
-        </p>
-      </form>
+        </tbody>    
     </div>
    </div>
    <overlay #overlay [disableClose]="true" [header]="overlayTitles[currentOverlay]">

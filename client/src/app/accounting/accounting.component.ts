@@ -57,25 +57,30 @@ export class AccountingComponent implements OnInit {
   }
 
   ngOnInit() {
+    // console.log(this.overlay);
     this.getFinance();
   }
 
   public launchOverlay(componentRef: string, data: any): void {
     this.currentOverlay = componentRef;
     this._loadComponent(this._overlayComponents[componentRef], data);
+    // console.log(this.overlay);
     this.overlay.state = 'active';
   }
 
   addListItem(finance: Finance) {
-    let financeItem = {
-      id_number : finance.lineItems.length + 1, name : null, type : null, cost : null
+    const financeItem = {
+      id_number: finance.lineItems.length + 1, name : null, type : null, cost : null
     };
     finance.lineItems.push(financeItem);
     finance.lineItems[finance.lineItems.length - 1].edit = true;
+    // HERE
+    finance.balance = this._returnBalance(finance.lineItems);
+
   }
   getFinance() {
     this.finances = this._financeService.getFinanceFromData();
-    for (let finance of this.finances) {
+    for (const finance of this.finances) {
       finance.balance = this._returnBalance(finance.lineItems);
     }
   }
@@ -90,15 +95,16 @@ export class AccountingComponent implements OnInit {
     this.saveMode = SaveMode.None;
   }
 
-  removeLineItem(arr: LineItem[], index: number, finance: Finance) {
+  /* removeLineItem(arr: LineItem[], index: number) {
     this._financeService.deleteFinance(finance);
-  }
+  } */
 
   public toggleLineItems(finance: Finance): void {
-    for (let f of this.finances) {
+    for (const f of this.finances) {
     f.showLineItems = f.id_number !== finance.id_number ? false : f.showLineItems;
     }
     finance.showLineItems = finance.hasOwnProperty('showLineItems') ? !finance.showLineItems : true;
+    finance.balance = this._returnBalance(finance.lineItems);
   }
 
   cancelEditFinance() {
@@ -108,18 +114,20 @@ export class AccountingComponent implements OnInit {
 
   showEditForm(finance: Finance) {
     if (!finance) {
+      finance.balance = this._returnBalance(finance.lineItems);
       return;
     }
     this.saveMode = SaveMode.Edit;
     this.headerText = 'Edit Finance';
     const editedFinance = Object.assign({}, finance, {});
     this.formGroup.setValue(editedFinance);
+    finance.balance = this._returnBalance(finance.lineItems);
   }
 
   showNewForm() {
     this.formGroup.reset();
     this.saveMode = SaveMode.New;
-    this.headerText = 'New Workbook';
+    this.headerText = 'New Account';
   }
 
   showForm() {
@@ -131,14 +139,14 @@ export class AccountingComponent implements OnInit {
   }
 
   private _loadComponent(component: any, data: any): void {
-    let componentFactory = this._componentFactoryResolver.resolveComponentFactory(component);
+    const componentFactory = this._componentFactoryResolver.resolveComponentFactory(component);
 
-    let viewContainerRef = this.loadComponent.viewContainerRef;
+    const viewContainerRef = this.loadComponent.viewContainerRef;
 
     viewContainerRef.clear();
 
-    let componentRef = viewContainerRef.createComponent(componentFactory);
-    
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+
     (<any> componentRef.instance).data = data;
 
     (<any> componentRef.instance).overlay = this.overlay;
@@ -146,10 +154,10 @@ export class AccountingComponent implements OnInit {
 
   private _returnBalance(arr: LineItem[]): number {
     let num = 0;
-    for (let a of arr) {
+    for (const a of arr) {
       a.edit = false;
       num = num + a.cost;
+      console.log(arr, num);
     }
     return num;
-  }
-}
+  }}
