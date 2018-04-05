@@ -64,7 +64,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
   // insertTestData(testAccounting, 'Accounting');
-  insertTestData(testUsers, 'User');
+  // insertTestData(testUsers, 'User');
   insertTestData(testVisit, 'Visit');
   insertTestData(testAppointments, 'Appointment');
 
