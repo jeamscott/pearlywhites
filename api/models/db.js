@@ -22,7 +22,7 @@ var testTreatment = require('./data/treatment');
 var testAccounting = require('./data/accounting');
 var testBilling = require('./data/billing');
 var testVisit = require('./data/visit');
-var testAppointment = require('./data/appointment');
+var testAppointments = require('./data/appointments');
 
 function insertTestData(testRecordModule, modelName) {
   const records = testRecordModule.data();
@@ -66,7 +66,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testAccounting, 'Accounting');
   insertTestData(testBilling, 'Billing');
   insertTestData(testVisit, 'Visit');
-  insertTestData(testAppointment, 'Appointment');
+  insertTestData(testAppointments, 'Appointment');
 
 
 });

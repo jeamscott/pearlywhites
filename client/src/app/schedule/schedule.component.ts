@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 
 export class ScheduleComponent {
   details: UserDetails;
-  appointment;
+  apts;
   patientProfile;
   
 
@@ -25,7 +25,7 @@ export class ScheduleComponent {
     });
 
     this.appointmentService.appointment().subscribe(appointment => {
-      this.appointment = appointment;
+      this.apts = appointment;
     }, (err) => {
       console.error(err);
     });
@@ -38,7 +38,7 @@ export class ScheduleComponent {
   }
 
   scheduleAppointment() {
-    this.appointmentService.schedule(this.appointment).subscribe(() => {
+    this.appointmentService.schedule(this.apts).subscribe(() => {
       console.log('yay');
     }, (err) => {
       console.error(err);

@@ -15,15 +15,15 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Appointment Date</label>
-                    <p class="form-control-static">{{ appointment?.app_date }}</p>
+                    <p class="form-control-static">{{ apts?.app_date }}</p>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Appointment Time</label>
-                    <p class="form-control-static">{{ appointment?.app_time }}</p>
+                    <p class="form-control-static">{{ apts?.app_time }}</p>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Appointment Location</label>
-                    <p class="form-control-static">{{ appointment?.app_location }}</p>
+                    <p class="form-control-static">{{ apts?.app_location }}</p>
                 </div>
       
       
@@ -34,15 +34,15 @@
               
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Date</label>
-                <input name="appointment.app_date" type="date" [(ngModel)]="appointment.app_date">         
+                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date">         
               </div>
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Time</label>
-                <input name="appointment.app_time" type="time" [(ngModel)]="appointment.app_time">
+                <input name="apts.app_time" type="time" [(ngModel)]="apts.app_time">
               </div>
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Location</label>
-                <input name="appointment.app_location" type="text" [(ngModel)]="appointment.app_location">
+                <input name="apts.app_location" type="text" [(ngModel)]="apts.app_location">
               </div>
               
               

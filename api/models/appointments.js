@@ -6,7 +6,7 @@ var appointmentSchema = new mongoose.Schema({
         required: true
       },
     app_date: {
-        type: Date,
+        type: String,
         required: false
       },
     app_time: {

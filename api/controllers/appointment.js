@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Patient = mongoose.model('Appointment');
+var Appointment = mongoose.model('Appointment');
 
 module.exports.appointmentRead = function(req, res) {
   
@@ -11,14 +11,14 @@ module.exports.appointmentRead = function(req, res) {
   } else {
     
     User
-      console.log("did i make it here")
+      
       .findById(req.payload._id)
       .exec(function(err, user) {
           if(err) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Appointment.findOne({'user_name':user.email},
+          Appointment.findOne({'user_name':user.email}, console.log(user.email),
             'user_name app_date app_time app_location', 
             function(err, appointment) {
                 if(err) {
