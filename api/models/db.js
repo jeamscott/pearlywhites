@@ -10,26 +10,17 @@ require('./visit');
 require('./location');
 require('./treatment');
 require('./inventory');
-<<<<<<< HEAD
 // require('./accounting');
-=======
-require('./accounting');
 require('./billing');
 require('./appointments');
->>>>>>> 264a2134625d3f5bbecd82105db95b26d5a1cc77
 
 //TEST DATA HERE
 var testPatients = require('./data/patients');
 var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
-<<<<<<< HEAD
 // var testAccounting = require('./data/accounting');
-var testUsers = require('./data/users');
-=======
-var testAccounting = require('./data/accounting');
 var testBilling = require('./data/billing');
->>>>>>> 264a2134625d3f5bbecd82105db95b26d5a1cc77
 var testVisit = require('./data/visit');
 var testAppointments = require('./data/appointments');
 
@@ -72,7 +63,7 @@ mongoose.connection.on('connected', function() {
   insertTestData(testPatients, 'Patient');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
- // insertTestData(testAccounting, 'Accounting');
+  // insertTestData(testAccounting, 'Accounting');
   insertTestData(testUsers, 'User');
   insertTestData(testVisit, 'Visit');
   insertTestData(testAppointments, 'Appointment');

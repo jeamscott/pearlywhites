@@ -9,7 +9,7 @@ var auth = jwt({
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlPatient = require('../controllers/patient');
-var ctrlAccounting = require('../controllers/accounting');
+// var ctrlAccounting = require('../controllers/accounting');
 var ctrlBilling = require('../controllers/billing');
 var ctrlAppointment = require('../controllers/appointment');
 
@@ -35,10 +35,6 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
 // accounting
-<<<<<<< HEAD
 // router.get('/accounting', crtlAccounting.getAll);
-=======
-router.get('/accounting', ctrlAccounting.getAll);
->>>>>>> 264a2134625d3f5bbecd82105db95b26d5a1cc77
 
 module.exports = router;

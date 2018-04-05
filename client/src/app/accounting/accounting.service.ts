@@ -29,7 +29,7 @@ export class FinanceService {
 }
 
 
-/*
+
 @Injectable()
 export class AccountingService {
   private token: string;
@@ -42,7 +42,7 @@ export class AccountingService {
     }
     return this.token;
   }
-
+/*
    private request(method: 'post'|'get'|'put', type: 'accounting', request?): Observable<any> {
     let base;
 
@@ -66,8 +66,8 @@ export class AccountingService {
     return this.request('get', 'accounting');
   }
 
-  // /* call for accounting
+    call for accounting
   public update(profile): Observable<any> {
     return this.request('put', 'accounting', profile);
   } */
-// }
+}
