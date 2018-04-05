@@ -11,6 +11,7 @@ var ctrlAuth = require('../controllers/authentication');
 var ctrlPatient = require('../controllers/patient');
 var ctrlAccounting = require('../controllers/accounting');
 var ctrlBilling = require('../controllers/billing');
+var ctrlAppointment = require('../controllers/appointment');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -23,6 +24,10 @@ router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
 // billing
 router.get('/billing', auth, ctrlBilling.billingRead);
 router.put('/billing', auth, ctrlBilling.billingWrite);
+
+// appointment
+router.get('/appointment', auth, ctrlAppointment.appointmentRead);
+router.put('/appointment', auth, ctrlAppointment.appointmentWrite);
 
 // authentication
 router.post('/register', ctrlAuth.register);

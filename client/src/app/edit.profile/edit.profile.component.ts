@@ -34,6 +34,7 @@ export class EditProfileComponent {
 
   updateProfile() {
     this.patientService.update(this.patientProfile).subscribe(() => {
+      this.router.navigateByUrl('/profile');
       console.log('yay');
     }, (err) => {
       console.error(err);

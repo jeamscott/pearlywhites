@@ -1,7 +1,7 @@
 var mongoose = require( 'mongoose' );
 
 var billingSchema = new mongoose.Schema({
-    email_address: {
+    user_name: {
         type: String,
         required: true
       },

@@ -16,10 +16,13 @@ import { EditProfileComponent } from './edit.profile/edit.profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { RegisterComponent } from './register/register.component';
+import { PayComponent } from './pay/pay.component';
 import { HomeComponent } from './home/home.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
+import { AppointmentService } from './appointment.service';
 
 
 // the following imports were added for accounting app ~RS
@@ -35,6 +38,8 @@ const routes: Routes = [
   { path: 'faqs', component: FaqsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuardService] },
+  { path: 'pay', component: PayComponent, canActivate: [AuthGuardService] },
   { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent }
@@ -54,6 +59,9 @@ const routes: Routes = [
     // line 41 added for accounting RS
     AccountingComponent,
     GeneraljournalComponent,
+    ScheduleComponent,
+    PayComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +79,8 @@ const routes: Routes = [
     AuthGuardService,
     FinanceService,
     JournalFinanceService,
-    PatientProfileService
+    PatientProfileService,
+    AppointmentService
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

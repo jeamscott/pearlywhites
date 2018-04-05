@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Patient = mongoose.model('Billing');
+var Patient = mongoose.model('Appointment');
 
-module.exports.billingRead = function(req, res) {
-  console.log("made it here")
+module.exports.appointmentRead = function(req, res) {
+  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -11,20 +11,21 @@ module.exports.billingRead = function(req, res) {
   } else {
     
     User
+      console.log("did i make it here")
       .findById(req.payload._id)
       .exec(function(err, user) {
           if(err) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Billing.findOne({'user_name':user.email},
-            'ballance_due', 
-            function(err, billing) {
+          Appointment.findOne({'user_name':user.email},
+            'user_name app_date app_time app_location', 
+            function(err, appointment) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(billing);
+                res.status(200).json(appointment);
           })
       });
   }
@@ -32,7 +33,7 @@ module.exports.billingRead = function(req, res) {
 };
 
 // /* Experimental
-module.exports.billingWrite = function(req, res) {  
+module.exports.appointmentWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -46,21 +47,21 @@ module.exports.billingWrite = function(req, res) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findOneAndUpdate(
+          Appointment.findOneAndUpdate(
           {
             'user_name':user.email},
           {
-            $set: { 'ballance_due': req.body.ballance_due},
+            $set: { 'app_date': req.body.app_date, 'app_time': req.body.app_time, 'app_location': req.body.app_location},
           },
           {
             new: true
           },
-            function(err, billing) {
+            function(err, appointment) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
-                res.status(200).json(billing);
+                res.status(200).json(appointment);
           })
       });
   }
