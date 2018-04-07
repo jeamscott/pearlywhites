@@ -13,6 +13,7 @@ require('./inventory');
 // require('./accounting');
 require('./billing');
 require('./appointments');
+require('./employees');
 
 //TEST DATA HERE
 var testPatients = require('./data/patients');
