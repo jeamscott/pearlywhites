@@ -12,6 +12,7 @@ var ctrlPatient = require('../controllers/patient');
 // var ctrlAccounting = require('../controllers/accounting');
 var ctrlBilling = require('../controllers/billing');
 var ctrlAppointment = require('../controllers/appointment');
+var ctrlEmployee = require('../controllers/employee')
 
 // profile
 
@@ -21,6 +22,11 @@ router.put('/profile', auth, ctrlProfile.profileWrite); //experimental
 // patient
 router.get('/patient/profile', auth, ctrlPatient.profileRead);
 router.put('/patient/profile', auth, ctrlPatient.profileWrite); //experimental
+
+// Employee
+router.get('/employee', auth, ctrlEmployee.employeeRead);
+router.put('/employee', auth, ctrlEmployee.employeeWrite);
+
 
 // billing
 router.get('/billing', auth, ctrlBilling.billingRead);
