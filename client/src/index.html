@@ -8,6 +8,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  
+  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<link rel="icon" href="../img/favicon96.png" type="image/png" sizes="96x96">
+
+<script src="https://s3.amazonaws.com/stitch-sdks/js/library/v3/stable/stitch.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  const clientPromise = stitch.StitchClientFactory.create('pearlywhites-fjnyu');
+  clientPromise.then(client => {
+    const db = client.service('mongodb', 'mongodb-atlas').db('pearlywhites');
+    client.login().then(() =>
+      db.collection('dental').updateOne({owner_id: client.authedId()}, {$set:{number:42}}, {upsert:true})
+    ).then(()=>
+      db.collection('dental').find({owner_id: client.authedId()}).limit(100).execute()
+    ).then(docs => {
+      console.log("Found docs", docs)
+      console.log("[MongoDB Stitch] Connected to Stitch")
+    }).catch(err => {
+      console.error(err)
+    });
+  });
+</script>
+
+<script>
+  $( function() {
+    $( ".apptDate" ).datepicker({ minDate: "+0D", maxDate: "+02Y" });
+  } );
+</script>
+  
+<script>
+  $( function() {
+    $( ".dob" ).datepicker({ maxDate: "-18Y" });
+  } );
+</script>
+
+<script>
+  $( function() {
+    $( ".lastVisit" ).datepicker({ maxDate: "+0D" });
+  } );
+</script>
+
+
 </head>
 <body>
   <app-root></app-root>
