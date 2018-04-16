@@ -17,6 +17,7 @@
                     <label class="col-sm-3 control-label">Appointment Date</label>
                     <p class="form-control-static">{{ apts?.app_date }}</p>
                 </div>
+          
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Appointment Time</label>
                     <p class="form-control-static">{{ apts?.app_time }}</p>
@@ -34,7 +35,10 @@
               
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Date</label>
-                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date">         
+<!--                <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate" > -->
+                
+                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date"> 
+                
               </div>
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Time</label>
@@ -42,17 +46,42 @@
               </div>
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Location</label>
-                <input name="apts.app_location" type="text" [(ngModel)]="apts.app_location">
+                
+                <select name="apts.app_location" size="1" [(ngModel)]="apts.app_location" onchange="java_script_:show(this.options[this.selectedIndex].value)">
+                  <option value="chooseDentist">Choose Location</option>
+
+        		  <option value="Fort Lauderdale">Florida - Fort Lauderdale</option>
+            	  <option value="Miami">Florida - Miami</option>
+            	  <option value="Orlando">Florida - Orlando</option>
+            	  <option value="Tallahassee">Florida - Tallahassee</option>
+            	  <option value="Tampa">Florida - Tampa</option>
+
+            	  <option value="Buffalo">New York - Buffalo</option>
+            	  <option value="New York City">New York - New York City</option>
+            	  <option value="Rochester">New York - Rochester</option>
+            	  <option value="Schenectady">New York - Schenectady</option>
+            	  <option value="Syracuse">New York - Syracuse</option>
+
+            	  <option value="Akron">Ohio - Akron</option>
+            	  <option value="Cincinnati">Ohio - Cincinnati</option>
+            	  <option value="Cleveland">Ohio - Cleveland</option>
+            	  <option value="Columbus">Ohio - Columbus</option>
+            	  <option value="Toledo">Ohio - Toledo</option>
+
+            	  <option value="Austin">Texas - Austin</option>
+            	  <option value="Dallas">Texas - Dallas</option>
+            	  <option value="Fort Worth">Texas - Fort Worth</option>
+            	  <option value="Houston">Texas - Houston</option>
+            	  <option value="San Antonio">Texas - San Antonio</option>
+                </select>
+      
               </div>
               
-              
-              
-              
-      
               </div>
                 <button type="submit" class="btn btn-default">Schedule Appointment</button>
             </form>
           </div>
+
       
         </div>
       </div>
