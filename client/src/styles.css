@@ -161,7 +161,7 @@ p.footer {
 /* Navbar container */
 
 .navbar {
-	font-family: Arial, sans-serif;
+	font-family:  "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
 	background-image: -webkit-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -moz-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -o-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
