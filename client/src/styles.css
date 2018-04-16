@@ -116,6 +116,10 @@ footer {
 	font-size: 95%;
 	padding: 20px 50px;
 	margin: 0 auto;
+	text-align: center;
+	text-shadow: 0px 1px 7px rgba(0,0,0,0.93);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 	background-image: -webkit-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -moz-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -o-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
@@ -124,15 +128,6 @@ footer {
 	clear: both;
 	border-top: 2px solid #EC1818;
 	min-height: 3em;
-	z-index: 40;
-}
-footer {
-	color: #fff;
-	margin: 0 auto;
-	text-align: center;
-	text-shadow: 0px 1px 7px rgba(0,0,0,0.93);
-	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
-	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 }
 
 p.footer {
@@ -176,7 +171,9 @@ p.footer {
 	text-shadow: 0px 1px 7px rgba(0,0,0,0.93);
 	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
-	border-top: 1px solid #EC1818;
+	border-top: 1px solid #EC1818;	
+	position: sticky;
+    top: 0;
 }
 
 /* Links inside the navbar */

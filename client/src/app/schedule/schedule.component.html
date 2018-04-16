@@ -14,6 +14,10 @@
                     <p class="form-control-static">{{ patientProfile?.last_name }}</p>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-3 control-label">Appointment Location</label>
+                    <p class="form-control-static">{{ apts?.app_location }}</p>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-3 control-label">Appointment Date</label>
                     <p class="form-control-static">{{ apts?.app_date }}</p>
                 </div>
@@ -22,26 +26,11 @@
                     <label class="col-sm-3 control-label">Appointment Time</label>
                     <p class="form-control-static">{{ apts?.app_time }}</p>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Appointment Location</label>
-                    <p class="form-control-static">{{ apts?.app_location }}</p>
-                </div>
 
             <form (ngSubmit)="scheduleAppointment()">
                 
               <div class="form-horizontal">
               
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Choose Date</label>
-<!--                <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate" > -->
-                
-                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date"> 
-                
-              </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Choose Time</label>
-                <input name="apts.app_time" type="time" [(ngModel)]="apts.app_time">
-              </div>
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Location</label>
                 
@@ -74,9 +63,21 @@
                 </select>
       
               </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Choose Date</label>
+<!--                <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate" > -->
+                
+                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date"> 
+                
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Choose Time</label>
+                <input name="apts.app_time" type="time" [(ngModel)]="apts.app_time">
+              </div>
               
               </div>
                 <button type="submit" class="btn btn-default">Schedule Appointment</button>
+                <button type="reset" class="btn btn-default">Cancel Appointment</button>
             </form>
           </div>
 
