@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Patient = mongoose.model('Billing');
+var Billing = mongoose.model('Billing');
 
 /*module.exports.billingRead = function(req, res) {
   console.log("made it here")
@@ -46,7 +46,7 @@ module.exports.payBill= function(req, res) {
               res.status(401).json({"message" : "UnauthorizedError: no matching record"});
               return;
           }
-          Patient.findOneAndUpdate(
+          Billing.findOneAndUpdate(
           {
             'user_name':user.email},
           {
