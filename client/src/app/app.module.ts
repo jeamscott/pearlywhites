@@ -24,6 +24,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { PatientProfileService } from './patient.profile.service';
 import { AppointmentService } from './appointment.service';
 import { EmployeeService } from './employee.service';
+import { BillingService } from './billing.service';
 
 
 // the following imports were added for accounting app ~RS
@@ -82,7 +83,8 @@ const routes: Routes = [
     JournalFinanceService,
     PatientProfileService,
     AppointmentService,
-    EmployeeService
+    EmployeeService,
+    BillingService
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

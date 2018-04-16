@@ -16,7 +16,7 @@ require('./appointments');
 require('./employees');
 
 //TEST DATA HERE
-var testPatients = require('./data/patients');
+// var testPatients = require('./data/patients');
 var testLocation = require('./data/location');
 var testInventory = require('./data/inventory');
 var testTreatment = require('./data/treatment');
@@ -61,7 +61,7 @@ mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
 
   insertTestData(testLocation, 'Location');
-  insertTestData(testPatients, 'Patient');
+  // insertTestData(testPatients, 'Patient');
   insertTestData(testInventory, 'Inventory');
   insertTestData(testTreatment, 'Treatment');
   // insertTestData(testAccounting, 'Accounting');
