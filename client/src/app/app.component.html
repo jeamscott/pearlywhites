@@ -1,42 +1,35 @@
 <div class="navbar navbar-default">
-  <div class="container">
+                      
+  <div class="navbar">
+  
+<!--
+    <p>{{ employee?.employee_status }}</p>
+    <p *ngIf="employee.employee_status == false">not employee</p>
+    <p *ngIf="employee.employee_status === true">employee</p>
+-->
+    
+    <div *ngIf="auth.isLoggedIn()">
+      <a (click)="auth.logout()">Logout</a>
+     
+      <div *ngIf="employee.employee_status == false">
+        <!-- Patient Bar Option -->
+        <a routerLink="/pay">Payments</a>      
+        <a routerLink="/schedule">Appointments</a>
+      </div>
+  
+      <div *ngIf="employee.employee_status == true">
+        <!-- Employee Bar Option -->
+        <a href="inventory">Inventory</a>
+        <a href="accounting">Finances</a>
+      </div>
+	  
+<!--      
+      <a href="index.html">Home</a>
+-->
+
       <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
       <a *ngIf="auth.isLoggedIn()" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
-      
 
-        
-        
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      
-      
-      <div *ngIf="auth.isLoggedIn()">
-      <a (click)="auth.logout()">Logout</a>
-      
-      
-      <div *ngIf="employee.employee_status == false">
-      <!-- Patient Bar Option -->
-      <a routerLink="/schedule">Appointment</a>
-      <a routerLink="/pay">Pay Bill</a>
-      
-      
-      </div>
-
-      <div *ngIf="employee.employee_status == true">
-      <!-- Employee Bar Option -->
-      <a href="accounting">Finance</a>
-      
-
-      </div>
-      
-    
-      <p>{{ employee?.employee_status }}</p>
-      <p *ngIf="employee.employee_status == false">not employee</p>
-      <p *ngIf="employee.employee_status === true">employee</p>
-      </div>
-      
-      
-  
     </div>
   </div>
 </div>

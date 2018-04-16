@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit.profile/edit.profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
+import { InventoryComponent } from './inventory/inventory.component';
 import { RegisterComponent } from './register/register.component';
 import { PayComponent } from './pay/pay.component';
 import { HomeComponent } from './home/home.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'faqs', component: FaqsComponent },
+  { path: 'inventory', component: InventoryComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuardService] },
@@ -54,6 +56,7 @@ const routes: Routes = [
     EditProfileComponent,
     LoginComponent,
     FaqsComponent,
+    InventoryComponent,
     RegisterComponent,
     HomeComponent,
     DeleteItemComponent,

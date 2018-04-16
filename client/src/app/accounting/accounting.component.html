@@ -39,10 +39,7 @@
       
       <md-content layout-padding="left" ng-controller="LeftCtrl">
         <p hide="" show-gt-md="">
-
-          
-
-
+      
  <div class="container">
     <div class="col-md-12">
       <h1> <button class="btn btn-success" (click)="showNewForm()">
@@ -62,6 +59,12 @@
           </form>
 
       <table class="table table-bordered table-striped table-hover">
+        <tbody>
+            <div class="container">
+                <div class="col-md-12">
+          <tr *ngFor="let finance of finances"> 
+            
+            <table class="table table-bordered table-striped table-hover">
         <tbody>
             <div class="container">
                 <div class="col-md-12">
