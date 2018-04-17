@@ -24,14 +24,12 @@
         <a href="accounting">Finances</a>
       </div>
 	  
-<!--      
-      <a href="index.html">Home</a>
--->
 
       <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
       <a *ngIf="auth.isLoggedIn()" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
 
     </div>
+      <a href="https://pearlywhites.000webhostapp.com/index.html">Home</a>
   </div>
 </div>
 <router-outlet></router-outlet>
