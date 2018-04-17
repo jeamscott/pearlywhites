@@ -19,7 +19,7 @@ var locationSchema = new mongoose.Schema({
   },
   zip: {
     type: String,
-    required: true
+    required: false
   }
 
 });
