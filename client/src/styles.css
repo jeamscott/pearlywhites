@@ -216,6 +216,10 @@ p.footer {
 	background-color: #EC1818;
 }
 
+.log:hover {
+	color: 	#EC1818;
+}
+
 /* Dropdown content (hidden by default)
 .dropdown-content {
 	display: none;
