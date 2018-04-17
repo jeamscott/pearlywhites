@@ -216,8 +216,12 @@ p.footer {
 	background-color: #EC1818;
 }
 
-.log:hover {
+.log {
 	color: 	#EC1818;
+}
+.log:hover, .log:active, .docLinks:hover {
+	color: 	#EC1818;
+	text-decoration: underline;
 }
 
 /* Dropdown content (hidden by default)
