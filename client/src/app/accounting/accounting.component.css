@@ -5,3 +5,6 @@
 input {
     transition: all .25s ease-in-out;
 }
+footer {
+display: none;	
+}
