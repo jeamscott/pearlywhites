@@ -4,22 +4,51 @@
     
         <div class="col-md-6">
    
-         <h1 class="form-signin-heading">Your profile</h1>
-   
-   
-   
+         <h1 class="form-signin-heading">Make Payment</h1>
+
+          <form>
+          <div class="form-horizontal">
+           
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Name on Card</label>
+                <input type="text">          
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Credit Card</label>
+                <select size="1">
+                  <option value="Visa">Visa</option>
+                  <option value="MasterCard">Master Card</option>
+                  <option value="AmericanExpress">American Express</option>
+                  <option value="Discover">Discover</option>
+                </select>          
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Card Number</label>
+                <input type="number">          
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">CVC</label>
+                <input type="number">          
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Expiration Month</label>
+                <input type="text">          
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Expiration Day</label>
+                <input type="number" min="1" step="1" max="31">          
+            </div>
+          </div>
+          </form>
+               
          <form (ngSubmit)="make_payment()">
              
            <div class="form-horizontal">
-
-           <div class="form-group">
-              <label class="col-sm-3 control-label">Balance Due</label>
-              <p class="form-control-static">{{ bill?.balance_due }}</p>          
-            </div>
            
+                      
            <div class="form-group">
              <label class="col-sm-3 control-label">Payment Amount</label>
-             <input name="payment.balance_due" type="text" [(ngModel)]="payment.balance_due">          
+             <input name="bill.balance_due" type="number" step=".01" [(ngModel)]="bill.balance_due">          
            </div>
 
    

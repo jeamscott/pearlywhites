@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class PayComponent {
   details: UserDetails;
   bill;
-  payment;
+  thing;
 
 
   constructor(private auth: AuthenticationService, private patientService: PatientProfileService, private billingService: BillingService, private router: Router) {}
@@ -23,18 +23,17 @@ export class PayComponent {
       console.log(err);
     });
 
-    this.bill.get_bill().subscribe(bill => {
-      this.bill = bill;
+    this.billingService.get_bill().subscribe(bills => {
+      this.bill = bills;
     }, (err) => {
       console.error(err);
     });
   }
 
   make_payment() {
-    this.billingService.pay_bill(this.payment).subscribe(() => {
-      this.router.navigateByUrl('/profile');
-      console.log('yay');
-    }, (err) => {
+    this.billingService.pay_bill(this.bill).subscribe(() => {
+      this.router.navigateByUrl('/thank.you');
+      }, (err) => {
       console.error(err);
     });
   }

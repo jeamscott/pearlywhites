@@ -27,6 +27,7 @@ import { PatientProfileService } from './patient.profile.service';
 import { AppointmentService } from './appointment.service';
 import { EmployeeService } from './employee.service';
 import { BillingService } from './billing.service';
+import { ThankYouComponent } from './thank.you/thank.you.component';
 
 
 // the following imports were added for accounting app ~RS
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuardService] },
   { path: 'pay', component: PayComponent, canActivate: [AuthGuardService] },
   { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'thank.you', component: ThankYouComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent }
 ];
@@ -69,6 +71,7 @@ const routes: Routes = [
     GeneraljournalComponent,
     ScheduleComponent,
     PayComponent,
+    ThankYouComponent,
     
   ],
   imports: [

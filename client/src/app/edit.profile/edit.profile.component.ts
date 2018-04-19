@@ -41,17 +41,6 @@ export class EditProfileComponent {
     });
   }
 
-  update() { //experimental
-    let tokenPayload: TokenPayload = { //experimental
-      email: this.details.email,
-      name: this.details.name,
-      password: 'Password1',
-    };
-    this.auth.register(tokenPayload).subscribe(() => {
-      this.router.navigateByUrl('/profile');
-    }, (err) => {
-      console.error(err);
-    });
-  }
+
 
 }

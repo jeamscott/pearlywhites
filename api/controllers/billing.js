@@ -3,7 +3,7 @@ var User = mongoose.model('User');
 var Billing = mongoose.model('Billing');
 
 module.exports.billingRead = function(req, res) {
-  console.log("made it here")
+  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -18,13 +18,14 @@ module.exports.billingRead = function(req, res) {
               return;
           }
           Billing.findOne({'user_name':user.email},
-            'ballance_due', 
+            'balance_due', 
             function(err, billing) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
                 }
                 res.status(200).json(billing);
+                
           })
       });
   }
@@ -50,7 +51,7 @@ module.exports.billingWrite = function(req, res) {
           {
             'user_name':user.email},
           {
-            $set: { 'ballance_due': req.body.ballance_due},
+            $set: { 'balance_due': (req.body.balance_due)},
           },
           {
             new: true
