@@ -174,6 +174,7 @@ p.footer {
 	border-top: 1px solid #EC1818;	
 	position: sticky;
     top: 0;
+	z-index: 100;
 }
 
 /* Links inside the navbar */
@@ -214,6 +215,13 @@ p.footer {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
 	background-color: #EC1818;
+}
+.log, .docLinks:active, .docLinks:hover {
+	color: #EC1818;
+}
+.log:hover, .log:active {
+	color: #EC1818;
+	text-decoration: underline;
 }
 
 /* Dropdown content (hidden by default)
