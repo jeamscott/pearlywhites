@@ -44,6 +44,9 @@ router.put('/appointment', auth, ctrlAppointment.appointmentWrite);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+//supplies
+;
+
 // accounting
 // router.get('/accounting', crtlAccounting.getAll);
 
