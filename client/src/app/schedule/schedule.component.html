@@ -63,16 +63,47 @@
                 </select>
       
               </div>
-              <div class="form-group">
+              
+ <!--         <div class="form-group">
+                <label class="col-sm-3 control-label">Choose Date</label>               
+                <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate">   
+              </div>             
+-->
+			  <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Date</label>
-<!--                <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate" > -->
-                
-                <input name="apts.app_date" type="date" [(ngModel)]="apts.app_date"> 
-                
+                <input class="col-sm-3 control-label" class="apptDate" name="apptDate" name="apts.app_date" type="date" [(ngModel)]="apts.app_date"> 
               </div>
+<!--                
               <div class="form-group">
                 <label class="col-sm-3 control-label">Choose Time</label>
                 <input name="apts.app_time" type="time" [(ngModel)]="apts.app_time">
+              </div>
+-->              
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Choose Time</label>
+                
+                <select name="apts.app_time" size="1" [(ngModel)]="apts.app_time" onchange="java_script_:show(this.options[this.selectedIndex].value)">
+
+        		  <option value="0800">8:00 am</option>
+            	  <option value="0830">8:30 am</option>
+            	  <option value="0900">9:00 am</option>
+            	  <option value="0930">9:30 am</option>
+            	  <option value="1000">10:00 am</option>
+            	  <option value="1030">10:30 am</option>
+            	  <option value="1100">11:00 am</option>
+            	  <option value="1130">11:30 am</option>
+            	  <option value="1200">12:00 pm</option>
+            	  <option value="1230">12:30 pm</option>
+            	  <option value="1300">1:00 pm</option>
+            	  <option value="1330">1:30 pm</option>
+            	  <option value="1400">2:00 pm</option>
+            	  <option value="1430">2:30 pm</option>
+            	  <option value="1500">3:00 pm</option>
+            	  <option value="1530">3:30 pm</option>
+            	  <option value="1600">4:00 pm</option>
+            	  <option value="1630">4:30 pm</option>
+                </select>
+      
               </div>
               
               </div>

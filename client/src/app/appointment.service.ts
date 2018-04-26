@@ -9,15 +9,11 @@ import { AuthenticationService, TokenPayload } from './authentication.service';
 
 @Injectable()
 export class AppointmentService {
-  private token: string;
-
+  
   constructor(private http: HttpClient, private router: Router, private auth: AuthenticationService) {}
 
   private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem('mean-token');
-    }
-    return this.token;
+    return this.auth.getToken();
   }
 
   private request(method: 'post'|'get'|'put', type: 'appointment', request?): Observable<any> {

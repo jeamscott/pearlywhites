@@ -13,13 +13,13 @@ module.exports.profileRead = function(req, res) {
     User
       .findById(req.payload._id)
       .exec(function(err, user) {
-          if(err) {
-              res.status(401).json({"message" : "UnauthorizedError: no matching record"});
-              return;
-          }
-          Patient.findOne({'user_name':user.email},
-            'id_number first_name last_name phone_number street city state zip_code email_address visit_history user_name',
-                function(err, patient) {
+        if(err) {
+          res.status(401).json({"message" : "UnauthorizedError: no matching record"});
+          return;
+        }
+        Patient.findOne({'user_name':user.email},
+        'id_number first_name last_name phone_number street city state zip_code email_address visit_history user_name',
+          function(err, patient) {
                 if(err) {
                     res.status(404).json({"message" : "No record found"});
                     return;
