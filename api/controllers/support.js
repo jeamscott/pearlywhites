@@ -24,7 +24,7 @@ module.exports.getAll = function(req, res) {
             patientArr.push(patient);
           });
         }
-        console.log(patientArr)
+        
         res.send(patientArr);
       });
   }
