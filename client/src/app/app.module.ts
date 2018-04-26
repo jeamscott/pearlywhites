@@ -28,8 +28,11 @@ import { AppointmentService } from './appointment.service';
 import { EmployeeService } from './employee.service';
 import { BillingService } from './billing.service';
 import { ThankYouComponent } from './thank.you/thank.you.component';
-import { SuppliesComponent} from './supplies/supplies.component';
-import { SuppliesService} from './supplies.service'
+import { SupportService } from './support.service';
+import { SupportComponent } from './support/support.component';
+import { SuppliesService } from './supplies.service';
+import { SuppliesComponent } from './supplies/supplies.component';
+
 
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
@@ -50,6 +53,7 @@ const routes: Routes = [
   { path: 'pay', component: PayComponent, canActivate: [AuthGuardService] },
   { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'thank.you', component: ThankYouComponent, canActivate: [AuthGuardService] },
+  { path: 'support', component: SupportComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent },
   { path: 'supplies', component: SuppliesComponent} 
@@ -76,6 +80,7 @@ const routes: Routes = [
     ScheduleComponent,
     PayComponent,
     ThankYouComponent,
+    SupportComponent,
     
   ],
   imports: [
@@ -98,6 +103,7 @@ const routes: Routes = [
     AppointmentService,
     EmployeeService,
     BillingService,
+    SupportService,
     SuppliesService,
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],

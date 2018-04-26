@@ -15,6 +15,7 @@ var ctrlAppointment = require('../controllers/appointment');
 var ctrlEmployee = require('../controllers/employee');
 var ctrlPay = require('../controllers/pay');
 var ctrlSupplies = require('../controllers/supplies')
+var ctrlSupport = require('../controllers/support');
 
 // profile
 
@@ -40,6 +41,9 @@ router.put('/pay', auth, ctrlPay.payBill)
 // appointment
 router.get('/appointment', auth, ctrlAppointment.appointmentRead);
 router.put('/appointment', auth, ctrlAppointment.appointmentWrite);
+
+// support
+router.get('/support', auth, ctrlSupport.getAll);
 
 // authentication
 router.post('/register', ctrlAuth.register);
