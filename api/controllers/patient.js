@@ -50,7 +50,7 @@ module.exports.profileWrite = function(req, res) {
           {
             'user_name':user.email},
           {
-            $set: { 'first_name': req.body.first_name, 'last_name': req.body.last_name, 'phone_number': req.body.phone_number, 'street': req.body.street, 'city': req.body.city, 'state': req.body.state, 'zip_code': req.body.zip_code, 'email_adress': req.body.email_adress },
+            $set: { 'first_name': req.body.first_name, 'last_name': req.body.last_name, 'phone_number': req.body.phone_number, 'street': req.body.street, 'city': req.body.city, 'state': req.body.state, 'zip_code': req.body.zip_code, 'email_address': req.body.email_address },
           },
           {
             new: true
