@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="form-signin-heading">Supplies</h1>
+  
+        <form (ngSubmit)="updateSuppies()">
+          <div class="form-horizontal">
+          
+            
+                   
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Supplies</label>        
+              <select size="1"  name="suppliesProfile.itemName" [(ngModel)]="suppliesProfile.itemName">
+                <option value="Tooth Brush">Tooth Brush</option>
+                <option value="Prophy Paste">Prophy Paste</option>
+                <option value="Floss">Floss</option>
+                <option value="Soap">Soap</option>
+                <option value="Patient Bibs">Patient Bibs</option>
+                <option value="Disposable Gowns">Disposable Gowns</option>
+                <option value="Cavi Wipes">Cavi Wipes</option>
+                <option value=""></option>
+               
+              </select>
+            </div>
+  <!--       --> 
+            
+  <!--		
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Email</label>
+              <input *ngIf="suppliesProfile" name="suppliesProfile.email_address" type="text" [(ngModel)]="patientProfile.email_address" size="30" placeholder="johndoe@gmail.com">
+            </div>
+  -->		  
+          </div>
+            
+          <button type="submit" class="btn btn-default">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
