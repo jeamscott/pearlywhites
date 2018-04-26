@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Supplies = mongoose.model('Supplies')
 
 module.exports.suppliesRead = function(req, res) {
 
