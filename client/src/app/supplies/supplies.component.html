@@ -1,16 +1,15 @@
 <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1 class="form-signin-heading">Supplies</h1>
+        <h1 class="form-signin-heading">Supply List</h1>
   
         <form (ngSubmit)="updateSuppies()">
           <div class="form-horizontal">
           
-            
                    
             <div class="form-group">
               <label class="col-sm-3 control-label">Supplies</label>        
-              <select size="1"  name="suppliesProfile.itemName" [(ngModel)]="suppliesProfile.itemName">
+              <select size="1"  name="suppliesProfile.item_name" [(ngModel)]="suppliesProfile.item_name">
                 <option value="Tooth Brush">Tooth Brush</option>
                 <option value="Prophy Paste">Prophy Paste</option>
                 <option value="Floss">Floss</option>
@@ -18,7 +17,10 @@
                 <option value="Patient Bibs">Patient Bibs</option>
                 <option value="Disposable Gowns">Disposable Gowns</option>
                 <option value="Cavi Wipes">Cavi Wipes</option>
-                <option value=""></option>
+                <option value="Mouth Wash">Mouth Wash</option>
+                <option value="Prophy Angle">Prophy Angle</option>
+                <option value="Sterilaztion Pouches">Sterilaztion Pouches</option>
+                <option value="Suction Tips">Suction Tips</option>
                
               </select>
             </div>

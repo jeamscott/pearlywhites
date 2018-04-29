@@ -16,6 +16,7 @@ import { EditProfileComponent } from './edit.profile/edit.profile.component';
 import { LoginComponent } from './login/login.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { DocsComponent } from './docs/docs.component';
+import { InventoryService } from './inventory.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import { RegisterComponent } from './register/register.component';
 import { PayComponent } from './pay/pay.component';
@@ -108,6 +109,7 @@ const routes: Routes = [
     SupportService,
     SuppliesService,
     FilterSortService,
+    InventoryService,
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

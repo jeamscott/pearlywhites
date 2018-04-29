@@ -1,24 +1,24 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Supplies = mongoose.model('Supplies')
+var Inventory = mongoose.model('Inventory')
 
-module.exports.suppliesRead = function(req, res) {
+module.exports.inventoryRead = function(req, res) {
 
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
     });
   } else {
-    Supplies
+    Inventory
       .findById(req.body.item_name)
-      .exec(function(err, supplies) {
-        res.status(200).json(supplies);
+      .exec(function(err, Inventory) {
+        res.status(200).json(inventory);
       });
   }
   
 };
 // /* Experimental
-module.exports.suppliesWrite = function(req, res) {  
+module.exports.inventoryWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
