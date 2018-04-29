@@ -9,10 +9,10 @@ module.exports.suppliesRead = function(req, res) {
       "message" : "UnauthorizedError: private profile"
     });
   } else {
-    User
-      .findById(req.payload._id)
-      .exec(function(err, user) {
-        res.status(200).json(user);
+    Supplies
+      .findById(req.body.item_name)
+      .exec(function(err, supplies) {
+        res.status(200).json(supplies);
       });
   }
   
