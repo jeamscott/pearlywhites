@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { DatePipe } from '@angular/common';
+
 
 @Injectable()
 export class FilterSortService {
 
-  constructor(private datePipe: DatePipe) { }
+  constructor() { }
 
   private _objArrayCheck(array: any[]): boolean {
     // Checks if the first item in the array is an object

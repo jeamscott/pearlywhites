@@ -33,6 +33,7 @@ import { SupportService } from './support.service';
 import { SupportComponent } from './support/support.component';
 import { SuppliesService } from './supplies.service';
 import { SuppliesComponent } from './supplies/supplies.component';
+import { FilterSortService } from './filtersort';
 
 
 // the following imports were added for accounting app ~RS
@@ -83,6 +84,7 @@ const routes: Routes = [
     ThankYouComponent,
     SupportComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -106,6 +108,7 @@ const routes: Routes = [
     BillingService,
     SupportService,
     SuppliesService,
+    FilterSortService,
     InventoryService,
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
