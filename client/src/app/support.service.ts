@@ -16,6 +16,27 @@ export class SupportService {
     return this.auth.getToken();
   }
 
+  tabIs(currentTab: string, tab: string): boolean {
+    // Check if current tab is tab name
+    return currentTab === tab;
+  }
+
+  getPatientById(id: string,): Observable<any> {
+    return this.http
+      .get(`/api/support/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      
+  }
+
+  getPatientProfile(id: string): Observable<any> {
+    return this.http
+      .get(`/api/patient/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+  updatePatientProfile(id: string, profile): Observable<any> {
+    return this.http
+      .put(`/api/patient/${id}`, profile, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
   private request(method: 'post'|'get'|'put', type: 'support', request?): Observable<any> {
     let base;
 

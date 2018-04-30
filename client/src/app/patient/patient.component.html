@@ -1,0 +1,58 @@
+<div class="container">
+
+  <h1 class="text-center">Patient Record</h1>
+  <!-- Patient -->
+  
+    
+
+    <div class="card">
+      <!-- Patient tab navigation -->
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="[]"
+              [queryParams]="{tab: 'profile'}"
+              [ngClass]="{'active': supportService.tabIs(tab, 'profile')}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="[]"
+              [queryParams]="{tab: 'appointment'}"
+              [ngClass]="{'active': supportService.tabIs(tab, 'appointment')}">Appointment</a>
+          </li>
+          <li class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="[]"
+                [queryParams]="{tab: 'bill'}"
+                [ngClass]="{'active': supportService.tabIs(tab, 'bill')}">Bill</a>
+            </li>
+        </ul>
+      </div>
+
+      <!-- Patient Profile tab -->
+      <app-patient-profile
+        *ngIf="supportService.tabIs(tab, 'profile')"
+        [patientProfile]="patientProfile"></app-patient-profile>
+
+      <!-- Patient Appointment tab -->
+      <app-appointment
+        *ngIf="supportService.tabIs(tab, 'appointment')"></app-appointment>
+
+      <!-- Patient Bill tab -->
+      <app-bill
+      *ngIf="supportService.tabIs(tab, 'bill')"></app-bill>
+
+    </div>
+  
+
+  <!-- Error loading events -->
+  <p *ngIf="error" class="alert alert-danger">
+    <strong>Oops!</strong> There was an error retrieving information for this patient.
+  </p>
+
+
+</div>

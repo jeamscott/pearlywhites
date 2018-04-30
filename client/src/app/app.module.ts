@@ -34,6 +34,8 @@ import { SupportComponent } from './support/support.component';
 import { SuppliesService } from './supplies.service';
 import { SuppliesComponent } from './supplies/supplies.component';
 import { FilterSortService } from './filtersort';
+import { PatientComponent } from './patient/patient.component';
+import { PatientProfileComponent } from './patient/patient.profile/patient.profile.component';
 
 
 // the following imports were added for accounting app ~RS
@@ -58,7 +60,9 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent },
-  { path: 'supplies', component: SuppliesComponent} 
+  { path: 'supplies', component: SuppliesComponent},
+  { path: 'patient/:id', component: PatientComponent, canActivate: [AuthGuardService] },
+  { path: 'patient/patient.profile', component: PatientProfileComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -75,6 +79,8 @@ const routes: Routes = [
     DeleteItemComponent,
     LogoutComponent,
     SuppliesComponent,
+    PatientComponent,
+    PatientProfileComponent,
 
     // line 41 added for accounting RS
     AccountingComponent,
@@ -110,6 +116,7 @@ const routes: Routes = [
     SuppliesService,
     FilterSortService,
     InventoryService,
+
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

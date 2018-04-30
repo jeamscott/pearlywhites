@@ -45,6 +45,13 @@ router.put('/appointment', auth, ctrlAppointment.appointmentWrite);
 
 // support
 router.get('/support', auth, ctrlSupport.getAll);
+router.get('/support/:id', auth, ctrlSupport.getPatient )
+router.put('/patient/:id', auth, ctrlPatient.supportWrite)
+// router.put('/appointment/:id', auth, ctrlAppointment.supportWrite)
+// router.put('/billing/:id', auth, ctrlBilling.supportWrite)
+router.get('/patient/:id', auth, ctrlPatient.supportRead)
+// router.put('/appointment/:id', auth, ctrlAppointment.supportWrite)
+// router.put('/billing/:id', auth, ctrlBilling.supportWrite)
 
 // authentication
 router.post('/register', ctrlAuth.register);
