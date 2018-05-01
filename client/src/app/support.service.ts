@@ -37,6 +37,26 @@ export class SupportService {
       .put(`/api/patient/${id}`, profile, { headers: { Authorization: `Bearer ${this.getToken()}` }})
   }
 
+  getPatientBill(id: string): Observable<any> {
+    return this.http
+      .get(`/api/billing/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+  updatePatientBill(id: string, bill): Observable<any> {
+    return this.http
+      .put(`/api/billing/${id}`, bill, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+  getPatientAppointment(id: string): Observable<any> {
+    return this.http
+      .get(`/api/appointment/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+  updatePatientAppointment(id: string, appointment): Observable<any> {
+    return this.http
+      .put(`/api/appointment/${id}`, appointment, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
   private request(method: 'post'|'get'|'put', type: 'support', request?): Observable<any> {
     let base;
 

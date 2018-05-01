@@ -15,8 +15,8 @@ export class RegisterComponent {
   constructor(private auth: AuthenticationService, private router: Router) {}
 
   register() {
-    this.auth.register(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/edit.profile');
+    this.auth.nsiregister(this.credentials).subscribe(() => {
+      window.alert("Account Added");
     }, (err) => {
       console.error(err);
     });

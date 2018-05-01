@@ -8,18 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 import { PatientComponent } from '../patient.component'
 
 @Component({
-    selector: 'app-patient-profile',
-    templateUrl: './patient.profile.component.html',
+    selector: 'app-appointment',
+    templateUrl: './patient.appointment.component.html',
     })
     
-  export class PatientProfileComponent implements OnInit, OnDestroy {
+  export class PatientAppointmentComponent implements OnInit, OnDestroy {
     details: UserDetails;
-    patientsSub: Subscription;
+    appointmentsSub: Subscription;
     routeSub: Subscription;
     profilerouteSub: Subscription;
     id: string;
     patient;
-    patientProfile;
+    patientAppointment;
   
     constructor(private auth: AuthenticationService, public supportService: SupportService, public fs: FilterSortService, private route: ActivatedRoute,) {}
   
@@ -36,19 +36,19 @@ import { PatientComponent } from '../patient.component'
       this.profilerouteSub = this.route.params
       .subscribe(params => {
         this.id = params['id'];
-        this._getPatientProfile();
+        this._getPatientAppointment();
       });
   
 
     }
   
   
-    private _getPatientProfile() {
-      this.patientsSub = this.supportService
-                            .getPatientProfile(this.id)
+    private _getPatientAppointment() {
+      this.appointmentsSub = this.supportService
+                            .getPatientAppointment(this.id)
                             .subscribe(
                               res => {
-                                this.patientProfile = res;
+                                this.patientAppointment = res;
                               },
                               err => {
                                 console.error(err);
@@ -57,9 +57,9 @@ import { PatientComponent } from '../patient.component'
                             )
     }
   
-    private _setPatientProfile() {
-      this.patientsSub = this.supportService
-                            .updatePatientProfile(this.id, this.patientProfile)
+    private _setPatientAppointment() {
+      this.appointmentsSub = this.supportService
+                            .updatePatientAppointment(this.id, this.patientAppointment)
                             .subscribe(() => {
                               },
                               err => {
@@ -73,7 +73,7 @@ import { PatientComponent } from '../patient.component'
     
     ngOnDestroy() {
       this.routeSub.unsubscribe();
-      this.patientsSub.unsubscribe();
+      this.appointmentsSub.unsubscribe();
     }
   }
   

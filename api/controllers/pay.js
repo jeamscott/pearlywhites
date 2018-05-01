@@ -79,41 +79,4 @@ module.exports.payBill = function(req, res) {
   }
   
 };
-// */
 
-/* Experimental
-module.exports.payBill= function(req, res) {  
-  if (!req.payload._id) {
-    res.status(401).json({
-      "message" : "UnauthorizedError: private profile"
-    });
-  } else {
-    User
-      .findById(req.payload._id)
-      .exec(function(err, user) {
-          if(err) {
-            console.error(err);
-              res.status(401).json({"message" : "UnauthorizedError: no matching record"});
-              return;
-          }
-          
-          Billing.findOneAndUpdate(
-          {
-            'user_name':user.email},
-          {
-            $set: { 'balance_due': (req.body.balance_due)},
-          },
-          {
-            new: true
-          },
-            function(err, billing) {
-                if(err) {
-                    res.status(404).json({"message" : "No record found"});
-                    return;
-                }
-                res.status(200).json(billing);
-          })
-      });
-  }
-};
- */

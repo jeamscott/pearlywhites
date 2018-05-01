@@ -32,7 +32,7 @@ module.exports.appointmentRead = function(req, res) {
   
 };
 
-// /* Experimental
+
 module.exports.appointmentWrite = function(req, res) {  
   if (!req.payload._id) {
     res.status(401).json({
@@ -66,4 +66,40 @@ module.exports.appointmentWrite = function(req, res) {
       });
   }
 };
-// */
+
+module.exports.supportWrite = function(req, res) {  
+ 
+  
+  Appointment.findOneAndUpdate(
+    
+  {
+    'user_name':req.params.id},
+  {
+    $set: { 'app_date': req.body.app_date, 'app_time': req.body.app_time, 'app_location': req.body.app_location},
+  },
+  {
+    new: true
+  },
+    function(err, appointment) {
+        if(err) {
+            res.status(404).json({"message" : "No record found"});
+            return;
+        }
+        res.status(200).json(appointment);
+  })
+};
+
+module.exports.supportRead = function(req, res) {
+
+  Appointment.findOne({'user_name':req.params.id},
+  'user_name app_date app_time app_location',
+function(err, appointment) {
+  if(err) {
+      res.status(404).json({"message" : "No record found"});
+      return;
+  }
+  
+  res.status(200).json(appointment);
+})
+
+};

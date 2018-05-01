@@ -36,6 +36,8 @@ import { SuppliesComponent } from './supplies/supplies.component';
 import { FilterSortService } from './filtersort';
 import { PatientComponent } from './patient/patient.component';
 import { PatientProfileComponent } from './patient/patient.profile/patient.profile.component';
+import { PatientBillComponent } from './patient/patient.bill/patient.bill.component';
+import { PatientAppointmentComponent } from './patient/patient.appointment/patient.appointment.component';
 
 
 // the following imports were added for accounting app ~RS
@@ -81,6 +83,9 @@ const routes: Routes = [
     SuppliesComponent,
     PatientComponent,
     PatientProfileComponent,
+    PatientBillComponent,
+    PatientAppointmentComponent,
+
 
     // line 41 added for accounting RS
     AccountingComponent,

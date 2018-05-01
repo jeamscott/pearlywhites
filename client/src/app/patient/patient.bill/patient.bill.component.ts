@@ -8,18 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 import { PatientComponent } from '../patient.component'
 
 @Component({
-    selector: 'app-patient-profile',
-    templateUrl: './patient.profile.component.html',
+    selector: 'app-bill',
+    templateUrl: './patient.bill.component.html',
     })
     
-  export class PatientProfileComponent implements OnInit, OnDestroy {
+  export class PatientBillComponent implements OnInit, OnDestroy {
     details: UserDetails;
-    patientsSub: Subscription;
+    billsSub: Subscription;
     routeSub: Subscription;
     profilerouteSub: Subscription;
     id: string;
     patient;
-    patientProfile;
+    patientBill;
   
     constructor(private auth: AuthenticationService, public supportService: SupportService, public fs: FilterSortService, private route: ActivatedRoute,) {}
   
@@ -36,19 +36,19 @@ import { PatientComponent } from '../patient.component'
       this.profilerouteSub = this.route.params
       .subscribe(params => {
         this.id = params['id'];
-        this._getPatientProfile();
+        this._getPatientBill();
       });
   
 
     }
   
   
-    private _getPatientProfile() {
-      this.patientsSub = this.supportService
-                            .getPatientProfile(this.id)
+    private _getPatientBill() {
+      this.billsSub = this.supportService
+                            .getPatientBill(this.id)
                             .subscribe(
                               res => {
-                                this.patientProfile = res;
+                                this.patientBill = res;
                               },
                               err => {
                                 console.error(err);
@@ -57,9 +57,9 @@ import { PatientComponent } from '../patient.component'
                             )
     }
   
-    private _setPatientProfile() {
-      this.patientsSub = this.supportService
-                            .updatePatientProfile(this.id, this.patientProfile)
+    private _setPatientBill() {
+      this.billsSub = this.supportService
+                            .updatePatientBill(this.id, this.patientBill)
                             .subscribe(() => {
                               },
                               err => {
@@ -73,7 +73,7 @@ import { PatientComponent } from '../patient.component'
     
     ngOnDestroy() {
       this.routeSub.unsubscribe();
-      this.patientsSub.unsubscribe();
+      this.billsSub.unsubscribe();
     }
   }
   
