@@ -31,8 +31,6 @@ import { BillingService } from './billing.service';
 import { ThankYouComponent } from './thank.you/thank.you.component';
 import { SupportService } from './support.service';
 import { SupportComponent } from './support/support.component';
-import { SuppliesService } from './supplies.service';
-import { SuppliesComponent } from './supplies/supplies.component';
 import { FilterSortService } from './filtersort';
 
 
@@ -58,7 +56,7 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent },
-  { path: 'supplies', component: SuppliesComponent} 
+  
 ];
 
 @NgModule({
@@ -74,7 +72,7 @@ const routes: Routes = [
     HomeComponent,
     DeleteItemComponent,
     LogoutComponent,
-    SuppliesComponent,
+    
 
     // line 41 added for accounting RS
     AccountingComponent,
@@ -107,7 +105,6 @@ const routes: Routes = [
     EmployeeService,
     BillingService,
     SupportService,
-    SuppliesService,
     FilterSortService,
     InventoryService,
   ],
