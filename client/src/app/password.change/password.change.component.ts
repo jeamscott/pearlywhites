@@ -4,12 +4,15 @@ import { PatientProfileService, PatientPayload } from '../patient.profile.servic
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+
+
 @Component({
-  templateUrl: './edit.profile.component.html'
+  templateUrl: './password.change.component.html'
 })
-export class EditProfileComponent {
+export class PasswordChangeComponent {
   details: UserDetails;
-  patientProfile;
+  newpassword;
+  
   
 
   constructor(private auth: AuthenticationService, private patientService: PatientProfileService, private router: Router) {}
@@ -21,21 +24,20 @@ export class EditProfileComponent {
       console.log(err);
     });
 
-    this.patientService.profile().subscribe(profile => {
-      this.patientProfile = profile;
-    }, (err) => {
-      console.error(err);
-    });
+    
+
+
   }
 
-  updateProfile() {
-    this.patientService.update(this.patientProfile).subscribe(() => {
+  _changePassword() {
+    this.patientService.changePassword(this.newpassword).subscribe(() => {
       this.router.navigateByUrl('/profile');
       
     }, (err) => {
       console.error(err);
     });
   }
+
 
 
 

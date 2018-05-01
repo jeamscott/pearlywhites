@@ -32,6 +32,10 @@ import { ThankYouComponent } from './thank.you/thank.you.component';
 import { SupportService } from './support.service';
 import { SupportComponent } from './support/support.component';
 import { FilterSortService } from './filtersort';
+import { PatientComponent } from './patient/patient.component';
+import { PatientProfileComponent } from './patient/patient.profile/patient.profile.component';
+import { PatientBillComponent } from './patient/patient.bill/patient.bill.component';
+import { PatientAppointmentComponent } from './patient/patient.appointment/patient.appointment.component';
 
 
 // the following imports were added for accounting app ~RS
@@ -72,7 +76,12 @@ const routes: Routes = [
     HomeComponent,
     DeleteItemComponent,
     LogoutComponent,
+    PatientComponent,
+    PatientProfileComponent,
+    PatientBillComponent,
+    PatientAppointmentComponent,
     
+
 
     // line 41 added for accounting RS
     AccountingComponent,
@@ -107,6 +116,8 @@ const routes: Routes = [
     SupportService,
     FilterSortService,
     InventoryService,
+   
+
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

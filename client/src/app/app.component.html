@@ -27,10 +27,11 @@
       </div>
 	  
 
-      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
+      
       <a *ngIf="auth.isLoggedIn()" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
 
     </div>
+      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
       <a href="https://pearlywhites.000webhostapp.com/index.html">Home</a>
   </div>
 </div>
