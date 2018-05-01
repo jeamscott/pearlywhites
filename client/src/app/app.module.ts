@@ -31,9 +31,14 @@ import { BillingService } from './billing.service';
 import { ThankYouComponent } from './thank.you/thank.you.component';
 import { SupportService } from './support.service';
 import { SupportComponent } from './support/support.component';
+import { PasswordChangeComponent } from './password.change/password.change.component';
 import { SuppliesService } from './supplies.service';
 import { SuppliesComponent } from './supplies/supplies.component';
 import { FilterSortService } from './filtersort';
+import { PatientComponent } from './patient/patient.component';
+import { PatientProfileComponent } from './patient/patient.profile/patient.profile.component';
+import { PatientBillComponent } from './patient/patient.bill/patient.bill.component';
+import { PatientAppointmentComponent } from './patient/patient.appointment/patient.appointment.component';
 
 
 // the following imports were added for accounting app ~RS
@@ -42,7 +47,6 @@ import { JournalFinanceService } from './accounting/generaljournal/generaljourna
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './accounting/logout/logout.component';
 // import { AlertModule } from 'ngx-bootstrap';
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -56,9 +60,12 @@ const routes: Routes = [
   { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'thank.you', component: ThankYouComponent, canActivate: [AuthGuardService] },
   { path: 'support', component: SupportComponent, canActivate: [AuthGuardService] },
+  { path: 'password.change', component: PasswordChangeComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent },
-  { path: 'supplies', component: SuppliesComponent} 
+  { path: 'supplies', component: SuppliesComponent},
+  { path: 'patient/:id', component: PatientComponent, canActivate: [AuthGuardService] },
+  { path: 'patient/patient.profile', component: PatientProfileComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -75,6 +82,12 @@ const routes: Routes = [
     DeleteItemComponent,
     LogoutComponent,
     SuppliesComponent,
+    PatientComponent,
+    PatientProfileComponent,
+    PatientBillComponent,
+    PatientAppointmentComponent,
+    PasswordChangeComponent,
+
 
     // line 41 added for accounting RS
     AccountingComponent,
@@ -110,6 +123,7 @@ const routes: Routes = [
     SuppliesService,
     FilterSortService,
     InventoryService,
+
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
   bootstrap: [

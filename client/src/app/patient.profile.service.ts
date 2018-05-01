@@ -18,7 +18,7 @@ export class PatientProfileService {
     return this.auth.getToken();
   }
 
-  private request(method: 'post'|'get'|'put', type: 'patient/profile', request?): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'patient/profile'|'changePassword', request?): Observable<any> {
     let base;
 
     
@@ -41,9 +41,13 @@ export class PatientProfileService {
     return this.request('get', 'patient/profile');
   }
 
-  // /* Experimental
+  
   public update(profile): Observable<any> { 
     return this.request('put', 'patient/profile', profile);
   }
-  // */
+  
+  public changePassword(newpassword): Observable<any> {
+    console.log('Made It Here')
+    return this.request('post', 'changePassword', newpassword);
+  }
 }
