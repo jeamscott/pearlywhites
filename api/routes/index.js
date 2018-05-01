@@ -14,6 +14,7 @@ var ctrlBilling = require('../controllers/billing');
 var ctrlAppointment = require('../controllers/appointment');
 var ctrlEmployee = require('../controllers/employee');
 var ctrlPay = require('../controllers/pay');
+var ctrlSupplies = require('../controllers/supplies')
 var ctrlSupport = require('../controllers/support');
 var ctrlInventory = require('../controllers/inventory')
 
@@ -48,6 +49,9 @@ router.get('/support', auth, ctrlSupport.getAll);
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
+
+//supplies
+router.get('/supplies', auth, ctrlSupplies.suppliesRead);
 
 //inventory
 router.get('/inventory', auth, ctrlInventory.inventoryRead);
