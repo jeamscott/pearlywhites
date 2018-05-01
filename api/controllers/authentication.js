@@ -92,31 +92,7 @@ module.exports.register = function(req, res) {
 
 };
 
-module.exports.changePassword = function(req, res) {
-  console.log('I made it here')
-  if (!req.payload._id) {
-    res.status(401).json({
-      "message" : "UnauthorizedError: private profile"
-    });
-  } else {
-    User
-      .findById(req.payload._id)
-      .exec(function(err, user) {
-        user.setPassword(req.body.password);
 
-        user.save(function(err) {
-        console.log(err)
-        var token;
-        token = user.generateJwt();
-        res.status(200);
-        res.json({
-        "token" : token
-    });
-  });
-      });
-  }
-
-};
 
 module.exports.login = function(req, res) {
 
