@@ -32,7 +32,7 @@
           class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1" [innerHTML]="patient.user_name"></h5>
-            <small>{{ patient.last_name }}, {{ patient.first_name }}</small>
+            <small>{{ patient.last_name }}</small><small> {{ patient.first_name }}</small><small> {{ patient.phone_number }}</small><small> {{ patient.state }}</small><small> {{ patient.zip_code }}</small>
           </div>
         </a>
       </section>

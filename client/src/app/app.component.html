@@ -24,13 +24,15 @@
         <a href="inventory">Inventory</a>
         <a href="accounting">Finances</a>
         <a href="supplies">Supplies</a>
+        <a href="support">Support</a>
       </div>
 	  
 
-      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
+      
       <a *ngIf="auth.isLoggedIn()" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
 
     </div>
+      <a *ngIf="!auth.isLoggedIn()" routerLink="/login">Sign in</a>
       <a href="https://pearlywhites.000webhostapp.com/index.html">Home</a>
   </div>
 </div>
