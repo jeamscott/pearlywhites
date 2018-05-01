@@ -15,7 +15,7 @@ var patientSchema = new mongoose.Schema({
   },
   phone_number: {
     type: String,
-    required: false
+    required: false 
   },
   street: {
     type: String,
@@ -24,7 +24,7 @@ var patientSchema = new mongoose.Schema({
   city: {
     type: String,
     required: false
-   },
+  },
   state: {
     type: String,
     required: false
@@ -36,15 +36,16 @@ var patientSchema = new mongoose.Schema({
   email_address: {
     type: String,
     required: false
-   },
-   visit_history: {
-    type: String,
+  },
+  visit_history: {
+    type: Date,
     required: false
-   },
-   user_name: {
+  },
+  user_name: {
     type: String,
-    required: false
-   }
+    required: true,
+    unique: true
+  }
 
 });
 mongoose.model('Patient', patientSchema);
