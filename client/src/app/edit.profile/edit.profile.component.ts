@@ -10,7 +10,11 @@ import { CommonModule } from '@angular/common';
 export class EditProfileComponent {
   details: UserDetails;
   patientProfile;
-  
+  changes: TokenPayload = { //experimental
+    email: '',
+    name: '',
+    password: '',
+  };
 
   constructor(private auth: AuthenticationService, private patientService: PatientProfileService, private router: Router) {}
   
@@ -31,7 +35,7 @@ export class EditProfileComponent {
   updateProfile() {
     this.patientService.update(this.patientProfile).subscribe(() => {
       this.router.navigateByUrl('/profile');
-      
+      console.log('yay');
     }, (err) => {
       console.error(err);
     });
