@@ -31,6 +31,7 @@ import { BillingService } from './billing.service';
 import { ThankYouComponent } from './thank.you/thank.you.component';
 import { SupportService } from './support.service';
 import { SupportComponent } from './support/support.component';
+import { PasswordChangeComponent } from './password.change/password.change.component';
 import { SuppliesService } from './supplies.service';
 import { SuppliesComponent } from './supplies/supplies.component';
 import { FilterSortService } from './filtersort';
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'edit.profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: 'thank.you', component: ThankYouComponent, canActivate: [AuthGuardService] },
   { path: 'support', component: SupportComponent, canActivate: [AuthGuardService] },
+  { path: 'password.change', component: PasswordChangeComponent, canActivate: [AuthGuardService] },
   { path: 'accounting', component: AccountingComponent },
   { path: 'generaljournal/generaljournal', component: GeneraljournalComponent },
   { path: 'supplies', component: SuppliesComponent},
@@ -85,6 +87,7 @@ const routes: Routes = [
     PatientProfileComponent,
     PatientBillComponent,
     PatientAppointmentComponent,
+    PasswordChangeComponent,
 
 
     // line 41 added for accounting RS

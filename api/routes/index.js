@@ -56,6 +56,7 @@ router.get('/billing/:id', auth, ctrlBilling.supportRead)
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
+router.post('/changePassword', ctrlAuth.changePassword);
 
 //supplies
 router.get('/supplies', auth, ctrlSupplies.suppliesRead);

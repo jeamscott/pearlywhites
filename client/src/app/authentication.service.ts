@@ -61,7 +61,7 @@ export class AuthenticationService {
     }
   }
 
-  private request(method: 'post'|'get'|'put', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'login'|'register'|'profile'|'changePassword', user?: TokenPayload): Observable<any> {
     let base;
 
     if (method === 'post') {
@@ -103,7 +103,7 @@ export class AuthenticationService {
   }
 
   public nsiregister(user: TokenPayload): Observable<any> {
-    return this.request('post', 'register', user);
+    return this.nsirequest('post', 'register', user);
   }
 
   public login(user: TokenPayload): Observable<any> {
@@ -113,6 +113,8 @@ export class AuthenticationService {
   public profile(): Observable<any> {
     return this.request('get', 'profile');
   }
+
+
 
 
 
