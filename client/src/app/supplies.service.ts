@@ -5,20 +5,24 @@ import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
 import { AuthenticationService, TokenPayload } from './authentication.service';
 
-export interface PatientPayload { //experimental
-  first_name: string;
+export interface SuppliesPayload { //experimental
+  item_name: string;
 }
 
 @Injectable()
-export class PatientProfileService {
+export class SuppliesService {
+  private token: string;
 
   constructor(private http: HttpClient, private router: Router, private auth: AuthenticationService) {}
 
   private getToken(): string {
-    return this.auth.getToken();
+    if (!this.token) {
+      this.token = localStorage.getItem('mean-token');
+    }
+    return this.token;
   }
 
-  private request(method: 'post'|'get'|'put', type: 'patient/profile', request?): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'supplies/profile', request?): Observable<any> {
     let base;
 
     
@@ -38,12 +42,12 @@ export class PatientProfileService {
   }
 
   public profile(): Observable<any> {
-    return this.request('get', 'patient/profile');
+    return this.request('get', 'supplies/profile');
   }
 
   // /* Experimental
   public update(profile): Observable<any> { 
-    return this.request('put', 'patient/profile', profile);
+    return this.request('put', 'supplies/profile', profile);
   }
   // */
 }

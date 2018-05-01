@@ -61,7 +61,7 @@ export class AuthenticationService {
     }
   }
 
-  private request(method: 'post'|'get'|'put', type: 'login'|'register'|'profile'|'changePassword', user?: TokenPayload): Observable<any> {
+  private request(method: 'post'|'get'|'put', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
     let base;
 
     if (method === 'post') {
@@ -86,24 +86,8 @@ export class AuthenticationService {
     return request;
   }
 
-  private nsirequest(method: 'post'|'get'|'put', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
-    let base;
-
-    if (method === 'post') {
-      base = this.http.post(`/api/${type}`, user);
-    } 
-    else if (method === 'put'){ //experimental
-      base = this.http.put(`/api/${type}`, user);
-    }
-    else {
-      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
-    }   
-
-    return base;
-  }
-
-  public nsiregister(user: TokenPayload): Observable<any> {
-    return this.nsirequest('post', 'register', user);
+  public register(user: TokenPayload): Observable<any> {
+    return this.request('post', 'register', user);
   }
 
   public login(user: TokenPayload): Observable<any> {
@@ -114,9 +98,11 @@ export class AuthenticationService {
     return this.request('get', 'profile');
   }
 
-
-
-
+    // /* Experimental
+    public update(user: TokenPayload): Observable<any> { 
+      return this.request('put', 'profile', user);
+    }
+    // */
 
   public logout(): void {
     this.token = '';
