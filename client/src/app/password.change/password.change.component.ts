@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PasswordChangeComponent {
   details: UserDetails;
-  newpassword;
+  newpassword: TokenPayload;
   
   
 
@@ -19,7 +19,7 @@ export class PasswordChangeComponent {
   
   ngOnInit() {    
     this.auth.profile().subscribe(user => {
-      this.details = user;
+      this.newpassword = user;
     }, (err) => {
       console.log(err);
     });
