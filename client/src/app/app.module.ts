@@ -47,6 +47,7 @@ import { JournalFinanceService } from './accounting/generaljournal/generaljourna
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './accounting/logout/logout.component';
 // import { AlertModule } from 'ngx-bootstrap';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
