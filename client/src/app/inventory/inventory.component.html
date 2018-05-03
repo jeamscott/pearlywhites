@@ -31,11 +31,11 @@
     <section class="list-group">
       <a
         *ngFor="let inventory of filteredinventory"
-        [routerLink]="['/inventory', inventory.id_number]"
+        [routerLink]="['/inventory', inventory.item_name]"
         class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" [innerHTML]="inventory.id_number"></h5>
-          <small>{{ inventory.item_name }}</small><small> {{ inventory.quantity }}</small><small> {{ inventory.cost }}</small>
+          <h5 class="mb-1" [innerHTML]="inventory.item_name"></h5>
+          <small>{{ inventory.product_description }}</small><small> {{ inventory.quantity }}</small><small> {{ inventory.cost }}</small>
         </div>
       </a>
     </section>
