@@ -11,7 +11,7 @@ var inventorySchema = new mongoose.Schema({
       },
     product_description: {
         type: String,
-        required: true
+        required: false
     },
     quantity: {
         type: String,

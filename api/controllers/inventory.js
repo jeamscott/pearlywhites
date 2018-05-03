@@ -1,47 +1,42 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Inventory = mongoose.model('Inventory')
+var Inventory = mongoose.model('Inventory');
 
-module.exports.inventoryRead = function(req, res) {
-
+module.exports.getAll = function(req, res) {
+  const _inventoryProjection = "item_name quantity"
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
     });
   } else {
+    
     Inventory
-      .findById(req.body.item_name)
-      .exec(function(err, Inventory) {
-        res.status(200).json(inventory);
+      .find({}, _inventoryProjection, (err, Inventory) => {
+        let inventoryArr = [];
+        if (err) {
+          return res.status(500).send({message: err.message});
+        }
+        if (inventory) {
+          inventory.forEach(inventory => {
+            inventoryArr.push(inventory);
+          });
+        }
+        
+        res.send(inventoryArr);
       });
   }
   
 };
-// /* Experimental
-module.exports.inventoryWrite = function(req, res) {  
-  if (!req.payload._id) {
-    res.status(401).json({
-      "message" : "UnauthorizedError: private profile"
-    });
-  } else {
-    User
-      .findByIdAndUpdate(
-          
-            req.payload._id
-          ,
-          {
-            $set: { 'name': req.body.name},
-          },
-          {
-            new: true
-          },
-            function(err, patient) {
-                if(err) {
-                    res.status(404).json({"message" : "No record found"});
-                    return;
-                }
-                res.status(200).json(patient);
-          })      
-  }
-};
-// */
+
+module.exports.getInventory = function(req, res) {
+
+  Inventory.findOne({'user_name':req.params.id},
+  'id_number item_name quantity visit_history user_name',
+    function(err, inventory) {
+          if(err) {
+              res.status(404).json({"message" : "No record found"});
+              return;
+          }
+          res.status(200).json(inventory);
+    })
+}
