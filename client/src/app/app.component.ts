@@ -10,8 +10,8 @@ import { HttpResponse, HttpErrorResponse} from '@angular/common/http';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  employee: Employee
-  error: HttpErrorResponse
+  employee: Employee;
+  error: HttpErrorResponse;
 
   constructor(public auth: AuthenticationService, public patient: PatientProfileService, public appointment: AppointmentService, public employeeService: EmployeeService) {}
 

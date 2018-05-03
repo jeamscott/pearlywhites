@@ -11,6 +11,7 @@
 <!--	  
       <p class="lead">Not a member? Please <a routerLink="/register">register</a> instead.</p>
 -->
+<!--
       <form (submit)="login()">
         <div class="form-group">
           <label for="email">Email address</label>
@@ -28,4 +29,25 @@
     </div>
   </div>
 
+</div> -->
+
+  <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email" #email="ngModel" required />
+          <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password" #password="ngModel" required />
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+      </div>
+      <alert></alert>
+      <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Login</button>
+          <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+
+      </div>
+      <p>Forgot your password? Please call 1-800-479-5295 to have your password reset.</p>
+  </form>
 </div>

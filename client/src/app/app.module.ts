@@ -39,8 +39,8 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientProfileComponent } from './patient/patient.profile/patient.profile.component';
 import { PatientBillComponent } from './patient/patient.bill/patient.bill.component';
 import { PatientAppointmentComponent } from './patient/patient.appointment/patient.appointment.component';
-
-
+import { AlertComponent } from './alert.component';
+import { AlertService } from './alert.service';
 // the following imports were added for accounting app ~RS
 import { FinanceService } from './accounting/accounting.service';
 import { JournalFinanceService } from './accounting/generaljournal/generaljournal.service';
@@ -67,6 +67,7 @@ const routes: Routes = [
   { path: 'supplies', component: SuppliesComponent},
   { path: 'patient/:id', component: PatientComponent, canActivate: [AuthGuardService] },
   { path: 'patient/patient.profile', component: PatientProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'alert.component', component: AlertComponent},
 ];
 
 @NgModule({
@@ -88,6 +89,7 @@ const routes: Routes = [
     PatientBillComponent,
     PatientAppointmentComponent,
     PasswordChangeComponent,
+    AlertComponent,
 
 
     // line 41 added for accounting RS
@@ -97,8 +99,7 @@ const routes: Routes = [
     PayComponent,
     ThankYouComponent,
     SupportComponent,
-    
-    
+
   ],
   imports: [
     BrowserModule,
@@ -124,6 +125,7 @@ const routes: Routes = [
     SuppliesService,
     FilterSortService,
     InventoryService,
+    AlertService,
 
   ],
   entryComponents: [DeleteItemComponent, LogoutComponent],
