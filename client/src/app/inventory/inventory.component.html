@@ -3,28 +3,44 @@
       <div class="col-md-6">
         <h1 class="form-signin-heading">Inventory</h1>
   
-        <form (ngSubmit)="updateInventory()">
-          <div class="form-horizontal">
+        <!--<form (ngSubmit)="updateInventory()">
+          <div class="form-horizontal">-->
+
+              <section class="search input-group mb-3">
+                  <label class="input-group-addon" for="search">Search</label>
+                  <input
+                    id="search"
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="query"
+                    (keyup)="searchInventory()" />
+                  <span class="input-group-btn">
+                    <button
+                      class="btn btn-danger"
+                      (click)="resetQuery()"
+                      [disabled]="!query">&times;</button>
+                  </span>
+                </section>
           
             <!-- No search results -->
-    <p *ngIf="fs.noSearchResults(filteredProfile, query)" class="alert alert-warning">
-      No events found for <em class="text-danger">{{query}}</em>, sorry!
+    <p *ngIf="fs.noSearchResults(filteredinventory, query)" class="alert alert-warning">
+      No items found for <em class="text-danger">{{query}}</em>, sorry!
     </p>
 
     <!-- Events listing -->
     <section class="list-group">
       <a
-        *ngFor="let inventory of filteredProfile"
-        [routerLink]="['/inventory', inventory.user_name]"
+        *ngFor="let inventory of filteredinventory"
+        [routerLink]="['/inventory', inventory.id_number]"
         class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" [innerHTML]="inventory.user_name"></h5>
-          <small>{{ inventory.item_name }}</small><small> {{ inventory.quantity }}</small>
+          <h5 class="mb-1" [innerHTML]="inventory.id_number"></h5>
+          <small>{{ inventory.item_name }}</small><small> {{ inventory.quantity }}</small><small> {{ inventory.cost }}</small>
         </div>
       </a>
     </section>
                    
-            <div class="form-group">
+            <!--<div class="form-group">
               <label class="col-sm-3 control-label">Inventory</label>        
               <select size="1"  name="inventoryProfile.item_name" [(ngModel)]="inventoryProfile.item_name">
                 <option value="Tooth Brush">Tooth Brush - Qty 500</option>
@@ -74,18 +90,18 @@
                 <p>{{ inventoryProfile?.quantity }}</p>
 
             </div>
-  <!--       --> 
+ 
             
-  <!--		
+ 		
             <div class="form-group">
               <label class="col-sm-3 control-label">Email</label>
               <input *ngIf="inventoryProfile" name="inventoryProfile.email_address" type="text" [(ngModel)]="patientProfile.email_address" size="30" placeholder="johndoe@gmail.com">
             </div>
-  -->		  
+  	  
           </div>
             
         
-        </form>
+        </form>-->	
       </div>
     </div>
   </div>

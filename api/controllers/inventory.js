@@ -3,7 +3,7 @@ var User = mongoose.model('User');
 var Inventory = mongoose.model('Inventory');
 
 module.exports.getAll = function(req, res) {
-  const _inventoryProjection = "item_name quantity"
+  const _inventoryProjection = "id_number item_name quantity cost"
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -11,18 +11,18 @@ module.exports.getAll = function(req, res) {
   } else {
     
     Inventory
-      .find({}, _inventoryProjection, (err, Inventory) => {
-        let inventoryArr = [];
+      .find({}, _inventoryProjection, (err, inventory) => {
+        let inventorytArr = [];
         if (err) {
           return res.status(500).send({message: err.message});
         }
         if (inventory) {
           inventory.forEach(inventory => {
-            inventoryArr.push(inventory);
+            inventorytArr.push(inventory);
           });
         }
         
-        res.send(inventoryArr);
+        res.send(inventorytArr);
       });
   }
   
@@ -30,8 +30,8 @@ module.exports.getAll = function(req, res) {
 
 module.exports.getInventory = function(req, res) {
 
-  Inventory.findOne({'user_name':req.params.id},
-  'id_number item_name quantity visit_history user_name',
+  Inventory.findOne({'id_number':req.params.id},
+  'id_number item_name quantity cost',
     function(err, inventory) {
           if(err) {
               res.status(404).json({"message" : "No record found"});

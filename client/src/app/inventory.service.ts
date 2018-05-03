@@ -5,24 +5,41 @@ import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
 import { AuthenticationService, TokenPayload } from './authentication.service';
 
-export interface InventoryPayload { //experimental
-  item_name: string;
-}
+
 
 @Injectable()
 export class InventoryService {
-  private token: string;
 
   constructor(private http: HttpClient, private router: Router, private auth: AuthenticationService) {}
 
   private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem('mean-token');
-    }
-    return this.token;
+    return this.auth.getToken();
   }
 
-  private request(method: 'post'|'get'|'put', type: 'inventory/profile', request?): Observable<any> {
+  tabIs(currentTab: string, tab: string): boolean {
+    // Check if current tab is tab name
+    return currentTab === tab;
+  }
+
+  getItemById(id: string,): Observable<any> {
+    return this.http
+      .get(`/api/inventory/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      
+  }
+
+  getItem(id: string): Observable<any> {
+    return this.http
+      .get(`/api/inventory/${id}`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+  updateItem(id: string, item): Observable<any> {
+    return this.http
+      .put(`/api/inventory/${id}`, item, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+  }
+
+
+
+  private request(method: 'post'|'get'|'put', type: 'inventory', request?): Observable<any> {
     let base;
 
     
@@ -30,7 +47,7 @@ export class InventoryService {
       request._id = this.auth.getUserDetails()._id;
     base = this.http.post(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     } 
-      else if (method === 'put'){ //experimental
+      else if (method === 'put'){ 
       request._id = this.auth.getUserDetails()._id;
       base = this.http.put(`/api/${type}`, request, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
@@ -42,12 +59,12 @@ export class InventoryService {
   }
 
   public profile(): Observable<any> {
-    return this.request('get', 'inventory/profile');
+    return this.request('get', 'inventory');
   }
 
   // /* Experimental
   public update(profile): Observable<any> { 
-    return this.request('put', 'inventory/profile', profile);
+    return this.request('put', 'inventory', profile);
   }
   // */
 }
