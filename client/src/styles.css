@@ -25,6 +25,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+@charset "utf-8";
+
 html, body { 
 	margin: 0 auto;
 	padding: 0;
@@ -36,52 +38,37 @@ body {
 	font-size: 12pt;
 	color: #000;
 	font-style: normal;
-	line-height: 1.2em;
+	line-height: 1.4em;
 	min-width: 330px;
 	max-width: 1200px;
+	text-align: justify;
 }
 .container {
-	background-image: url('./assets/brushed.jpg');
+	background-color: #fff;
+	background-image: url(assets/brushed.jpg);
 	background-attachment: fixed;
 	margin: 0 auto;
-	padding: 2em;
 	width: 100%;
 	height: auto !important;
 }
-.main  {
-	width: 100%;
-	margin: 20px;
-	clear: both;
-}
 h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 1% 5%;
-	color: #3C628F;
-}
-h1 {
-	font-size: 2.2em;
-	line-height: 1.2em;
-}
-h2 {
-	font-size: 1.7em;
-	line-height: 1.2em;
-	margin: 20px 0 5px 0;
-}
-h3 {
-	font-size: 1.4em;
-	line-height: 1.2em;
-	margin: 20px 0 5px 0;
-}
-ol, ul {
-	list-style: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-form {
 	margin: 2% 0;
 	padding: 0 5%;
+	color: #3C628F;
+	text-align: left;
+}
+.header {
+	background-image: url(assets/brushed.jpg);	
+    background-attachment: fixed;
+	background-color: #ffffff;	
+	position: sticky;
+    top: 0;
+	z-index: 50;
+}
+form {
+	margin: 5% 0;
+	padding: 2% 5%;
+	width: 80%;
 }
 p {
 	margin: 2% 5%;
@@ -92,8 +79,7 @@ ul {
 	padding: 0 3.5%;
 }
 li {
-	padding: 0.2% 0;
-	line-height: 1.2em;	
+	padding: 0.2% 0;	
 }
 .logo {
 	float: left;
@@ -103,35 +89,98 @@ li {
 	max-width: 100%;
 }
 form, table {
-	margin: 10px auto;	
+	margin: 10px auto;
+	min-width: 60%;
+}
+#table td.redBorder {
+	margin: 0 2%;
+	padding: 3%;
+	border-bottom: 1px dotted #EC1818;
+	text-align: left;
+}
+#table td.redBorderAlt {
+	margin: 0 2%;
+	padding: 4% 1%;
+	color: #000000;
+	text-align: left;
+	vertical-align: top;
+}
+#table {
+	border-left: 1px solid #3C628F;
+	padding-left: 5px;
+}
+.submit 	{
+	margin: 0 2%;
+	padding: 2%;
+	color: #000000;
+	border-bottom: 1px solid #EC1818;
+	text-align: left;
+	vertical-align: top;
+}
+a img {
+	border: none;
 }
 a:link , a:visited{
 	text-decoration: none;
+	color: #3C628F;
 }
 a:hover, a:active, a:focus {
-	text-decoration: none;
+	color: #EC1818;
+	text-decoration: underline;
+}
+h1 {
+	font-size: 2.2em;
+	line-height: 1.2em;
+}
+h2 {
+	font-size: 1.7em;
+	line-height: 1.2em;
+	margin: 1% 0 1% 0;
+}
+h3 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 1% 0 1% 0;
+}
+h4 {
+	font-size: 1.4em;
+	line-height: 1.2em;
+	margin: 2% 0 0 1%;
+	padding: 0;
 }
 footer {
 	color: #fff;
 	font-size: 95%;
-	padding: 20px 50px;
-	margin: 0 auto;
-	text-align: center;
-	text-shadow: 0px 1px 7px rgba(0,0,0,0.93);
-	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
-	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
-	background-image: -webkit-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
-	background-image: -moz-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
-	background-image: -o-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
-	background-image: linear-gradient(180deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	padding: 2% 5%;
+	margin: 2% auto;
+	background-image: -moz-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -webkit-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -ms-linear-gradient( 270deg, rgb(2,129,166) 0%, rgb(0,97,153) 100%);
+	background-image: -o-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: linear-gradient(0deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	position: relative;
 	clear: both;
 	border-top: 2px solid #EC1818;
-	min-height: 3em;
+	z-index: 40;
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 }
-
+/*
+footer a:hover, footer a:active, footer a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+ul.navfooter {
+	margin: 0.5em 0;
+	padding: 0;
+	list-style-type: none;
+}
+.navfooter li {
+	display: inline;
+}
+*/
 p.footer {
-	margin: 1em 0;
+	margin: 0.5em 0;
 	padding: 0;
 }
 
@@ -192,26 +241,6 @@ p.footer {
 	z-index: 90;
 }
 
-/*
-/* The dropdown container
-.dropdown {
-	float: left;
-	overflow: hidden;
-}
- */
-
-/* Dropdown button
-.dropdown .dropbtn {
-	font-size: 16px; 
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;  */   /* Important for vertical align on mobile phones
-	margin: 0; /* Important for vertical align on mobile phones
-} */
-
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
 	background-color: #EC1818;
@@ -223,37 +252,3 @@ p.footer {
 	color: #EC1818;
 	text-decoration: underline;
 }
-
-/* Dropdown content (hidden by default)
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #eee;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-}
- */
- 
-/* Links inside the dropdown
-.dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
- */
-
-/* Add a grey background color to dropdown links on hover
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
- */
- 
-/* Show the dropdown menu on hover
-.dropdown:hover .dropdown-content {
-	display: block;
-}
- */

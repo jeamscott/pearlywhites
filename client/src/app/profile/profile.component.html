@@ -1,49 +1,51 @@
 <div class="container">
 
-  <div class="row">
-    
-     <div class="col-md-6">
+<h1>Your profile</h1>
 
-      <h1 class="form-signin-heading">Your profile</h1>
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label class="col-sm-3 control-label">First Name</label>
-          <p class="form-control-static">{{ patientProfile?.first_name }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Last Name</label>
-          <p class="form-control-static">{{ patientProfile?.last_name }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Phone Number</label>
-          <p class="form-control-static">{{ patientProfile?.phone_number }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Street</label>
-          <p class="form-control-static">{{ patientProfile?.street }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">City</label>
-          <p class="form-control-static">{{ patientProfile?.city }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">State</label>
-          <p class="form-control-static">{{ patientProfile?.state }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Zip</label>
-          <p class="form-control-static">{{ patientProfile?.zip_code }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Email</label>
-          <p class="form-control-static">{{ patientProfile?.email_address }}</p>
-        </div>
-        
-      <button class="btn btn-default"><a href="edit.profile">Edit</a></button><button class="btn btn-default" ><a href="password.change">Change Password</a></button>
-      
-      </div>
-
-    </div>
-
-  </div>
+<table border="0" cellspacing="0" cellpadding="0" id="table">
+  <tr>
+    <td class="redBorder">First Name</td>
+    <td class="redBorder">{{ patientProfile?.first_name }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">Last Name</td>
+    <td class="redBorder">{{ patientProfile?.last_name }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">Phone Number</td>
+    <td class="redBorder">{{ patientProfile?.phone_number }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">Street</td>   
+    <td class="redBorder">{{ patientProfile?.street }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">City</td>   
+    <td class="redBorder">{{ patientProfile?.city }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">State</td>   
+    <td class="redBorder">{{ patientProfile?.state }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">Zip</td>   
+    <td class="redBorder">{{ patientProfile?.zip_code }}</td>
+  </tr>
+  
+  <tr>
+    <td class="redBorder">Email</td>   
+    <td class="redBorder">{{ patientProfile?.email_address }}</td>
+  </tr>
+  
+  <tr>
+    <td class="submit"><button><a href="edit.profile">Edit</a></button></td>   
+    <td class="submit"><button><a href="password.change">Change Password</a></button></td>
+  </tr>
+</table>
 </div>
