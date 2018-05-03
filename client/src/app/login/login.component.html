@@ -1,16 +1,9 @@
 <div class="container">
 
-  <div class="row">
-
-    <div class="col-md-6">
-
-      <h1 class="form-signin-heading">Sign in</h1>
+  <h1>Sign in</h1>
 	  
-      <p class="lead">Not a member? Please call 1-800-479-5295 to make an appointment and become a patient!</p>
+  <p class="lead">Not a member? Please call 1-800-479-5295 to make an appointment and become a patient!</p>
 
-<!--	  
-      <p class="lead">Not a member? Please <a routerLink="/register">register</a> instead.</p>
--->
 <!--
       <form (submit)="login()">
         <div class="form-group">
@@ -23,31 +16,33 @@
         </div>
         <button type="submit" class="btn btn-default">Sign in!</button>
       </form>
-
       <p>Forgot your password? Please call 1-800-479-5295 to have your password reset.</p>
-
     </div>
   </div>
-
 </div> -->
 
-  <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email" #email="ngModel" required />
-          <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+  <form class="loginForm" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+      <label for="email">Email address</label>
+      <input type="email" size="30" class="form-control" name="email" placeholder="johndoe@gmail.com" [(ngModel)]="credentials.email" #email="ngModel" required />
+      <div *ngIf="f.submitted && !email.valid" class="help-block">Email:*
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password" #password="ngModel" required />
-          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+    </div>
+    
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+      <label for="password">Password</label>
+      <input type="password" size="30" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password" #password="ngModel" required />
+      <div *ngIf="f.submitted && !password.valid" class="help-block">Password:*
       </div>
-      <alert></alert>
-      <div class="form-group">
-          <button [disabled]="loading" class="btn btn-primary">Login</button>
-          <a [routerLink]="['/register']" class="btn btn-link">Register</a>
-
-      </div>
-      <p>Forgot your password? Please call 1-800-479-5295 to have your password reset.</p>
+    </div>
+    
+    <alert></alert>
+    
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Login</button>
+      <button [disabled]="loading" class="btn btn-primary" type="reset">Clear</button>
+    </div>
   </form>
+  
+  <p style="text-align: center;">Forgot your password? Please call 1-800-479-5295 to have your password reset.</p>
 </div>

@@ -25,8 +25,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-@charset "utf-8";
-
 html, body { 
 	margin: 0 auto;
 	padding: 0;
@@ -38,14 +36,14 @@ body {
 	font-size: 12pt;
 	color: #000;
 	font-style: normal;
-	line-height: 1.4em;
+	line-height: 1.2em;
 	min-width: 330px;
 	max-width: 1200px;
 	text-align: justify;
 }
 .container {
 	background-color: #fff;
-	background-image: url(assets/brushed.jpg);
+	background-image: url('./assets/brushed.jpg');
 	background-attachment: fixed;
 	margin: 0 auto;
 	width: 100%;
@@ -55,55 +53,48 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 2% 0;
 	padding: 0 5%;
 	color: #3C628F;
-	text-align: left;
 }
-.header {
-	background-image: url(assets/brushed.jpg);	
-    background-attachment: fixed;
-	background-color: #ffffff;	
-	position: sticky;
-    top: 0;
-	z-index: 50;
+h1 {
+	font-size: 2.2em;
+	line-height: 1.2em;
+}
+h2 {
+	font-size: 1.7em;
+	line-height: 1.2em;
+	margin: 1% 0;
+}
+h3 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 1% 0;
+}
+button {
+	padding: 5px;	
 }
 form {
-	margin: 5% 0;
+	margin: 3% auto;
 	padding: 2% 5%;
-	width: 80%;
+	min-width: 60%;	
+}
+.loginForm {
+	margin: 0 auto;
+	max-width: 60%;	
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width: 60%;	
+	margin: 3% auto;
 }
 p {
 	margin: 2% 5%;
 	padding: 0 2%;
-}
-ul {
-	margin: 0 5%;
-	padding: 0 3.5%;
-}
-li {
-	padding: 0.2% 0;	
-}
-.logo {
-	float: left;
-	border-radius: 15px;
-	margin: 10px auto;
-	min-width: 40%;
-	max-width: 100%;
-}
-form, table {
-	margin: 10px auto;
-	min-width: 60%;
 }
 #table td.redBorder {
 	margin: 0 2%;
 	padding: 3%;
 	border-bottom: 1px dotted #EC1818;
 	text-align: left;
-}
-#table td.redBorderAlt {
-	margin: 0 2%;
-	padding: 4% 1%;
-	color: #000000;
-	text-align: left;
-	vertical-align: top;
 }
 #table {
 	border-left: 1px solid #3C628F;
@@ -117,42 +108,28 @@ form, table {
 	text-align: left;
 	vertical-align: top;
 }
-a img {
-	border: none;
-}
-a:link , a:visited{
+a:link , a:visited {
+	color: #EC1818;
 	text-decoration: none;
-	color: #3C628F;
 }
 a:hover, a:active, a:focus {
 	color: #EC1818;
 	text-decoration: underline;
 }
-h1 {
-	font-size: 2.2em;
-	line-height: 1.2em;
+table a:link, table a:visited {
+	color: #3C628F;
+	text-decoration: none;	
 }
-h2 {
-	font-size: 1.7em;
-	line-height: 1.2em;
-	margin: 1% 0 1% 0;
-}
-h3 {
-	font-size: 1.5em;
-	line-height: 1.2em;
-	margin: 1% 0 1% 0;
-}
-h4 {
-	font-size: 1.4em;
-	line-height: 1.2em;
-	margin: 2% 0 0 1%;
-	padding: 0;
+table a:hover, table a:active, table a:focus {
+	color: #EC1818;
+	text-decoration: underline;	
 }
 footer {
 	color: #fff;
-	font-size: 95%;
+	font-size: 90%;
 	padding: 2% 5%;
-	margin: 2% auto;
+	margin: 0 auto;
+	text-align: center;
 	background-image: -moz-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -webkit-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
 	background-image: -ms-linear-gradient( 270deg, rgb(2,129,166) 0%, rgb(0,97,153) 100%);
@@ -165,25 +142,6 @@ footer {
 	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 }
-/*
-footer a:hover, footer a:active, footer a:visited {
-	color: #fff;
-	text-decoration: none;
-}
-ul.navfooter {
-	margin: 0.5em 0;
-	padding: 0;
-	list-style-type: none;
-}
-.navfooter li {
-	display: inline;
-}
-*/
-p.footer {
-	margin: 0.5em 0;
-	padding: 0;
-}
-
 /* Makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
     .column_left, .column_right {
