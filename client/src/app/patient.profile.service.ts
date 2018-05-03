@@ -46,8 +46,8 @@ export class PatientProfileService {
     return this.request('put', 'patient/profile', profile);
   }
   
-  public changePassword(newpassword): Observable<any> {
+  public changePassword(newpassword: TokenPayload): Observable<any> {
     console.log('Made It Here')
-    return this.request('post', 'changePassword', newpassword);
+    return this.request('put', 'changePassword', newpassword);
   }
 }
