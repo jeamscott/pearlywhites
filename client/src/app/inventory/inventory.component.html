@@ -3,9 +3,41 @@
       <div class="col-md-6">
         <h1 class="form-signin-heading">Inventory</h1>
   
-        <form (ngSubmit)="updateSuppies()">
+        <form (ngSubmit)="updateInventory()">
           <div class="form-horizontal">
           
+            <section class="search input-group mb-3">
+              <label class="input-group-addon" for="search">Search</label>
+              <input
+                id="search"
+                type="text"
+                class="form-control"
+                [(ngModel)]="query"
+                (keyup)="searchInventory()" />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-danger"
+                  (click)="resetQuery()"
+                  [disabled]="!query">&times;</button>
+              </span>
+            </section>
+             <!-- No search results -->
+    <p *ngIf="fs.noSearchResults(filteredProfile, query)" class="alert alert-warning">
+      No events found for <em class="text-danger">{{query}}</em>, sorry!
+    </p>
+
+    <!-- Events listing -->
+    <section class="list-group">
+      <a
+        *ngFor="let inventory of filteredProfile"
+        [routerLink]="['/inventory', inventory.user_name]"
+        class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" [innerHTML]="inventory.user_name"></h5>
+          <small>{{ inventory.item_name }}</small><small> {{ inventory.quantity }}</small>
+        </div>
+      </a>
+    </section>
                    
             <div class="form-group">
               <label class="col-sm-3 control-label">Inventory</label>        
@@ -67,7 +99,7 @@
   -->		  
           </div>
             
-          <button type="submit" class="btn btn-default">Update</button>
+        
         </form>
       </div>
     </div>

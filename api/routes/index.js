@@ -62,7 +62,8 @@ router.post('/changePassword', auth, ctrlAuth.changePassword);
 router.get('/supplies', auth, ctrlSupplies.suppliesRead);
 
 //inventory
-router.get('/inventory', auth, ctrlInventory.inventoryRead);
+router.get('/inventory', auth, ctrlInventory.getAll);
+router.get('/inventory/:id', auth, ctrlInventory.getInventory)
 
 // accounting
 // router.get('/accounting', crtlAccounting.getAll);
