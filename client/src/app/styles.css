@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body { 
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+}
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	background-color: #c4c4c4;
+	font-size: 12pt;
+	color: #000;
+	font-style: normal;
+	line-height: 1.2em;
+	min-width: 330px;
+	max-width: 1200px;
+	text-align: justify;
+}
+.container {
+	background-color: #fff;
+	background-image: url('./assets/brushed.jpg');
+	background-attachment: fixed;
+	margin: 0 auto;
+	width: 100%;
+	height: auto !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 2% 0;
+	padding: 0 5%;
+	color: #3C628F;
+}
+h1 {
+	font-size: 2.2em;
+	line-height: 1.2em;
+}
+h2 {
+	font-size: 1.7em;
+	line-height: 1.2em;
+	margin: 1% 0;
+}
+h3 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 1% 0;
+}
+h4 {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	margin: 1%;
+	padding: 0;
+}
+ul {
+	margin: 1% 5% 2% 5%;
+	padding: 0 3.5%;
+}
+li {
+	padding: 0.2% 0;	
+}
+button {
+	padding: 5px;	
+}
+.editProfileForm {
+	margin: 0 auto;
+	min-width: 80%;	
+}
+.loginForm, .registerForm, .passChangeForm {
+	margin: 0 auto;
+	max-width: 60%;	
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width: 60%;	
+	margin: 3% auto;
+}
+p {
+	margin: 2% 5%;
+	padding: 0 2%;
+}
+#table td.redBorder {
+	margin: 0 2%;
+	padding: 3%;
+	border-bottom: 1px dotted #EC1818;
+	text-align: left;
+	width: 45%;
+}
+#table {
+	border-left: 1px solid #3C628F;
+	padding-left: 5px;
+}
+.alert {
+	margin: 3% auto;
+	padding: 3% auto;
+	width: 50%;
+	text-align: center;
+}
+.submit 	{
+	margin: 0 2%;
+	padding: 2%;
+	color: #000000;
+	border-bottom: 1px solid #EC1818;
+	text-align: left;
+	vertical-align: top;
+}
+a:link , a:visited {
+	color: #EC1818;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	color: #EC1818;
+	text-decoration: underline;
+}
+table a:link, table a:visited {
+	color: #3C628F;
+	text-decoration: none;	
+}
+table a:hover, table a:active, table a:focus {
+	color: #EC1818;
+	text-decoration: underline;	
+}
+footer {
+	color: #fff;
+	font-size: 90%;
+	padding: 2% 5%;
+	margin: 0 auto;
+	text-align: center;
+	background-image: -moz-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -webkit-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -ms-linear-gradient( 270deg, rgb(2,129,166) 0%, rgb(0,97,153) 100%);
+	background-image: -o-linear-gradient(90deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: linear-gradient(0deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	position: relative;
+	clear: both;
+	border-top: 2px solid #EC1818;
+	z-index: 40;
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+}
+.search {
+	margin: 2% 10%;
+	font-size: 24pt;
+}
+/* Makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column_left, .column_right {
+        width: 100%;
+    }
+}
+/* Navigation moves from 6 wide to 3 wide */
+@media (max-width: 830px) and (min-width: 415px) {
+    .column {
+        width: 100%;
+    }
+}
+/* Absolute site min-width: 330px */
+/* Navbar container */
+.navbar {
+	font-family:  "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	background-image: -webkit-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -moz-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: -o-linear-gradient(270deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(76,124,180,1.00) 0%,rgba(154,185,231,1.00) 100%);
+	line-height: auto;
+	font-weight: normal;
+	margin: 0 auto;
+	width: 100%;
+	overflow: auto;
+	text-align: center;
+	text-shadow: 0px 1px 7px rgba(0,0,0,0.93);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
+	border-top: 1px solid #EC1818;	
+	position: sticky;
+    top: 0;
+	z-index: 100;
+}
+/* Links inside the navbar */
+.navbar a {
+	float: right;
+	font-size: 16px;
+	text-align: center;
+	padding: 1% 2%;
+	text-decoration: none;
+	color: #fff;
+	margin: 0 auto;
+	position: relative;
+	display: block;
+	width: auto;
+	z-index: 90;
+}
+#table.td, form td, table td {
+	width: auto;	
+}
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #EC1818;
+}
+.log, .docLinks:active, .docLinks:hover {
+	color: #EC1818;
+}
+.log:hover, .log:active {
+	color: #EC1818;
+	text-decoration: underline;
+}
