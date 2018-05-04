@@ -22,7 +22,6 @@ import { InventoryService } from './inventory.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import { RegisterComponent } from './register/register.component';
 import { PayComponent } from './pay/pay.component';
-import { CardValidator } from './pay/pay';
 import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { AuthenticationService } from './authentication.service';
@@ -93,8 +92,7 @@ const routes: Routes = [
     PatientAppointmentComponent,
     PasswordChangeComponent,
     AlertComponent,
-    CardValidator,
-
+    
 
 
     // line 41 added for accounting RS
