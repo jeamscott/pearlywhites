@@ -74,6 +74,13 @@ h4 {
 	margin: 1%;
 	padding: 0;
 }
+ul {
+	margin: 1% 5% 2% 5%;
+	padding: 0 3.5%;
+}
+li {
+	padding: 0.2% 0;	
+}
 button {
 	padding: 5px;	
 }
@@ -81,7 +88,7 @@ button {
 	margin: 0 auto;
 	min-width: 80%;	
 }
-.loginForm, .registerForm {
+.loginForm, .registerForm, .passChangeForm {
 	margin: 0 auto;
 	max-width: 60%;	
 }
@@ -105,6 +112,12 @@ p {
 #table {
 	border-left: 1px solid #3C628F;
 	padding-left: 5px;
+}
+.alert {
+	margin: 3% auto;
+	padding: 3% auto;
+	width: 50%;
+	text-align: center;
 }
 .submit 	{
 	margin: 0 2%;
@@ -149,8 +162,7 @@ footer {
 	box-shadow: 0px 3px 3px rgba(0,0,0,0.30);
 }
 .search {
-	padding: 1%;
-	margin: 1%;
+	margin: 2% 10%;
 	font-size: 24pt;
 }
 /* Makes the two columns stack on top of each other instead of next to each other */

@@ -1,4 +1,6 @@
 <div class="container">
+  <h1>Patient Database</h1>
+  
   <section class="search input-group mb-3">
     <label class="search" class="input-group-addon" for="search">Search</label>
     <input
@@ -14,12 +16,14 @@
         [disabled]="!query">&times;</button>
     </span>
   </section>
+  
 <!-- No search results -->
   <p *ngIf="fs.noSearchResults(filteredProfile, query)" class="alert alert-warning">
     No patients found for <em class="text-danger">{{query}}</em>, sorry!
   </p>
+  
 <!-- Events listing -->
-  <section class="list-group">
+  <section style="margin: 2% 10%;" class="list-group">
     <a
       *ngFor="let patient of filteredProfile"
       [routerLink]="['/patient', patient.user_name]"
