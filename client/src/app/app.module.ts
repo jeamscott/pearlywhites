@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+import { NgXCreditCardsModule } from 'ngx-credit-cards';
+
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit.profile/edit.profile.component';
@@ -20,6 +22,7 @@ import { InventoryService } from './inventory.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import { RegisterComponent } from './register/register.component';
 import { PayComponent } from './pay/pay.component';
+import { CardValidator } from './pay/pay';
 import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { AuthenticationService } from './authentication.service';
@@ -90,6 +93,8 @@ const routes: Routes = [
     PatientAppointmentComponent,
     PasswordChangeComponent,
     AlertComponent,
+    CardValidator,
+
 
 
     // line 41 added for accounting RS
@@ -111,6 +116,7 @@ const routes: Routes = [
     // AlertModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot(routes),
+    NgXCreditCardsModule,
   ],
   providers: [
     AuthenticationService,
