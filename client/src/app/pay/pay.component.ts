@@ -33,7 +33,9 @@ export class PayComponent {
 
   make_payment() {
     this.billingService.pay_bill(this.bill).subscribe(() => {
-      this.router.navigateByUrl('/thank.you');
+      //this.router.navigateByUrl('/thank.you');
+        window.alert("Thank you for your payment");
+		location.reload();
       }, (err) => {
       console.error(err);
     });
