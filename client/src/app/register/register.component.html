@@ -1,10 +1,8 @@
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Patient Registration</h1>
-
-      <form (submit)="register()">
+  <h1>Patient Registration</h1>
+<!--
+      <form class="registerForm" (submit)="register()">
         <div class="form-group">
           <label for="name">Patient Full Name</label>
           <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
@@ -21,16 +19,37 @@
       </form>
     </div>
   </div>
-
-
-
-
+-->
+  <form class="registerForm" (submit)="register()">
+    <table border="0" cellspacing="0" cellpadding="0" id="table">
+      <tr>
+        <td class="redBorder"><label for="name">Patient Full Name</label></td>
+        <td class="redBorder"><input type="text" class="form-control" name="name" placeholder="John Doe" [(ngModel)]="credentials.name"></td>
+      </tr>
+      
+      <tr>
+        <td class="redBorder"><label for="email">Patient Email Address</label></td>
+        <td class="redBorder"><input type="email" class="form-control" name="email" placeholder="johndoe@gmail.com" [(ngModel)]="credentials.email"></td>
+      </tr>
+      
+      <tr>
+        <td class="redBorder"><label for="password">Password<br /><font style="font-size: 0.8em">(Patient Account Number)</font></label></td>
+        <td class="redBorder"><input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password"></td>
+      </tr>
+      
+      <tr>
+        <td class="submit"><button type="submit" class="btn btn-primary">Register!</button></td>
+        <td class="submit"><button type="reset" class="btn btn-primary">Clear</button></td>
+      </tr>
+      
+    </table>
+  </form>
 <!--
   <div class="row">
     <div class="col-md-6">
       <h1>Register</h1>
       <p class="lead">Already a member? Please <a routerLink="/login">log in</a> instead.</p>
-      <form (submit)="register()">
+      <form class="registerForm" (submit)="register()">
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" class="form-control" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name">
@@ -48,5 +67,4 @@
     </div>
   </div>
 -->  
-
 </div>
