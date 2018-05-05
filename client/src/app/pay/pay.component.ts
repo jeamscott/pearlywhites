@@ -4,6 +4,7 @@ import { PatientProfileService, PatientPayload } from '../patient.profile.servic
 import { BillingService} from '../billing.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Payment } from '../../../node_modules/payment/dist/payment.js'
 
 @Component({
   templateUrl: './pay.component.html'
@@ -36,5 +37,7 @@ export class PayComponent {
       }, (err) => {
       console.error(err);
     });
-  }
+  };
+
+  
 }
