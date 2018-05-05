@@ -57,93 +57,149 @@
         </div>
         -->
         
-
-
-
-
-
-
 <div class="container">
 
-    <div class="row">
-    
-        <div class="col-md-6">
-   
-         <h1 class="form-signin-heading">Make a Payment</h1>
+  <h1>Make a Payment</h1>
 
-          <form>
-          <div class="form-horizontal">
-           
-            <div class="form-group">
-                <label class="col-sm-3 control-label">Name on Card</label>
-                <input type="text" size="30">          
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">Credit Card</label>
-                <select size="1">
-                  <option value="Visa">Visa</option>
-                  <option value="MasterCard">MasterCard</option>
-                  <option value="AmericanExpress">American Express</option>
-                  <option value="CareCredit">CareCredit</option>
-                </select>          
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">Card Number</label>
-                <input type="number" size="30">          
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">CVC</label>
-                <input type="number">          
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">Expiration Month</label>
-                <select size="1">
-                  <option value=""></option>
-                  <option value="jan">January</option>
-                  <option value="feb">February</option>
-                  <option value="mar">March</option>
-                  <option value="apr">April</option>
-                  <option value="may">May</option>
-                  <option value="jun">June</option>
-                  <option value="jul">July</option>
-                  <option value="aug">August</option>
-                  <option value="sep">September</option>
-                  <option value="oct">October</option>
-                  <option value="nov">November</option>
-                  <option value="dec">December</option>
-                </select>          
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Expiration Year</label>
-              <select size="1">
-                <option value=""></option>
-                <option value="18"> 2018</option>
-                <option value="19"> 2019</option>
-                <option value="20"> 2020</option>
-                <option value="21"> 2021</option>
-                <option value="22"> 2022</option>
-                <option value="23"> 2023</option>
-              </select>
-            </div>
-          </div>
-          </form>
-               
-         <form (ngSubmit)="make_payment()">
-             
-           <div class="form-horizontal">
-           
-                      
-           <div class="form-group">
-             <label class="col-sm-3 control-label">Payment Amount</label>
-             <input name="bill.balance_due" type="number" step=".01" [(ngModel)]="bill.balance_due">          
-           </div>
+ <form (ngSubmit)="make_payment()">
+    <table border="0" cellspacing="0" cellpadding="0" id="table">
+      <tr>
+        <td class="redBorder">Name on Card</td>
+        <td class="redBorder"><input class="form-control" type="text" size="30"></td>        
+      </tr>    
 
-   
-           </div>
-             <button type="submit" class="btn btn-default">Make Payment</button>
-         </form>
-       </div>
-   
-     </div>
 
+      <tr>
+        <td class="redBorder">Credit Card</td>
+        <td class="redBorder">
+          <select class="form-control" size="1">
+            <option value="Visa">Visa</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="AmericanExpress">American Express</option>
+            <option value="CareCredit">CareCredit</option>
+          </select>
+        </td>        
+      </tr>    
+
+      <tr>
+        <td class="redBorder">Card Number</td>
+        <td class="redBorder"><input class="form-control" type="number" size="30"></td>        
+      </tr>    
+
+      <tr>
+        <td class="redBorder">CVC</td>
+        <td class="redBorder"><input class="form-control" type="number"></td>        
+      </tr>    
+
+      <tr>
+        <td class="redBorder">Expiration Month</td>
+        <td class="redBorder">
+          <select class="form-control" size="1">
+            <option value=""></option>
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+          </select>
+        </td>        
+      </tr>    
+
+      <tr>
+        <td class="redBorder">Payment Amount</td>
+        <td class="redBorder"><input class="form-control" name="bill.balance_due" type="number" step=".01" [(ngModel)]="bill.balance_due"></td>        
+      </tr>    
+
+      <tr>
+        <td class="submit"><button type="submit" class="btn btn-primary">Make Payment</button></td>
+        <td class="submit"><button type="reset" class="btn btn-primary">Clear</button></td>
+      </tr>
+    </table>
+  </form>
 </div>
+
+
+
+<!--
+<div class="container">
+
+  <h1>Make a Payment</h1>
+
+  <form (ngSubmit)="make_payment()">
+  <div class="form-horizontal">
+   
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Name on Card</label>
+        <input type="text" size="30">          
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Credit Card</label>
+        <select size="1">
+          <option value="Visa">Visa</option>
+          <option value="MasterCard">MasterCard</option>
+          <option value="AmericanExpress">American Express</option>
+          <option value="CareCredit">CareCredit</option>
+        </select>          
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Card Number</label>
+        <input type="number" size="30">          
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">CVC</label>
+        <input type="number">          
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Expiration Month</label>
+        <select size="1">
+          <option value=""></option>
+          <option value="jan">January</option>
+          <option value="feb">February</option>
+          <option value="mar">March</option>
+          <option value="apr">April</option>
+          <option value="may">May</option>
+          <option value="jun">June</option>
+          <option value="jul">July</option>
+          <option value="aug">August</option>
+          <option value="sep">September</option>
+          <option value="oct">October</option>
+          <option value="nov">November</option>
+          <option value="dec">December</option>
+        </select>          
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">Expiration Year</label>
+      <select size="1">
+        <option value=""></option>
+        <option value="18"> 2018</option>
+        <option value="19"> 2019</option>
+        <option value="20"> 2020</option>
+        <option value="21"> 2021</option>
+        <option value="22"> 2022</option>
+        <option value="23"> 2023</option>
+      </select>
+    </div>
+  </div>
+  </form>
+       
+ <form (ngSubmit)="make_payment()">
+     
+   <div class="form-horizontal">
+                 
+   <div class="form-group">
+     <label class="col-sm-3 control-label">Payment Amount</label>
+     <input name="bill.balance_due" type="number" step=".01" [(ngModel)]="bill.balance_due">          
+   </div>
+
+   </div>
+     <button type="submit" class="btn btn-default">Make Payment</button>
+ </form>
+</div>
+-->
