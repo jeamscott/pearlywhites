@@ -48,7 +48,7 @@ import { FinanceService } from './accounting/accounting.service';
 import { JournalFinanceService } from './accounting/generaljournal/generaljournal.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './accounting/logout/logout.component';
-import { Payment } from '../../node_modules/payment/dist/payment.js'
+// import { Payment } from '../../node_modules/payment/dist/payment.js'
 // import { AlertModule } from 'ngx-bootstrap';
 const routes: Routes = [
   { path: '', component: HomeComponent },
