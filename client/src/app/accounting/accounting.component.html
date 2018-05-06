@@ -1,8 +1,8 @@
 <div ng-controller="AppCtrl" layout="column" style="height:auto;" ng-cloak="" class="sidenavdemoBasicUsage" ng-app="MyApp">
 
   <section layout="row" flex="">
-
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+<!--
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
 
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Navigation</h1>
@@ -11,7 +11,7 @@
             <li class="nav-item start">
               <a class="nav-link" routerLink="/accounting"> Chart of Accounts <div class="sr-only">(current)</div></a>
             </li>
-          </ul>
+          </ul> -->
      <!-- 
      	  <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -29,6 +29,7 @@
             </div>
           </div>
       -->
+      <!--
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item start">
@@ -44,7 +45,7 @@
             </div>
           </div>
         </div>
-      
+      -->
         <md-content layout-padding="left" ng-controller="LeftCtrl">
           <p hide="" show-gt-md="">
       
@@ -68,12 +69,12 @@
               </p>
             </form>
 
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-striped table-hover">
               <tbody>
                 <div class="container">
                   <div class="col-md-12">
                     <tr *ngFor="let finance of finances"> 
-                      <table class="table table-bordered table-striped table-hover">
+                      <table class="table table-striped table-hover">
                         <tbody>
                           <div class="container">
                             <div class="col-md-12">
