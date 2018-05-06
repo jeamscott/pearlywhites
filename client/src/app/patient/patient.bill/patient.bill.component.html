@@ -1,4 +1,27 @@
 <div class="card-block">
+
+  <h2>Balance Due</h2>
+      
+  <form (ngSubmit)="_setPatientBill()">
+    <table border="0" cellspacing="0" cellpadding="0" id="table">
+      <tr>
+        <td colspan="2" class="redBorder">Please enter new total balance due</td>
+      </tr>    
+      
+      <tr>
+        <td class="redBorder">Balance Due</td>
+        <td class="redBorder"><input class="form-control" *ngIf="patientBill" name="patientBill.balance_due" type="number" step=".01" [(ngModel)]="patientBill.balance_due"></td>
+      </tr>    
+      
+      <tr>
+        <td colspan="2" class="submit"><button type="submit" class="btn btn-primary">Update Balance Due</button></td>
+      </tr>    
+    </table>
+  </form>
+</div>
+
+<!--
+<div class="card-block">
         <div class="row">
           <div class="col-md-6">
             <h1 class="form-signin-heading">Balance Due</h1>
@@ -21,3 +44,4 @@
           </div>
         </div>
       </div>
+-->      

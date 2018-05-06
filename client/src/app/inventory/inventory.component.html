@@ -1,45 +1,46 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1 class="form-signin-heading">Inventory</h1>
+  <h1>Inventory</h1>
   
-        <!--<form (ngSubmit)="updateInventory()">
-          <div class="form-horizontal">-->
+<!--
+<form (ngSubmit)="updateInventory()">
+  <div class="form-horizontal">
+-->
 
-              <section class="search input-group mb-3">
-                  <label class="input-group-addon" for="search">Search</label>
-                  <input
-                    id="search"
-                    type="text"
-                    class="form-control"
-                    [(ngModel)]="query"
-                    (keyup)="searchInventory()" />
-                  <span class="input-group-btn">
-                    <button
-                      class="btn btn-danger"
-                      (click)="resetQuery()"
-                      [disabled]="!query">&times;</button>
-                  </span>
-                </section>
+  <section class="search input-group mb-3">
+    <label class="search" class="input-group-addon" for="search">Search</label>
+    <input
+      id="search"
+      type="text"
+      class="form-control"
+      [(ngModel)]="query"
+      (keyup)="searchInventory()" />
+    <span class="input-group-btn">
+      <button
+        class="btn btn-danger"
+        (click)="resetQuery()"
+        [disabled]="!query">&times;</button>
+    </span>
+  </section>
           
-            <!-- No search results -->
+<!-- No search results -->
     <p *ngIf="fs.noSearchResults(filteredinventory, query)" class="alert alert-warning">
       No items found for <em class="text-danger">{{query}}</em>, sorry!
     </p>
 
-    <!-- Events listing -->
-    <section class="list-group">
+<!-- Events listing -->
+    <section style="margin: 2% 10%;" class="list-group">
       <a
         *ngFor="let inventory of filteredinventory"
-        [routerLink]="['/inventory', inventory.id_number]"
+        [routerLink]="['/inventory', inventory.item_name]"
         class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" [innerHTML]="inventory.id_number"></h5>
-          <small>{{ inventory.item_name }}</small><small> {{ inventory.quantity }}</small><small> {{ inventory.cost }}</small>
+          <h4 class="mb-1" [innerHTML]="inventory.item_name"></h4>
+          <small>{{ inventory.product_description }} {{ inventory.quantity }} {{ inventory.cost }}</small>
         </div>
       </a>
     </section>
                    
+<<<<<<< HEAD
             <!--<div class="form-group">
               <label class="col-sm-3 control-label">Inventory</label>        
               <select size="1"  name="inventoryProfile.item_name" [(ngModel)]="inventoryProfile.item_name">
@@ -69,39 +70,66 @@
                 <option value="Monitor">Monitor - Qty 80</option>
                 <option value="Tower">Tower - Qty 80</option>
                 <option value="Hard Drive">Hard Drive - Qty 80</option>
-                <option value="Laptop">Laptop - Qty 40</option>
-                <option value="Key Board">Key Board - Qty 80</option>
-                <option value="Mouse">Mouse - Qty 80</option>
-                <option value="Speaker">Speaker - Qty 160</option>
-                <option value="Router">Router - Qty 80</option>
-                <option value="Surge Protector">Surge Protector - Qty 80</option>
-                <option value="Cable">Cable - Qty 80</option>
-                <option value="Extension Cord">Extension Cord - Qty 80</option>
-                <option value="Printer">Printer - Qty 20</option>
-                <option value="Scanner">Scanner - Qty 20</option>
-                <option value="Desk">Desk - Qty 80</option>
-                <option value="Office Chair">Office Chair - Qty 80</option>
-               
+                               
                
               </select>
             </div>
+=======
+<!--<div class="form-group">
+  <label class="col-sm-3 control-label">Inventory</label>        
+  <select size="1"  name="inventoryProfile.item_name" [(ngModel)]="inventoryProfile.item_name">
+    <option value="Tooth Brush">Tooth Brush - Qty 500</option>
+    <option value="Prophy Paste">Prophy Paste - Qty 500</option>
+    <option value="Floss">Floss - Qty 500</option>
+    <option value="Soap">Soap - Qty 500</option>
+    <option value="Patient Bibs">Patient Bibs - Qty 500</option>
+    <option value="Disposable Gowns">Disposable Gowns - Qty 500</option>
+    <option value="Cavi Wipes">Cavi Wipes - Qty 500</option>
+    <option value="Mouth Wash">Mouth Wash - Qty 100</option>
+    <option value="Paper Towels">Paper Towels - Qty 100</option>
+    <option value="Tissue Paper">Tissue Paper - Qty 100</option>
+    <option value="Toilet Paper">Toilet Paper - Qty 100</option>
+    <option value="Prophy Angle">Prophy Angle - Qty 500</option>
+    <option value="Sterilaztion Pouches">Sterilaztion Pouches - Qty 200</option>
+    <option value="Suction Tips">Suction Tips - Qty 500</option>
+    <option value="Matrix Band">Matirx Band - Qty 100</option>
+    <option value="Toffelmire Retainer">Toffelmire Retainer - Qty 100</option>
+    <option value="Defend Putty">Defend Putty - Qty 500</option>
+    <option value="Defend Crown and Bridge Material">Defend Crown and Bridge Material - Qty 100</option>
+    <option value="Dispensing Gun">Dispensing Gun - Qty 500</option>
+    <option value="Acrylic and Monomer Liquid">Acrylic and Monomer Liquid - Qty 100</option>
+    <option value="Gingival Tissue Retraction">Gingival Tissue Retraction - Qty 100</option>
+    <option value="Distilled Water">Distilled Water - Qty 100</option>
+    <option value="Defend Putty">Defend Putty - Qty 100</option>
+    <option value="Monitor">Monitor - Qty 80</option>
+    <option value="Tower">Tower - Qty 80</option>
+    <option value="Hard Drive">Hard Drive - Qty 80</option>
+    <option value="Laptop">Laptop - Qty 40</option>
+    <option value="Key Board">Key Board - Qty 80</option>
+    <option value="Mouse">Mouse - Qty 80</option>
+    <option value="Speaker">Speaker - Qty 160</option>
+    <option value="Router">Router - Qty 80</option>
+    <option value="Surge Protector">Surge Protector - Qty 80</option>
+    <option value="Cable">Cable - Qty 80</option>
+    <option value="Extension Cord">Extension Cord - Qty 80</option>
+    <option value="Printer">Printer - Qty 20</option>
+    <option value="Scanner">Scanner - Qty 20</option>
+    <option value="Desk">Desk - Qty 80</option>
+    <option value="Office Chair">Office Chair - Qty 80</option>
+  </select>
+</div>
+>>>>>>> c3c0cf73aa2719faa4830e7973ce8ab6cc0d8ba4
 
-            <div>
-                <p>{{ inventoryProfile?.quantity }}</p>
-
-            </div>
- 
-            
- 		
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Email</label>
-              <input *ngIf="inventoryProfile" name="inventoryProfile.email_address" type="text" [(ngModel)]="patientProfile.email_address" size="30" placeholder="johndoe@gmail.com">
-            </div>
-  	  
-          </div>
-            
-        
-        </form>-->	
-      </div>
-    </div>
+<div>
+  <p>{{ inventoryProfile?.quantity }}</p>
+</div>    
+      
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Email</label>
+    <input *ngIf="inventoryProfile" name="inventoryProfile.email_address" type="text" [(ngModel)]="patientProfile.email_address" size="30" placeholder="johndoe@gmail.com">
   </div>
+</div>
+    
+</form>-->	
+
+</div>

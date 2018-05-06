@@ -1,9 +1,10 @@
 <div class="container">
     <h1>Welcome to Your Portal!</h1>
     
-    <img style="margin: 0 auto; display: block;" src="..\assets\logo-small-transparent.png" alt=""/>
+    <img style="margin: 3% auto; display: block;" src="..\assets\logo-small-transparent.png" alt=""/>
     <div *ngIf="!auth.isLoggedIn()">
-    <h2>Please <a class="log" routerLink="/login">sign in</a> <!--or <a class="log" routerLink="/register">register</a>--></h2>
+    <h2>Please <a class="log" routerLink="/login">sign in</a></h2>
+    <br />
     </div>
     
 </div>

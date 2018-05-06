@@ -1,92 +1,79 @@
 <div class="card-block">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="form-signin-heading">Next Apointment</h1>
-      
-            <form (ngSubmit)="_setPatientAppointment()">
-                
-                    <div class="form-horizontal">
-                    
-                    <div class="form-group">
-                      <label class="col-sm-3 control-label">Choose Location</label>
-                      
-                      <select name="patientAppointment.app_location" size="1" [(ngModel)]="patientAppointment.app_location" onchange="java_script_:show(this.options[this.selectedIndex].value)">
-                        <option value="chooseDentist">Choose Location</option>
-      
-                        <option value="Fort Lauderdale">Florida - Fort Lauderdale</option>
-                        <option value="Miami">Florida - Miami</option>
-                        <option value="Orlando">Florida - Orlando</option>
-                        <option value="Tallahassee">Florida - Tallahassee</option>
-                        <option value="Tampa">Florida - Tampa</option>
-      
-                        <option value="Buffalo">New York - Buffalo</option>
-                        <option value="New York City">New York - New York City</option>
-                        <option value="Rochester">New York - Rochester</option>
-                        <option value="Schenectady">New York - Schenectady</option>
-                        <option value="Syracuse">New York - Syracuse</option>
-      
-                        <option value="Akron">Ohio - Akron</option>
-                        <option value="Cincinnati">Ohio - Cincinnati</option>
-                        <option value="Cleveland">Ohio - Cleveland</option>
-                        <option value="Columbus">Ohio - Columbus</option>
-                        <option value="Toledo">Ohio - Toledo</option>
-      
-                        <option value="Austin">Texas - Austin</option>
-                        <option value="Dallas">Texas - Dallas</option>
-                        <option value="Fort Worth">Texas - Fort Worth</option>
-                        <option value="Houston">Texas - Houston</option>
-                        <option value="San Antonio">Texas - San Antonio</option>
-                      </select>
-            
-                    </div>
-                    
-       <!--         <div class="form-group">
-                      <label class="col-sm-3 control-label">Choose Date</label>               
-                      <input name="apts.app_date" type="text" [(ngModel)]="apts.app_date" placeholder="mm/dd/yyyy" class="apptDate">   
-                    </div>             
-      -->
-                    <div class="form-group">
-                      <label class="col-sm-3 control-label">Choose Date</label>
-                      <input class="col-sm-3 control-label" class="apptDate" name="apptDate" name="patientAppointment.app_date" type="date" [(ngModel)]="patientAppointment.app_date"> 
-                    </div>
-      <!--                
-                    <div class="form-group">
-                      <label class="col-sm-3 control-label">Choose Time</label>
-                      <input name="apts.app_time" type="time" [(ngModel)]="apts.app_time">
-                    </div>
-      -->              
-                    <div class="form-group">
-                      <label class="col-sm-3 control-label">Choose Time</label>
-                      
-                      <select name="patientAppointment.app_time" size="1" [(ngModel)]="patientAppointment.app_time" onchange="java_script_:show(this.options[this.selectedIndex].value)">
-      
-                        <option value="0800">8:00 am</option>
-                        <option value="0830">8:30 am</option>
-                        <option value="0900">9:00 am</option>
-                        <option value="0930">9:30 am</option>
-                        <option value="1000">10:00 am</option>
-                        <option value="1030">10:30 am</option>
-                        <option value="1100">11:00 am</option>
-                        <option value="1130">11:30 am</option>
-                        <option value="1200">12:00 pm</option>
-                        <option value="1230">12:30 pm</option>
-                        <option value="1300">1:00 pm</option>
-                        <option value="1330">1:30 pm</option>
-                        <option value="1400">2:00 pm</option>
-                        <option value="1430">2:30 pm</option>
-                        <option value="1500">3:00 pm</option>
-                        <option value="1530">3:30 pm</option>
-                        <option value="1600">4:00 pm</option>
-                        <option value="1630">4:30 pm</option>
-                      </select>
-            
-                    </div>
-                    
-                    </div>
-                      <button type="submit" class="btn btn-default">Schedule Appointment</button>
-                      <button type="reset" class="btn btn-default">Cancel Appointment</button>
-                  </form>
 
-          </div>
-        </div>
-      </div>
+  <h2>Upcoming Appointments</h2>
+      
+  <form class="patientApptForm" (ngSubmit)="_setPatientAppointment()">
+    <table border="0" cellspacing="0" cellpadding="0" id="table">
+      <tr>
+        <td class="redBorder">Choose Location</td>
+        <td class="redBorder">
+          <select class="form-control" name="patientAppointment.app_location" size="1" [(ngModel)]="patientAppointment.app_location" onchange="java_script_:show(this.options[this.selectedIndex].value)">
+            <option value=""></option>
+
+            <option value="Fort Lauderdale">Florida - Fort Lauderdale</option>
+            <option value="Miami">Florida - Miami</option>
+            <option value="Orlando">Florida - Orlando</option>
+            <option value="Tallahassee">Florida - Tallahassee</option>
+            <option value="Tampa">Florida - Tampa</option>
+
+            <option value="Buffalo">New York - Buffalo</option>
+            <option value="New York City">New York - New York City</option>
+            <option value="Rochester">New York - Rochester</option>
+            <option value="Schenectady">New York - Schenectady</option>
+            <option value="Syracuse">New York - Syracuse</option>
+
+            <option value="Akron">Ohio - Akron</option>
+            <option value="Cincinnati">Ohio - Cincinnati</option>
+            <option value="Cleveland">Ohio - Cleveland</option>
+            <option value="Columbus">Ohio - Columbus</option>
+            <option value="Toledo">Ohio - Toledo</option>
+
+            <option value="Austin">Texas - Austin</option>
+            <option value="Dallas">Texas - Dallas</option>
+            <option value="Fort Worth">Texas - Fort Worth</option>
+            <option value="Houston">Texas - Houston</option>
+            <option value="San Antonio">Texas - San Antonio</option>
+          </select>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="redBorder">Choose Date</td>
+        <td class="redBorder"><input class="form-control" class="apptDate" name="apptDate" name="patientAppointment.app_date" type="date" [(ngModel)]="patientAppointment.app_date"></td>
+      </tr>
+      
+      <tr>
+        <td class="redBorder">Choose Time</td>
+        <td class="redBorder">
+          <select class="form-control" name="patientAppointment.app_time" size="1" [(ngModel)]="patientAppointment.app_time" onchange="java_script_:show(this.options[this.selectedIndex].value)">
+            <option value=""></option>
+
+            <option value="8:00 am">8:00 am</option>
+            <option value="8:30 am">8:30 am</option>
+            <option value="9:00 am">9:00 am</option>
+            <option value="9:30 am">9:30 am</option>
+            <option value="10:00 am">10:00 am</option>
+            <option value="10:30 am">10:30 am</option>
+            <option value="11:00 am">11:00 am</option>
+            <option value="11:30 am">11:30 am</option>
+            <option value="12:00 pm">12:00 pm</option>
+            <option value="12:30 pm">12:30 pm</option>
+            <option value="1:00 pm">1:00 pm</option>
+            <option value="1:30 pm">1:30 pm</option>
+            <option value="2:00 pm">2:00 pm</option>
+            <option value="2:30 pm">2:30 pm</option>
+            <option value="3:00 pm">3:00 pm</option>
+            <option value="3:30 pm">3:30 pm</option>
+            <option value="4:00 pm">4:00 pm</option>
+            <option value="4:30 pm">4:30 pm</option>
+          </select>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="submit"><button type="submit" class="btn btn-primary">Schedule Appointment</button></td>
+        <td class="submit"><button type="reset" class="btn btn-primary">Cancel Appointment</button></td>
+      </tr>
+    </table>
+  </form>
+</div>

@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+//import { NgXCreditCardsModule } from 'ngx-credit-cards';
+
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit.profile/edit.profile.component';
@@ -46,8 +48,8 @@ import { FinanceService } from './accounting/accounting.service';
 import { JournalFinanceService } from './accounting/generaljournal/generaljournal.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './accounting/logout/logout.component';
+// import { Payment } from '../../node_modules/payment/dist/payment.js'
 // import { AlertModule } from 'ngx-bootstrap';
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -68,6 +70,7 @@ const routes: Routes = [
   { path: 'patient/:id', component: PatientComponent, canActivate: [AuthGuardService] },
   { path: 'patient/patient.profile', component: PatientProfileComponent, canActivate: [AuthGuardService] },
   { path: 'alert.component', component: AlertComponent},
+  
 ];
 
 @NgModule({
@@ -90,6 +93,7 @@ const routes: Routes = [
     PatientAppointmentComponent,
     PasswordChangeComponent,
     AlertComponent,
+    
 
 
     // line 41 added for accounting RS
@@ -111,6 +115,7 @@ const routes: Routes = [
     // AlertModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot(routes),
+    // NgXCreditCardsModule,
   ],
   providers: [
     AuthenticationService,

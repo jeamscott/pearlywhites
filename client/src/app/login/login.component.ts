@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loading = true;
     this.auth.login(this.credentials).subscribe(response => {
+	  location.reload();
       console.log(response);
       this.router.navigate([this.returnUrl]);
     },

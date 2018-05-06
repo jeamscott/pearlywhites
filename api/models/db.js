@@ -62,15 +62,15 @@ mongoose.connect(dbURI, options);
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
 
-  insertTestData(testLocation, 'Location');
+  // insertTestData(testLocation, 'Location');
   // insertTestData(testPatients, 'Patient');
-  insertTestData(testInventory, 'Inventory');
-  insertTestData(testTreatment, 'Treatment');
- // insertTestData(testSupplies, 'Supplies');
+  // insertTestData(testInventory, 'Inventory');
+  // insertTestData(testTreatment, 'Treatment');
+  // insertTestData(testSupplies, 'Supplies');
   // insertTestData(testAccounting, 'Accounting');
   // insertTestData(testUsers, 'User');
-  insertTestData(testVisit, 'Visit');
-  insertTestData(testAppointments, 'Appointment');
+  // insertTestData(testVisit, 'Visit');
+  // insertTestData(testAppointments, 'Appointment');
 
 
 });

@@ -72,8 +72,8 @@ import { PatientComponent } from '../patient.component'
   
     
     ngOnDestroy() {
-      this.routeSub.unsubscribe();
-      this.appointmentsSub.unsubscribe();
+      //this.routeSub.unsubscribe();
+      //this.appointmentsSub.unsubscribe();
     }
   }
   

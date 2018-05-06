@@ -84,7 +84,7 @@ li {
 button {
 	padding: 5px;	
 }
-.editProfileForm, .patientApptForm {
+.editProfileForm {
 	margin: 0 auto;
 	min-width: 80%;	
 }
@@ -163,7 +163,7 @@ footer {
 }
 .search {
 	margin: 2% 10%;
-	font-size: 1em;
+	font-size: 24pt;
 }
 /* Makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {

@@ -1,51 +1,51 @@
 <div class="container">
 
-<h1>Your profile</h1>
-
-<table border="0" cellspacing="0" cellpadding="0" id="table">
-  <tr>
-    <td class="redBorder">First Name</td>
-    <td class="redBorder">{{ patientProfile?.first_name }}</td>
-  </tr>
+  <h1>Your Profile</h1>
   
-  <tr>
-    <td class="redBorder">Last Name</td>
-    <td class="redBorder">{{ patientProfile?.last_name }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">Phone Number</td>
-    <td class="redBorder">{{ patientProfile?.phone_number }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">Street</td>   
-    <td class="redBorder">{{ patientProfile?.street }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">City</td>   
-    <td class="redBorder">{{ patientProfile?.city }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">State</td>   
-    <td class="redBorder">{{ patientProfile?.state }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">Zip</td>   
-    <td class="redBorder">{{ patientProfile?.zip_code }}</td>
-  </tr>
-  
-  <tr>
-    <td class="redBorder">Email</td>   
-    <td class="redBorder">{{ patientProfile?.email_address }}</td>
-  </tr>
-  
-  <tr>
-    <td class="submit"><button><a href="edit.profile">Edit</a></button></td>   
-    <td class="submit"><button><a href="password.change">Change Password</a></button></td>
-  </tr>
-</table>
+  <table border="0" cellspacing="0" cellpadding="0" id="table">
+    <tr>
+      <td class="redBorder">First Name</td>
+      <td class="redBorder">{{ patientProfile?.first_name }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">Last Name</td>
+      <td class="redBorder">{{ patientProfile?.last_name }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">Phone Number</td>
+      <td class="redBorder">{{ patientProfile?.phone_number }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">Address</td>   
+      <td class="redBorder">{{ patientProfile?.street }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">City</td>   
+      <td class="redBorder">{{ patientProfile?.city }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">State</td>   
+      <td class="redBorder">{{ patientProfile?.state }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">Zip Code</td>   
+      <td class="redBorder">{{ patientProfile?.zip_code }}</td>
+    </tr>
+    
+    <tr>
+      <td class="redBorder">Email</td>   
+      <td class="redBorder">{{ patientProfile?.email_address }}</td>
+    </tr>
+    
+    <tr>
+      <td class="submit"><a href="edit.profile"><button class="btn btn-primary">Update Profile</button></a></td>
+      <td class="submit"><a href="password.change"><button class="btn btn-primary">Change Password</button></a></td>
+    </tr>
+  </table>
 </div>

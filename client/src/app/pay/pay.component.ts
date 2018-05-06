@@ -4,6 +4,7 @@ import { PatientProfileService, PatientPayload } from '../patient.profile.servic
 import { BillingService} from '../billing.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+// import { Payment } from '../../../node_modules/payment/dist/payment.js'
 
 @Component({
   templateUrl: './pay.component.html'
@@ -32,9 +33,13 @@ export class PayComponent {
 
   make_payment() {
     this.billingService.pay_bill(this.bill).subscribe(() => {
-      this.router.navigateByUrl('/thank.you');
+      //this.router.navigateByUrl('/thank.you');
+        window.alert("Thank you for your payment");
+		location.reload();
       }, (err) => {
       console.error(err);
     });
-  }
+  };
+
+  
 }

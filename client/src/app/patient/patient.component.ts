@@ -96,8 +96,8 @@ export class PatientComponent implements OnInit, OnDestroy {
 
   
   ngOnDestroy() {
-    this.routeSub.unsubscribe();
-    this.tabSub.unsubscribe();
-    this.patientsSub.unsubscribe();
+    //this.routeSub.unsubscribe();
+    //this.tabSub.unsubscribe();
+    //this.patientsSub.unsubscribe();
   }
 }
