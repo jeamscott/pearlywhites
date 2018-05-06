@@ -47,7 +47,7 @@ function insertTestData(testRecordModule, modelName) {
 const options = {
   useMongoClient: true,
   user: 'root',
-  pass: 'Password1',
+  pass: 'a3YYSSsKZBuT',
   autoIndex: true,
   reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
   reconnectInterval: 500, // Reconnect every 500ms
