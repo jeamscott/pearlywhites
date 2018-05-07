@@ -15,13 +15,13 @@ var cors = require('cors');
 // [SH] Require Passport
 var passport = require('passport');
 
-//Set up mongoose connection
+/*//Set up mongoose connection
 var mongoose = require('mongoose');
 var mongoDB =  process.env.MONGODB_URI || 'mongodb://root:Password1@ds217310.mlab.com:17310/pearlywhites';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));*/
 
 // [SH] Bring in the data model
 require('./api/models/db');
