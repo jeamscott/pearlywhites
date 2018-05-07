@@ -43,7 +43,7 @@ import { PatientComponent } from '../patient.component'
     }
   
   
-    private _getPatientAppointment() {
+    public _getPatientAppointment() {
       this.appointmentsSub = this.supportService
                             .getPatientAppointment(this.id)
                             .subscribe(
@@ -57,7 +57,7 @@ import { PatientComponent } from '../patient.component'
                             )
     }
   
-    private _setPatientAppointment() {
+    public _setPatientAppointment() {
       this.appointmentsSub = this.supportService
                             .updatePatientAppointment(this.id, this.patientAppointment)
                             .subscribe(() => {

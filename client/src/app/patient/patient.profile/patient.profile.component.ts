@@ -43,7 +43,7 @@ import { PatientComponent } from '../patient.component'
     }
   
   
-    private _getPatientProfile() {
+    public _getPatientProfile() {
       this.patientsSub = this.supportService
                             .getPatientProfile(this.id)
                             .subscribe(
@@ -57,7 +57,7 @@ import { PatientComponent } from '../patient.component'
                             )
     }
   
-    private _setPatientProfile() {
+    public _setPatientProfile() {
       this.patientsSub = this.supportService
                             .updatePatientProfile(this.id, this.patientProfile)
                             .subscribe(() => {

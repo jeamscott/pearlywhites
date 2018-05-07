@@ -54,7 +54,7 @@ export class PatientComponent implements OnInit, OnDestroy {
     });
   }
 
-  private _getPatient() {
+  public _getPatient() {
     this.patientsSub = this.supportService
                           .getPatientById(this.id)
                           .subscribe(
@@ -68,7 +68,7 @@ export class PatientComponent implements OnInit, OnDestroy {
                           )
   }
 
-  private _getPatientProfile() {
+  public _getPatientProfile() {
     this.patientsSub = this.supportService
                           .getPatientProfile(this.id)
                           .subscribe(
@@ -82,7 +82,7 @@ export class PatientComponent implements OnInit, OnDestroy {
                           )
   }
 
-  private _setPatientProfile() {
+  public _setPatientProfile() {
     this.patientsSub = this.supportService
                           .updatePatientProfile(this.id, this.patientProfile)
                           .subscribe(() => {
