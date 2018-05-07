@@ -14,9 +14,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 // [SH] Require Passport
 var passport = require('passport');
+var mongoose = require('mongoose');
+// var database = require('./config/database');
 
 /*//Set up mongoose connection
-var mongoose = require('mongoose');
+
 var mongoDB =  process.env.MONGODB_URI || 'mongodb://root:Password1@ds217310.mlab.com:17310/pearlywhites';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
